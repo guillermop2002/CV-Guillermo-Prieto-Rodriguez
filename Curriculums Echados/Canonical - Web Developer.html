@@ -4,17 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Guillermo Prieto Rodriguez - Backend Engineer (Affirm)</title>
+    <title>CV - Guillermo Prieto Rodriguez - Web Developer (Canonical)</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Calibre:wght@300;400;500;600&family=Inter:wght@300;400;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&family=Open+Sans:wght@400;600&display=swap');
 
         :root {
-            /* Affirm-ish Branding: Clean, Trusted, Fintech Blue/Purple/Black */
-            --primary: #4C25C1;
-            /* Affirm Purple-Blue */
-            --text-main: #1D1D1F;
-            --text-light: #5E5E65;
-            --bg-light: #F7F7F9;
+            /* Ubuntu/Canonical Branding: Orange + Aubergine */
+            --ubuntu-orange: #E95420;
+            --ubuntu-warm-grey: #AEA79F;
+            --ubuntu-aubergine: #77216F;
+            --text-main: #333;
+            --bg-light: #F7F7F7;
         }
 
         * {
@@ -24,7 +24,7 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Open Sans', sans-serif;
             color: var(--text-main);
             background: #fff;
             font-size: 9.5pt;
@@ -46,7 +46,7 @@
             align-items: center;
             padding-bottom: 25px;
             margin-bottom: 30px;
-            border-bottom: 2px solid var(--primary);
+            border-bottom: 3px solid var(--ubuntu-orange);
         }
 
         .header-left {
@@ -55,26 +55,26 @@
         }
 
         .profile-img {
-            width: 90px;
-            height: 90px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             object-fit: cover;
             margin-right: 25px;
-            border: 2px solid var(--primary);
+            border: 2px solid var(--ubuntu-orange);
         }
 
         .header-info h1 {
+            font-family: 'Ubuntu', sans-serif;
             font-size: 24pt;
             font-weight: 700;
             color: var(--text-main);
             margin-bottom: 4px;
-            letter-spacing: -0.5px;
         }
 
         .header-info h2 {
             font-size: 11pt;
             font-weight: 500;
-            color: var(--primary);
+            color: var(--ubuntu-orange);
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
@@ -82,13 +82,15 @@
         .header-right {
             text-align: right;
             font-size: 9pt;
-            color: var(--text-light);
+            color: #555;
+            line-height: 1.6;
         }
 
         .header-right a {
-            color: var(--primary);
+            color: var(--text-main);
             text-decoration: none;
             font-weight: 600;
+            border-bottom: 1px dotted var(--ubuntu-orange);
         }
 
         /* SECTIONS */
@@ -97,22 +99,26 @@
         }
 
         .section-title {
+            font-family: 'Ubuntu', sans-serif;
             font-size: 11pt;
             font-weight: 700;
             text-transform: uppercase;
             color: var(--text-main);
-            letter-spacing: 0.5px;
-            border-bottom: 1px solid #ddd;
-            margin-bottom: 12px;
-            padding-bottom: 4px;
+            border-left: 5px solid var(--ubuntu-orange);
+            /* Orange line */
+            padding-left: 10px;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #f9f9f9 0%, #fff 100%);
+            display: flex;
+            align-items: center;
+            height: 26px;
         }
 
-        /* SUMMARY */
+        /* SUMMARY - "LOVE WHAT YOU DO" */
         .profile-summary {
             color: var(--text-main);
             text-align: justify;
-            margin-bottom: 15px;
-            font-size: 9.5pt;
+            margin-bottom: 20px;
         }
 
         /* SKILLS GRID */
@@ -123,19 +129,27 @@
             margin-bottom: 20px;
         }
 
-        .skill-item h4 {
+        .skill-group h4 {
             font-size: 9pt;
             font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 4px;
+            color: var(--ubuntu-orange);
+            margin-bottom: 6px;
             text-transform: uppercase;
         }
 
         .skill-list {
             list-style: none;
             font-size: 9pt;
-            color: var(--text-main);
-            line-height: 1.6;
+        }
+
+        .skill-list li {
+            margin-bottom: 4px;
+            border-bottom: 1px dotted #e5e5e5;
+            padding-bottom: 2px;
+        }
+
+        .skill-list li:last-child {
+            border-bottom: none;
         }
 
         /* EXPERIENCE */
@@ -147,7 +161,7 @@
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 3px;
+            margin-bottom: 4px;
         }
 
         .job-title {
@@ -158,7 +172,7 @@
 
         .company {
             font-weight: 600;
-            color: var(--primary);
+            color: var(--ubuntu-orange);
         }
 
         .date {
@@ -186,7 +200,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 3px;
+            margin-bottom: 4px;
         }
 
         .project-name {
@@ -199,7 +213,10 @@
             font-size: 8pt;
             font-family: monospace;
             font-weight: 600;
-            color: var(--primary);
+            color: #666;
+            background: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 2px;
         }
 
         .project-desc {
@@ -211,8 +228,9 @@
         .lang-line {
             font-size: 9pt;
             margin-top: 10px;
-            color: var(--text-light);
-            border-top: 1px solid #eee;
+            color: #555;
+            text-align: right;
+            border-top: 1px solid #ddd;
             padding-top: 8px;
         }
 
@@ -239,7 +257,7 @@
                 <img src="../cara horizontal.jpg" alt="Profile" class="profile-img">
                 <div class="header-info">
                     <h1>Guillermo Prieto</h1>
-                    <h2>Software Engineer, Backend</h2>
+                    <h2>Web Developer (React & TypeScript)</h2>
                 </div>
             </div>
             <div class="header-right">
@@ -255,50 +273,46 @@
         <section>
             <div class="section-title">Professional Summary</div>
             <p class="profile-summary">
-                <strong>Software Engineer</strong> with experience in designing and launching scalable <strong>backend
-                    systems</strong> using <strong>Python</strong> and distributed technologies (AWS, Kubernetes, SQL).
+                <strong>Web Developer</strong> passionate about web standards, performance, and Open Source. I build
+                high-fidelity web applications using <strong>React, TypeScript, and SCSS</strong>, always prioritizing
+                accessibility and responsive design.
                 <br><br>
-                Aligned with Affirm's mission of building "honest and friendly" financial products, I bring a strong
-                reliability mindset (SRE/Observability) from my background in DevSecOps. I specialize in building robust
-                solutions that handle high volumes while strictly maintaining data integrity and system availability.
-                Eager to join the Collections team to help optimize recovery strategies through clean, testable, and
-                extensible code.
+                With a background in Engineering, I combine technical precision with a collaborative mindset ("learning
+                from others" is key). I am eager to join Canonical's web team to contribute to the <strong>Vanilla
+                    Framework</strong> and maintain the web portfolio for the world's most deployed Linux distribution.
             </p>
         </section>
 
         <section>
-            <div class="section-title">Technical Skills</div>
+            <div class="section-title">Technical Expertise</div>
             <div class="skills-grid">
-                <div class="skill-item">
-                    <h4>Backend Engineering</h4>
+                <div class="skill-group">
+                    <h4>Web Tech (Vanilla & Frameworks)</h4>
                     <ul class="skill-list">
-                        <li><strong>Python</strong> (API Design & Collections)</li>
-                        <li><strong>SQL</strong> (MySQL/PostgreSQL)</li>
-                        <li>RESTful APIs • Microservices</li>
-                        <li>Distributed Systems</li>
+                        <li><strong>React & TypeScript</strong> (Main Stack)</li>
+                        <li>HTML5 / Semantic Markup</li>
+                        <li><strong>SCSS / CSS Modules</strong></li>
+                        <li>Responsive Design (Mobile-First)</li>
                     </ul>
                 </div>
-                <div class="skill-item">
-                    <h4>Infrastructure & Reliability</h4>
+                <div class="skill-group">
+                    <h4>Standards & Best Practices</h4>
                     <ul class="skill-list">
-                        <li><strong>AWS</strong> & <strong>Kubernetes</strong></li>
-                        <li>Observability (Monitoring/Alerting)</li>
-                        <li>CI/CD & Deployment Strategies</li>
-                        <li>High Availability Design</li>
+                        <li>Web Performance (Core Web Vitals)</li>
+                        <li><strong>Accessibility</strong> (A11y/WCAG)</li>
+                        <li>SEO Best Practices</li>
+                        <li>Component Libraries</li>
                     </ul>
                 </div>
-                <div class="skill-item">
-                    <h4>Security & Quality</h4>
+                <div class="skill-group">
+                    <h4>Dev Tools & Backend</h4>
                     <ul class="skill-list">
-                        <li>Secure Coding Practices</li>
-                        <li>Unit & Integration Testing</li>
-                        <li>Code Review & Collaboration</li>
-                        <li>Incident Response (On-call)</li>
+                        <li><strong>Python / NodeJS</strong> (Server-side)</li>
+                        <li>Git / Version Control</li>
+                        <li>Linux Experience</li>
+                        <li>Figma (Designer Collaboration)</li>
                     </ul>
                 </div>
-            </div>
-            <div class="lang-line">
-                <strong>Languages:</strong> Spanish (Native) • English (C1 Advanced) • French (Basic)
             </div>
         </section>
 
@@ -306,60 +320,61 @@
             <div class="section-title">Experience</div>
             <div class="exp-item">
                 <div class="exp-header">
-                    <span class="job-title">Backend Software Engineer (DevSecOps)</span>
+                    <span class="job-title">Full Stack Developer & Engineer</span>
                     <span class="date">Jan 2025 - Present</span>
                 </div>
                 <span class="company">Centro de Servicios Avanzados (CSA)</span>
                 <div class="job-desc">
                     <ul>
-                        <li><strong>Scalable Systems Design:</strong> Designed and implemented backend automation
-                            services in <strong>Python</strong> to handle incident data processing at scale, ensuring
-                            99.9% uptime.</li>
-                        <li><strong>Database Optimization:</strong> Optimized <strong>SQL</strong> queries for large
-                            datasets (logs/alerts), improving retrieval speeds by 40% for internal dashboards.</li>
-                        <li><strong>Reliability Engineering:</strong> Implemented monitoring and alerting (On-call
-                            rotation) to detect and resolve system bottlenecks before they impacted users.</li>
-                        <li><strong>Code Quality:</strong> Championed code reviews and wrote extensive unit/integration
-                            tests to ensure the robustness of mission-critical security tools.</li>
+                        <li><strong>Web Development:</strong> Designed and developed internal dashboards using
+                            <strong>React and TypeScript</strong>, ensuring a consistent user experience (UX) and high
+                            performance for data visualization.</li>
+                        <li><strong>Component Design:</strong> Built reusable UI components to standardize the
+                            look-and-feel across internal tools, similar to maintaining a <strong>Living Style
+                                Guide</strong>.</li>
+                        <li><strong>Collaboration:</strong> Liaised with stakeholders to implement updates and new
+                            features, ensuring standard output and compliance with internal style guides.</li>
+                        <li><strong>Server-side Integration:</strong> Connected front-end interfaces with
+                            <strong>Python/NodeJS</strong> backends, ensuring seamless data flow and interactivity.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
         <section>
-            <div class="section-title">Relevant Projects</div>
+            <div class="section-title">Web Projects</div>
 
             <div class="project-item">
                 <div class="project-head">
-                    <span class="project-name">Patch-BOE (Legal Data Processing)</span>
-                    <span class="project-tech">Python • SQL • OpenAI API • ETL</span>
+                    <span class="project-name">Dreizeer (High Performance Web)</span>
+                    <span class="project-tech">React • TypeScript • SCSS • SEO</span>
                 </div>
                 <div class="project-desc">
-                    Built a backend pipeline that ingests, cleans, and summarizes complex legal texts from the Spanish
-                    Official Gazette. Demonstrates ability to "take a simple problem" (text overload) and build an
-                    automated solution using <strong>Python</strong> and <strong>Databases</strong>.
+                    A fitness platform built to high web standards. Achieved <strong>100/100 Core Web Vitals</strong>
+                    scores through aggressive optimization (image lazy-loading, code splitting). Focused on
+                    <strong>SEO</strong> and responsive design for all devices.
                 </div>
             </div>
 
             <div class="project-item">
                 <div class="project-head">
-                    <span class="project-name">AI Chatbot Service (High Scale)</span>
-                    <span class="project-tech">Cloudflare Workers • Distributed Systems</span>
+                    <span class="project-name">NativeConnect (SaaS UX)</span>
+                    <span class="project-tech">React • UX/UI • Accessibility</span>
                 </div>
                 <div class="project-desc">
-                    Engineered a distributed API handling high-concurrency requests. Focused on reliability and latency
-                    optimization, similar to the requirements for handling payment recovery transactions.
+                    Developed the frontend for a secure SaaS product. Prioritized <strong>Accessibility (a11y)</strong>
+                    in forms and interactive elements to ensure usability for a broad audience.
                 </div>
             </div>
 
             <div class="project-item">
                 <div class="project-head">
-                    <span class="project-name">NativeConnect (Secure Auth)</span>
-                    <span class="project-tech">Python • OAuth2 • Sessions • Security</span>
+                    <span class="project-name">AI Chatbot Widget</span>
+                    <span class="project-tech">Modern JS • Component Library</span>
                 </div>
                 <div class="project-desc">
-                    Designed a secure authentication backend ensuring strict session management and data protection.
-                    Relevant to Affirm's need for handling sensitive financial user data securely.
+                    Built a standalone chat widget using vanilla JS/React concepts. Designed to be embedded in
+                    third-party sites, requiring strict CSS scoping and cross-browser compatibility.
                 </div>
             </div>
 
@@ -370,6 +385,9 @@
             <div style="display:flex; justify-content:space-between;">
                 <div><strong>BSc in Cybersecurity Engineering</strong>, Universidad Rey Juan Carlos</div>
                 <div style="font-style:italic; color:#888;">2020 - 2025</div>
+            </div>
+            <div class="lang-line">
+                <strong>Languages:</strong> English (Fluent / C1) • Spanish (Native)
             </div>
         </section>
 

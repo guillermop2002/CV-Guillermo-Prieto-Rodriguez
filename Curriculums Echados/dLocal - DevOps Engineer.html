@@ -4,17 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Guillermo Prieto Rodriguez - Backend Engineer (Affirm)</title>
+    <title>CV - Guillermo Prieto Rodriguez - DevOps Engineer (dLocal)</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Calibre:wght@300;400;500;600&family=Inter:wght@300;400;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap');
 
         :root {
-            /* Affirm-ish Branding: Clean, Trusted, Fintech Blue/Purple/Black */
-            --primary: #4C25C1;
-            /* Affirm Purple-Blue */
-            --text-main: #1D1D1F;
-            --text-light: #5E5E65;
-            --bg-light: #F7F7F9;
+            /* dLocal Branding: Black, White, and vivid accent if needed (kept professional) */
+            --primary: #000000;
+            --accent: #E63946;
+            /* A slight red/pink accent for "fintech" energy */
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-light: #f9f9f9;
         }
 
         * {
@@ -24,7 +25,7 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Open Sans', sans-serif;
             color: var(--text-main);
             background: #fff;
             font-size: 9.5pt;
@@ -35,7 +36,7 @@
             max-width: 210mm;
             margin: 0 auto;
             background: #fff;
-            padding: 45px;
+            padding: 40px;
             min-height: 297mm;
         }
 
@@ -44,9 +45,9 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-bottom: 25px;
-            margin-bottom: 30px;
             border-bottom: 2px solid var(--primary);
+            padding-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .header-left {
@@ -59,24 +60,26 @@
             height: 90px;
             border-radius: 50%;
             object-fit: cover;
-            margin-right: 25px;
+            margin-right: 20px;
             border: 2px solid var(--primary);
         }
 
         .header-info h1 {
+            font-family: 'Montserrat', sans-serif;
             font-size: 24pt;
             font-weight: 700;
-            color: var(--text-main);
-            margin-bottom: 4px;
-            letter-spacing: -0.5px;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            line-height: 1;
+            margin-bottom: 5px;
         }
 
         .header-info h2 {
             font-size: 11pt;
-            font-weight: 500;
-            color: var(--primary);
+            font-weight: 600;
+            color: var(--text-light);
             text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
         .header-right {
@@ -93,33 +96,32 @@
 
         /* SECTIONS */
         section {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .section-title {
+            font-family: 'Montserrat', sans-serif;
             font-size: 11pt;
             font-weight: 700;
             text-transform: uppercase;
-            color: var(--text-main);
-            letter-spacing: 0.5px;
+            color: var(--primary);
             border-bottom: 1px solid #ddd;
-            margin-bottom: 12px;
-            padding-bottom: 4px;
+            margin-bottom: 10px;
+            padding-bottom: 3px;
         }
 
         /* SUMMARY */
         .profile-summary {
-            color: var(--text-main);
             text-align: justify;
-            margin-bottom: 15px;
-            font-size: 9.5pt;
+            color: var(--text-main);
+            margin-bottom: 20px;
         }
 
         /* SKILLS GRID */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            gap: 15px;
             margin-bottom: 20px;
         }
 
@@ -127,7 +129,7 @@
             font-size: 9pt;
             font-weight: 700;
             color: var(--primary);
-            margin-bottom: 4px;
+            margin-bottom: 5px;
             text-transform: uppercase;
         }
 
@@ -135,12 +137,11 @@
             list-style: none;
             font-size: 9pt;
             color: var(--text-main);
-            line-height: 1.6;
         }
 
         /* EXPERIENCE */
         .exp-item {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .exp-header {
@@ -153,12 +154,12 @@
         .job-title {
             font-weight: 700;
             font-size: 10.5pt;
-            color: var(--text-main);
+            color: var(--primary);
         }
 
         .company {
             font-weight: 600;
-            color: var(--primary);
+            color: var(--text-light);
         }
 
         .date {
@@ -168,52 +169,54 @@
         }
 
         .job-desc ul {
-            padding-left: 17px;
-            margin-top: 6px;
+            padding-left: 18px;
+            margin-top: 5px;
         }
 
         .job-desc li {
-            margin-bottom: 4px;
+            margin-bottom: 3px;
             color: var(--text-main);
+            font-size: 9.5pt;
         }
 
         /* PROJECTS */
         .project-item {
             margin-bottom: 15px;
+            border-left: 3px solid var(--primary);
+            padding-left: 15px;
         }
 
         .project-head {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 3px;
         }
 
         .project-name {
             font-weight: 700;
             font-size: 10pt;
-            color: var(--text-main);
+            color: var(--primary);
         }
 
         .project-tech {
             font-size: 8pt;
             font-family: monospace;
             font-weight: 600;
-            color: var(--primary);
+            color: var(--text-light);
         }
 
         .project-desc {
             font-size: 9pt;
-            color: var(--text-main);
             margin-top: 2px;
         }
 
+        /* LANGUAGES LINE */
         .lang-line {
             font-size: 9pt;
+            border-top: 1px solid #eee;
+            padding-top: 5px;
             margin-top: 10px;
             color: var(--text-light);
-            border-top: 1px solid #eee;
-            padding-top: 8px;
         }
 
         @media print {
@@ -224,7 +227,7 @@
             .cv-container {
                 width: 100%;
                 margin: 0;
-                padding: 40px;
+                padding: 30px;
                 box-shadow: none;
             }
         }
@@ -239,7 +242,7 @@
                 <img src="../cara horizontal.jpg" alt="Profile" class="profile-img">
                 <div class="header-info">
                     <h1>Guillermo Prieto</h1>
-                    <h2>Software Engineer, Backend</h2>
+                    <h2>DevOps Engineer & Cloud Platform Specialist</h2>
                 </div>
             </div>
             <div class="header-right">
@@ -255,14 +258,14 @@
         <section>
             <div class="section-title">Professional Summary</div>
             <p class="profile-summary">
-                <strong>Software Engineer</strong> with experience in designing and launching scalable <strong>backend
-                    systems</strong> using <strong>Python</strong> and distributed technologies (AWS, Kubernetes, SQL).
+                <strong>DevOps Engineer</strong> with a strong foundation in <strong>Infrastructure as Code
+                    (IaC)</strong>, automation, and security. I specialize in building scalable environments using
+                <strong>Terraform and Kubernetes</strong>, optimizing CI/CD pipelines for performance and reliability.
                 <br><br>
-                Aligned with Affirm's mission of building "honest and friendly" financial products, I bring a strong
-                reliability mindset (SRE/Observability) from my background in DevSecOps. I specialize in building robust
-                solutions that handle high volumes while strictly maintaining data integrity and system availability.
-                Eager to join the Collections team to help optimize recovery strategies through clean, testable, and
-                extensible code.
+                With a background in Cybersecurity Engineering, I advocate for "Security by Design" (DevSecOps),
+                ensuring that compliance and DR strategies are embedded into the infrastructure from day one. I am
+                accustomed to working with international teams and eager to apply my skills in multi-region setups for
+                dLocal's mission-critical platforms.
             </p>
         </section>
 
@@ -270,30 +273,30 @@
             <div class="section-title">Technical Skills</div>
             <div class="skills-grid">
                 <div class="skill-item">
-                    <h4>Backend Engineering</h4>
+                    <h4>Cloud & Infrastructure</h4>
                     <ul class="skill-list">
-                        <li><strong>Python</strong> (API Design & Collections)</li>
-                        <li><strong>SQL</strong> (MySQL/PostgreSQL)</li>
-                        <li>RESTful APIs • Microservices</li>
-                        <li>Distributed Systems</li>
+                        <li><strong>Terraform (IaC)</strong> • CloudFormation</li>
+                        <li><strong>Kubernetes (EKS/GKE)</strong> • Docker</li>
+                        <li>AWS Services • Cloudflare</li>
+                        <li>Linux Administration (Core)</li>
                     </ul>
                 </div>
                 <div class="skill-item">
-                    <h4>Infrastructure & Reliability</h4>
+                    <h4>DevOps & CI/CD</h4>
                     <ul class="skill-list">
-                        <li><strong>AWS</strong> & <strong>Kubernetes</strong></li>
-                        <li>Observability (Monitoring/Alerting)</li>
-                        <li>CI/CD & Deployment Strategies</li>
-                        <li>High Availability Design</li>
+                        <li>GitHub Actions • CI/CD Pipelines</li>
+                        <li>Python Scripting • Bash</li>
+                        <li>Monitoring: ELK Stack (Basic)</li>
+                        <li>Autoscaling & Performance</li>
                     </ul>
                 </div>
                 <div class="skill-item">
-                    <h4>Security & Quality</h4>
+                    <h4>Security (DevSecOps)</h4>
                     <ul class="skill-list">
-                        <li>Secure Coding Practices</li>
-                        <li>Unit & Integration Testing</li>
-                        <li>Code Review & Collaboration</li>
-                        <li>Incident Response (On-call)</li>
+                        <li>Security Compliance (DR/HA)</li>
+                        <li>Secret Management (Gitleaks)</li>
+                        <li>SAST (Semgrep) • OWASP</li>
+                        <li>AppSec & Network Security</li>
                     </ul>
                 </div>
             </div>
@@ -303,63 +306,62 @@
         </section>
 
         <section>
-            <div class="section-title">Experience</div>
+            <div class="section-title">Professional Experience</div>
             <div class="exp-item">
                 <div class="exp-header">
-                    <span class="job-title">Backend Software Engineer (DevSecOps)</span>
+                    <span class="job-title">DevSecOps Engineer</span>
                     <span class="date">Jan 2025 - Present</span>
                 </div>
                 <span class="company">Centro de Servicios Avanzados (CSA)</span>
                 <div class="job-desc">
                     <ul>
-                        <li><strong>Scalable Systems Design:</strong> Designed and implemented backend automation
-                            services in <strong>Python</strong> to handle incident data processing at scale, ensuring
-                            99.9% uptime.</li>
-                        <li><strong>Database Optimization:</strong> Optimized <strong>SQL</strong> queries for large
-                            datasets (logs/alerts), improving retrieval speeds by 40% for internal dashboards.</li>
-                        <li><strong>Reliability Engineering:</strong> Implemented monitoring and alerting (On-call
-                            rotation) to detect and resolve system bottlenecks before they impacted users.</li>
-                        <li><strong>Code Quality:</strong> Championed code reviews and wrote extensive unit/integration
-                            tests to ensure the robustness of mission-critical security tools.</li>
+                        <li><strong>Infrastructure Automation:</strong> Developed Python scripts to automate incident
+                            response and threat intelligence gathering, reducing manual toil by 50%.</li>
+                        <li><strong>CI/CD Optimization:</strong> Architected secure CI/CD pipelines integrating
+                            automated security testing (SAST/DAST) to "shift-left" security in the SDLC.</li>
+                        <li><strong>Compliance & DR:</strong> Assisted in designing Disaster Recovery strategies and
+                            implementing security controls aligned with ISO 27001 / ENS standards.</li>
+                        <li><strong>Monitoring:</strong> Configured alerting rules in SIEM/Logging platforms to detect
+                            anomalies in real-time.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
         <section>
-            <div class="section-title">Relevant Projects</div>
+            <div class="section-title">Key Projects</div>
 
             <div class="project-item">
                 <div class="project-head">
-                    <span class="project-name">Patch-BOE (Legal Data Processing)</span>
-                    <span class="project-tech">Python • SQL • OpenAI API • ETL</span>
+                    <span class="project-name">GraphSec-IaC (Infrastructure Orchestration)</span>
+                    <span class="project-tech">Terraform • Python • React • CI/CD</span>
                 </div>
                 <div class="project-desc">
-                    Built a backend pipeline that ingests, cleans, and summarizes complex legal texts from the Spanish
-                    Official Gazette. Demonstrates ability to "take a simple problem" (text overload) and build an
-                    automated solution using <strong>Python</strong> and <strong>Databases</strong>.
+                    Engineered a platform to parse and visualize <strong>Terraform (IaC)</strong> infrastructure.
+                    Correlates assets with security inputs (Trivy/Checkov) to provide a unified view of cloud posture.
                 </div>
             </div>
 
             <div class="project-item">
                 <div class="project-head">
-                    <span class="project-name">AI Chatbot Service (High Scale)</span>
-                    <span class="project-tech">Cloudflare Workers • Distributed Systems</span>
+                    <span class="project-name">Secure "Golden Pipeline"</span>
+                    <span class="project-tech">GitHub Actions • Docker • IaC Security</span>
                 </div>
                 <div class="project-desc">
-                    Engineered a distributed API handling high-concurrency requests. Focused on reliability and latency
-                    optimization, similar to the requirements for handling payment recovery transactions.
+                    Built a reusable CI/CD workflow that enforces security policies. Blocks deployments if
+                    <strong>secrets (Gitleaks)</strong> or misconfigurations are detected, ensuring only clean code
+                    reaches production.
                 </div>
             </div>
 
             <div class="project-item">
                 <div class="project-head">
-                    <span class="project-name">NativeConnect (Secure Auth)</span>
-                    <span class="project-tech">Python • OAuth2 • Sessions • Security</span>
+                    <span class="project-name">AI Chatbot on Edge (Scalability)</span>
+                    <span class="project-tech">Cloudflare Workers • Serverless • RAG</span>
                 </div>
                 <div class="project-desc">
-                    Designed a secure authentication backend ensuring strict session management and data protection.
-                    Relevant to Affirm's need for handling sensitive financial user data securely.
+                    Deployed a globally distributed (Edge) application using Cloudflare Workers. optimized for high
+                    concurrency and low latency, handling auto-scaling automatically via serverless architecture.
                 </div>
             </div>
 
@@ -368,9 +370,13 @@
         <section>
             <div class="section-title">Education</div>
             <div style="display:flex; justify-content:space-between;">
-                <div><strong>BSc in Cybersecurity Engineering</strong>, Universidad Rey Juan Carlos</div>
+                <div>
+                    <strong>BSc in Cybersecurity Engineering</strong>, Universidad Rey Juan Carlos
+                </div>
                 <div style="font-style:italic; color:#888;">2020 - 2025</div>
             </div>
+            <div style="font-size:9pt; color:#666; margin-top:3px;">Focus on Secure Software Development and Cloud
+                Infrastructure.</div>
         </section>
 
     </div>

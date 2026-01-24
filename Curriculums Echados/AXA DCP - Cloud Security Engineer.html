@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Guillermo Prieto Rodriguez - Cloud Security Engineer (AXA DCP)</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;600;700;800&family=Roboto:wght@300;400;500&display=swap');
+
+        :root {
+            /* AXA Branding: Enterprise Blue, Dark Navy, Clean */
+            --primary: #00008F;
+            /* AXA Blue approx */
+            --accent: #FF1414;
+            /* AXA Red Switch - subtle use */
+            --text-main: #333333;
+            --bg-light: #F0F4F8;
+            --border: #E0E0E0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-main);
+            background: #fff;
+            font-size: 9.5pt;
+            line-height: 1.5;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+            padding: 45px;
+            min-height: 297mm;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 25px;
+            margin-bottom: 30px;
+            border-bottom: 3px solid var(--primary);
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 5px;
+            /* Square with slight radius */
+            object-fit: cover;
+            margin-right: 25px;
+            border: 2px solid var(--primary);
+        }
+
+        .header-info h1 {
+            font-family: 'Public Sans', sans-serif;
+            font-size: 24pt;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            line-height: 1;
+        }
+
+        .header-info h2 {
+            font-size: 11pt;
+            font-weight: 600;
+            color: #555;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 9pt;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .header-right a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-family: 'Public Sans', sans-serif;
+            font-size: 11pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--primary);
+            border-left: 4px solid var(--accent);
+            padding-left: 10px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(90deg, #f9f9f9 0%, #fff 100%);
+        }
+
+        /* SUMMARY */
+        .profile-summary {
+            color: var(--text-main);
+            text-align: justify;
+            margin-bottom: 20px;
+            font-size: 9.5pt;
+        }
+
+        /* SKILLS GRID */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .skill-group h4 {
+            font-size: 9pt;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 3px;
+        }
+
+        .skill-list {
+            list-style: none;
+            font-size: 9pt;
+        }
+
+        .skill-list li {
+            margin-bottom: 4px;
+            display: flex;
+            align-items: start;
+        }
+
+        .skill-list li::before {
+            content: "▪";
+            color: var(--accent);
+            margin-right: 6px;
+        }
+
+        /* EXPERIENCE */
+        .exp-item {
+            margin-bottom: 20px;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .job-title {
+            font-weight: 700;
+            font-size: 10.5pt;
+            color: var(--primary);
+        }
+
+        .company {
+            font-weight: 600;
+            color: #444;
+        }
+
+        .date {
+            font-size: 9pt;
+            font-style: italic;
+            color: #888;
+        }
+
+        .job-desc ul {
+            padding-left: 17px;
+            margin-top: 6px;
+        }
+
+        .job-desc li {
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+
+        /* PROJECTS */
+        .project-item {
+            margin-bottom: 15px;
+            border: 1px solid #eee;
+            padding: 10px 15px;
+            border-radius: 4px;
+        }
+
+        .project-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4px;
+        }
+
+        .project-name {
+            font-weight: 700;
+            font-size: 10pt;
+            color: var(--primary);
+        }
+
+        .project-tech {
+            font-size: 8pt;
+            font-family: monospace;
+            font-weight: 600;
+            color: #666;
+        }
+
+        .project-desc {
+            font-size: 9pt;
+            color: var(--text-main);
+        }
+
+        .lang-line {
+            font-size: 9pt;
+            margin-top: 15px;
+            color: #555;
+            text-align: right;
+            border-top: 1px solid #eee;
+            padding-top: 5px;
+        }
+
+        @media print {
+            body {
+                margin: 0;
+            }
+
+            .cv-container {
+                width: 100%;
+                margin: 0;
+                padding: 40px;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cv-container">
+
+        <header>
+            <div class="header-left">
+                <img src="../cara horizontal.jpg" alt="Profile" class="profile-img">
+                <div class="header-info">
+                    <h1>Guillermo Prieto</h1>
+                    <h2>Cloud Security Engineer</h2>
+                </div>
+            </div>
+            <div class="header-right">
+                <div>Madrid / Barcelona, Spain</div>
+                <div>guillermoprieto17@gmail.com</div>
+                <div>+34 650 164 383</div>
+                <div><a href="https://linkedin.com/in/guillermo-prieto-rodriguez">linkedin.com/in/guillermo-prieto</a>
+                </div>
+                <div><a href="https://cv-guillermo-prieto-rodriguez.vercel.app">Portfolio Web</a></div>
+            </div>
+        </header>
+
+        <section>
+            <div class="section-title">Professional Summary</div>
+            <p class="profile-summary">
+                <strong>Cloud Security Engineer</strong> specialized in implementing secure architectures and
+                identifying risks within <strong>AWS</strong> environments. I act as a trusted advisor for development
+                teams, embedding security into the CI/CD pipeline ("Shift Left") and automating compliance checks using
+                <strong>Python</strong> and <strong>Terraform (IaC)</strong>.
+                <br><br>
+                With a solid background in <strong>DevSecOps</strong> and Threat Modeling, I am proficient in securing
+                containerized applications (Docker/EKS) and conducting in-depth code analysis. I am eager to join AXA
+                DCP to protect commercial risk platforms and drive the adoption of secure coding standards across the
+                organization.
+            </p>
+        </section>
+
+        <section>
+            <div class="section-title">Technical Skills</div>
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <h4>Cloud Security (AWS)</h4>
+                    <ul class="skill-list">
+                        <li><strong>AWS Security</strong> & Serverless</li>
+                        <li><strong>Terraform</strong> (IaC Patterns)</li>
+                        <li>Container Security (Docker/K8s)</li>
+                        <li>Threat Modeling & Architecture</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h4>AppSec & Development</h4>
+                    <ul class="skill-list">
+                        <li><strong>Python & Scripting</strong> (Automation)</li>
+                        <li>Secure Coding Standards (OWASP)</li>
+                        <li>Code Analysis (SAST/DAST)</li>
+                        <li>API Security Best Practices</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h4>DevSecOps & GRC</h4>
+                    <ul class="skill-list">
+                        <li><strong>Shift-Left</strong> Security (CI/CD)</li>
+                        <li>ISO 27001 / GDPR Awareness</li>
+                        <li>KPI/KRI Monitoring</li>
+                        <li>Incident Investigation</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Experience</div>
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span class="job-title">DevSecOps Engineer (Cloud Security Focus)</span>
+                    <span class="date">Jan 2025 - Present</span>
+                </div>
+                <span class="company">Centro de Servicios Avanzados (CSA)</span>
+                <div class="job-desc">
+                    <ul>
+                        <li><strong>Secure CI/CD ("Shift Left"):</strong> Integrated automated security checks (SAST,
+                            Secrets Scanning) into pipelines, enabling early detection of vulnerabilities and preventing
+                            insecure code from reaching production.</li>
+                        <li><strong>Infrastructure as Code (IaC):</strong> Assessed and improved cloud blueprints using
+                            <strong>Terraform</strong> to enforce security baselines and standardize configurations
+                            across environments.</li>
+                        <li><strong>Automation:</strong> Utilized <strong>Python</strong> to automate the assessment of
+                            vulnerabilities and streamline the reporting of security KPIs to stakeholders, facilitating
+                            informed decision-making.</li>
+                        <li><strong>Trusted Advisor:</strong> Collaborated with development teams to remediate findings
+                            and implement secure coding practices, fostering effective partnerships to enhance the
+                            overall security posture.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Relevant Projects</div>
+
+            <div class="project-item">
+                <div class="project-head">
+                    <span class="project-name">GraphSec (IaC Security & Visualization)</span>
+                    <span class="project-tech">Terraform • Python • AWS Patterns</span>
+                </div>
+                <div class="project-desc">
+                    Developed a tool to parse and visualize <strong>Terraform</strong> infrastructure configurations.
+                    Demonstrates deep understanding of IaC patterns and the ability to perform in-depth analysis of
+                    infrastructure code for compliance.
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-head">
+                    <span class="project-name">Secure "Golden Pipeline"</span>
+                    <span class="project-tech">CI/CD • Automation • Vulnerability Mgmt</span>
+                </div>
+                <div class="project-desc">
+                    Architected a reusable pipeline that automates security testing processes. Aligns with the mission
+                    to "design and integrate security into the CI/CD pipeline" and standardize configurations.
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-head">
+                    <span class="project-name">NativeConnect (Secure Architecture)</span>
+                    <span class="project-tech">Threat Modeling • Python • Identity</span>
+                </div>
+                <div class="project-desc">
+                    Designed a secure application architecture from scratch. Involved conducting threat modeling,
+                    defining security controls, and implementing secure coding standards (OAuth2/Encryption).
+                </div>
+            </div>
+
+        </section>
+
+        <section>
+            <div class="section-title">Education</div>
+            <div style="display:flex; justify-content:space-between;">
+                <div><strong>BSc in Cybersecurity Engineering</strong>, Universidad Rey Juan Carlos</div>
+                <div style="font-style:italic; color:#888;">2020 - 2025</div>
+            </div>
+            <div class="lang-line">
+                <strong>Languages:</strong> English (Fluent / C1) • Spanish (Native)
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>

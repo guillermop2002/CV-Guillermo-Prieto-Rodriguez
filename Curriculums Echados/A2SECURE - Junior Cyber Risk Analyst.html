@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Guillermo Prieto Rodriguez - Junior Cyber Risk Analyst</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+        :root {
+            --primary: #2C3E50;
+            /* Professional Navy Blue */
+            --primary-dark: #1a252f;
+            --text-dark: #222;
+            --text-light: #444;
+            --white: #ffffff;
+            --bg-sidebar: #34495e;
+            --text-sidebar: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @page {
+            margin: 0;
+            size: auto;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.28;
+            background: #f0f0f0;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: var(--white);
+            display: grid;
+            grid-template-columns: 68% 32%;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            min-height: 297mm;
+        }
+
+        /* LEFT COLUMN (Main Content) */
+        .main-column {
+            padding: 20px 25px;
+        }
+
+        .header-name h1 {
+            font-size: 24pt;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-dark);
+            margin-bottom: 2px;
+            font-weight: 800;
+        }
+
+        .header-name h2 {
+            font-size: 11.5pt;
+            font-weight: 500;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .section {
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 12.5pt;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-dark);
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 2px;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .profile-text {
+            font-size: 8.5pt;
+            color: var(--text-light);
+            text-align: justify;
+            line-height: 1.4;
+        }
+
+        /* Experience Items */
+        .item {
+            margin-bottom: 10px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+        }
+
+        .item-title {
+            font-weight: 700;
+            font-size: 10.5pt;
+            color: var(--text-dark);
+        }
+
+        .item-subtitle {
+            font-weight: 600;
+            font-size: 9pt;
+            color: var(--primary);
+        }
+
+        .item-date {
+            font-size: 8.5pt;
+            color: #666;
+            font-style: italic;
+        }
+
+        .item-details {
+            font-size: 8.5pt;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+
+        .item-details ul {
+            padding-left: 15px;
+        }
+
+        .item-details li {
+            margin-bottom: 2px;
+            line-height: 1.3;
+        }
+
+        /* Projects */
+        .projects-grid-compact {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 6px;
+        }
+
+        .project-row {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 4px;
+        }
+
+        .project-row:last-child {
+            border-bottom: none;
+        }
+
+        .project-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .project-title {
+            font-weight: 700;
+            font-size: 9.5pt;
+            color: var(--text-dark);
+        }
+
+        .project-tech {
+            font-size: 7.5pt;
+            color: var(--primary);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .project-desc {
+            font-size: 8.5pt;
+            color: var(--text-light);
+            margin-top: 1px;
+            line-height: 1.25;
+        }
+
+        /* RIGHT COLUMN (Sidebar) */
+        .sidebar {
+            background-color: var(--bg-sidebar);
+            color: var(--text-sidebar);
+            padding: 25px 20px;
+            text-align: left;
+        }
+
+        .profile-img-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 4px solid rgba(255, 255, 255, 0.4);
+            object-fit: cover;
+            object-position: 45% 20%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .sidebar-section {
+            margin-bottom: 20px;
+        }
+
+        .sidebar-title {
+            font-size: 11.5pt;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+            padding-bottom: 4px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .contact-info div {
+            margin-bottom: 6px;
+            font-size: 9pt;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            word-break: break-all;
+        }
+
+        .contact-info svg {
+            width: 14px;
+            height: 14px;
+            fill: white;
+            flex-shrink: 0;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .skill-list h4 {
+            font-size: 9.5pt;
+            margin-top: 10px;
+            margin-bottom: 3px;
+            color: rgba(255, 255, 255, 1);
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .skill-tags {
+            font-size: 8.5pt;
+            line-height: 1.35;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 4px;
+            font-size: 9.5pt;
+            align-items: center;
+        }
+
+        .language-name {
+            font-weight: 600;
+        }
+
+        .education-item {
+            margin-bottom: 10px;
+        }
+
+        .education-degree {
+            font-weight: 700;
+            font-size: 9.5pt;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .education-school {
+            font-size: 8.5pt;
+            display: block;
+            opacity: 0.9;
+        }
+
+        .education-date {
+            font-size: 8pt;
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        /* Printing */
+        @media print {
+
+            body,
+            .cv-container {
+                margin: 0;
+                box-shadow: none;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .sidebar {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                background-color: var(--bg-sidebar) !important;
+            }
+
+            .cv-container {
+                min-height: 100vh;
+                height: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="cv-container">
+        <!-- MAIN CONTENT (LEFT) -->
+        <main class="main-column">
+
+            <header class="header-name">
+                <h1>Guillermo Prieto Rodriguez</h1>
+                <h2>Ingeniero de Ciberseguridad</h2>
+            </header>
+
+            <section class="section">
+                <h3 class="section-title">Perfil Profesional</h3>
+                <p class="profile-text">
+                    <strong>Graduado en Ingeniería de Ciberseguridad</strong> con experiencia práctica en
+                    <strong>Consultoría de Riesgos (GRC) y Cumplimiento Normativo (ENS, ISO 27001)</strong>. Mi
+                    experiencia actual en el CSA me ha permitido participar directamente en la ejecución de auditorías
+                    internas, análisis de riesgos y definición de Planes Directores de Seguridad.
+                    <br><br>
+                    Combino una sólida base técnica con la capacidad de entender el negocio ("Business Acumen"), lo que
+                    me permite traducir riesgos técnicos en impacto estratégico. Apasionado por la tecnología, proactivo
+                    y con un nivel de <strong>Inglés C1</strong>, busco desarrollarme como consultor estratégico en un
+                    entorno internacional, aportando mi capacidad para afrontar retos complejos y trabajar en equipo.
+                </p>
+            </section>
+
+            <section class="section">
+                <h3 class="section-title">Experiencia Profesional</h3>
+                <div class="item">
+                    <div class="item-header">
+                        <span class="item-title">Ingeniero de Ciberseguridad (GRC & Ops)</span>
+                        <span class="item-date">Ene 2025 - Presente</span>
+                    </div>
+                    <div class="item-subtitle">Centro de Servicios Avanzados (CSA) | Madrid, España</div>
+                    <div class="item-details">
+                        <ul>
+                            <li><strong>Soporte en Auditoría y Cumplimiento (ENS/ISO 27001):</strong> Participación
+                                activa en la recopilación de evidencias, gap analysis y preparación de informes de
+                                auditoría para organismos públicos, asegurando la alineación con el Esquema Nacional de
+                                Seguridad.</li>
+                            <li><strong>Gestión de Riesgos y Planes de Mitigación:</strong> Colaboración en el análisis
+                                de riesgos de proyectos tecnológicos, identificando vulnerabilidades y apoyando en la
+                                definición de controles compensatorios y planes de acción correctiva.</li>
+                            <li><strong>Elaboración de Documentación y Políticas:</strong> Apoyo en la redacción y
+                                actualización del cuerpo normativo (políticas, procedimientos y guías técnicas),
+                                asegurando su coherencia y aplicabilidad práctica.</li>
+                            <li><strong>Soporte Técnico y Reporting:</strong> Preparación de informes ejecutivos sobre
+                                el estado de la seguridad ("Reporting") para stakeholders, traduciendo métricas técnicas
+                                en indicadores de negocio comprensibles.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h3 class="section-title">Proyectos Académicos y de Estrategia</h3>
+                <div class="projects-grid-compact">
+
+                    <div class="project-row">
+                        <div class="project-head">
+                            <span class="project-title">Plan Director de Seguridad (TFG)</span>
+                            <span class="project-tech">ISO 27001 • Análisis de Riesgos • Estrategia</span>
+                        </div>
+                        <div class="project-desc">
+                            Desarrollo teórico-práctico de un sistema de orquestación de seguridad (GraphSec) alineado
+                            con estándares de la industria, incluyendo el diseño de controles, análisis de riesgos
+                            inherentes/residuales y definición de la estrategia de mitigación.
+                        </div>
+                    </div>
+
+                    <div class="project-row">
+                        <div class="project-head">
+                            <span class="project-title">Implementation of Secure CI/CD (DevSecOps)</span>
+                            <span class="project-tech">NIST SSDLC • Política de Seguridad • Compliance</span>
+                        </div>
+                        <div class="project-desc">
+                            Diseño de un ciclo de vida de desarrollo seguro (SSDLC) siguiendo el marco NIST. Definición
+                            de políticas de seguridad ("Policy as Code") para garantizar el cumplimiento normativo
+                            automático en cada despliegue.
+                        </div>
+                    </div>
+
+                    <div class="project-row">
+                        <div class="project-head">
+                            <span class="project-title">Patch-BOE (Automatización LegalTech)</span>
+                            <span class="project-tech">Python • NLP • Regulación</span>
+                        </div>
+                        <div class="project-desc">
+                            Herramienta de automatización que procesa actualizaciones regulatorias del BOE. Demuestra
+                            capacidad para trabajar con textos legales/normativos y aplicar tecnología para extraer
+                            "insights" relevantes para el cumplimiento.
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="section">
+                <h3 class="section-title">Formación Académica</h3>
+                <div class="item">
+                    <div class="item-header">
+                        <span class="item-title">Grado en Ingeniería de la Ciberseguridad</span>
+                        <span class="item-date">2020 - 2025</span>
+                    </div>
+                    <div class="item-subtitle">Universidad Rey Juan Carlos | Madrid</div>
+                    <div class="item-details">
+                        Especialización en Gestión de Riesgos, Legislación IT y Seguridad Corporativa.
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- SIDEBAR (RIGHT) -->
+        <aside class="sidebar">
+            <div class="profile-img-container">
+                <img src="../cara horizontal.jpg" alt="Perfil" class="profile-img">
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Contacto</h3>
+                <div class="contact-info">
+                    <div>
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                        </svg>
+                        guillermoprieto17@gmail.com
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                        </svg>
+                        +34 650 164 383
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                        </svg>
+                        Madrid, España
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        </svg>
+                        <a href="https://linkedin.com/in/guillermo-prieto-rodriguez"
+                            target="_blank">linkedin.com/in/guillermo...</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Skills GRC & Estrategia</h3>
+                <div class="skill-list">
+                    <h4>Cumplimiento & Riesgos</h4>
+                    <div class="skill-tags">
+                        ISO 27001 • ENS<br>
+                        Análisis de Riesgos<br>
+                        NIST CSF • GDPR<br>
+                        Auditoría Interna<br>
+                        Políticas de Seguridad
+                    </div>
+
+                    <h4>Soft Skills</h4>
+                    <div class="skill-tags">
+                        Pensamiento Analítico<br>
+                        Orientación a Cliente<br>
+                        Trabajo en Equipo<br>
+                        Reporting Ejecutivo<br>
+                        Adaptabilidad
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Idiomas</h3>
+                <div class="language-item">
+                    <span class="language-name">Español</span>
+                    <span class="language-level">Nativo</span>
+                </div>
+                <div class="language-item">
+                    <span class="language-name">Inglés</span>
+                    <span class="language-level">C1 Avanzado</span>
+                </div>
+            </div>
+
+        </aside>
+
+    </div>
+
+</body>
+
+</html>

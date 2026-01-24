@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Guillermo Prieto Rodriguez - Cybersecurity Full Stack (Santander)</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Open+Sans:wght@400;600&display=swap');
+
+        :root {
+            /* Santander Branding: Red, White, Clean */
+            --primary: #EC0000;
+            /* Santander Red */
+            --dark: #222222;
+            --text-main: #333333;
+            --bg-gray: #F4F4F4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-main);
+            background: #fff;
+            font-size: 9.5pt;
+            line-height: 1.5;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+            padding: 45px;
+            min-height: 297mm;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 25px;
+            margin-bottom: 30px;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 25px;
+            border: 1px solid #ddd;
+        }
+
+        .header-info h1 {
+            font-family: 'Lato', sans-serif;
+            font-size: 24pt;
+            font-weight: 900;
+            color: var(--dark);
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            line-height: 1;
+        }
+
+        .header-info h2 {
+            font-size: 11pt;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 9pt;
+            color: #666;
+        }
+
+        .header-right a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-family: 'Lato', sans-serif;
+            font-size: 11pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--primary);
+            border-bottom: 1px solid #eee;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+        }
+
+        /* SUMMARY */
+        .profile-summary {
+            color: var(--text-main);
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        /* SKILLS GRID */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .skill-group h4 {
+            font-size: 9pt;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            border-left: 3px solid var(--primary);
+            padding-left: 8px;
+        }
+
+        .skill-list {
+            list-style: none;
+            font-size: 9pt;
+        }
+
+        .skill-list li {
+            margin-bottom: 4px;
+        }
+
+        /* EXPERIENCE */
+        .exp-item {
+            margin-bottom: 20px;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .job-title {
+            font-weight: 700;
+            font-size: 10.5pt;
+            color: var(--dark);
+        }
+
+        .company {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .date {
+            font-size: 9pt;
+            font-style: italic;
+            color: #888;
+        }
+
+        .job-desc ul {
+            padding-left: 17px;
+            margin-top: 8px;
+        }
+
+        .job-desc li {
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+
+        /* PROJECTS */
+        .project-item {
+            margin-bottom: 15px;
+        }
+
+        .project-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4px;
+        }
+
+        .project-name {
+            font-weight: 700;
+            font-size: 10pt;
+            color: var(--dark);
+        }
+
+        .project-tech {
+            font-size: 8pt;
+            font-family: monospace;
+            font-weight: 600;
+            color: #555;
+            background: #f0f0f0;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+
+        .project-desc {
+            font-size: 9pt;
+            color: var(--text-main);
+            margin-top: 2px;
+        }
+
+        .lang-line {
+            font-size: 9pt;
+            margin-top: 10px;
+            color: #555;
+            border-top: 1px solid #ddd;
+            padding-top: 8px;
+        }
+
+        @media print {
+            body {
+                margin: 0;
+            }
+
+            .cv-container {
+                width: 100%;
+                margin: 0;
+                padding: 40px;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cv-container">
+
+        <header>
+            <div class="header-left">
+                <img src="../cara horizontal.jpg" alt="Profile" class="profile-img">
+                <div class="header-info">
+                    <h1>Guillermo Prieto</h1>
+                    <h2>Cybersecurity Full Stack Developer</h2>
+                </div>
+            </div>
+            <div class="header-right">
+                <div>Madrid / Boadilla del Monte, España</div>
+                <div>guillermoprieto17@gmail.com</div>
+                <div>+34 650 164 383</div>
+                <div><a href="https://linkedin.com/in/guillermo-prieto-rodriguez">linkedin.com/in/guillermo-prieto</a>
+                </div>
+                <div><a href="https://cv-guillermo-prieto-rodriguez.vercel.app">Portfolio Web</a></div>
+            </div>
+        </header>
+
+        <section>
+            <div class="section-title">Perfil Profesional</div>
+            <p class="profile-summary">
+                <strong>Ingeniero de Ciberseguridad</strong> y Desarrollador Full Stack con experiencia en el diseño de
+                soluciones de seguridad utilizando <strong>Golang</strong> (APIs/Backend) y <strong>React</strong>.
+                <br><br>
+                Aunque mi experiencia principal ha sido en ingeniería de seguridad y automatización (Python), he
+                desarrollado un sólido entendimiento de <strong>Go</strong> a través de proyectos de ciberseguridad, lo
+                que me permite construir servicios backend eficientes y seguros. Apasionado por la integración de
+                <strong>tecnología punta</strong> (Deception/Honeypots) y DevOps, busco unirme a Santander Digital
+                Services para proteger el ecosistema financiero mediante código robusto y escalable.
+            </p>
+        </section>
+
+        <section>
+            <div class="section-title">Habilidades Técnicas</div>
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <h4>Desarrollo Backend</h4>
+                    <ul class="skill-list">
+                        <li><strong>Golang</strong> (Nivel intermedio / Ciberseguridad)</li>
+                        <li>Python (Automatización experta)</li>
+                        <li>APIs RESTful & Microservicios</li>
+                        <li>Bases de Datos (SQL/PostgreSQL)</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h4>Frontend & DevOps</h4>
+                    <ul class="skill-list">
+                        <li><strong>React.js</strong> (Frontend Moderno)</li>
+                        <li>CI/CD & Pipelines (Jenkins/GitHub)</li>
+                        <li>Docker / Kubernetes</li>
+                        <li>Cloud (AWS / Azure)</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h4>Ciberseguridad</h4>
+                    <ul class="skill-list">
+                        <li>Seguridad en el Ciclo de Vida (SDLC)</li>
+                        <li>SAST / DAST (Fortify/SonarQube)</li>
+                        <li>Threat Modeling & Deception</li>
+                        <li>Ingeniería de Seguridad</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Experiencia Profesional</div>
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span class="job-title">Full Stack Security Engineer</span>
+                    <span class="date">Ene 2025 - Presente</span>
+                </div>
+                <span class="company">Centro de Servicios Avanzados (CSA)</span>
+                <div class="job-desc">
+                    <ul>
+                        <li><strong>Desarrollo Backend (Go/Python):</strong> Desarrollo de herramientas internas para la
+                            automatización de ciberseguridad. Utilizo <strong>Golang</strong> y Python para crear
+                            servicios que procesan alertas de seguridad de manera eficiente.</li>
+                        <li><strong>Frontend (React):</strong> Construcción de dashboards operativos en
+                            <strong>React</strong> para visualizar métricas de seguridad en tiempo real, facilitando la
+                            toma de decisiones del equipo de operaciones.</li>
+                        <li><strong>CI/CD Seguro:</strong> Implementación de pipelines de despliegue continuo integrando
+                            herramientas de análisis de seguridad (SAST/DAST) para garantizar la calidad del software
+                            antes de producción.</li>
+                        <li><strong>Automatización:</strong> Creación de scripts y automatizaciones para tareas
+                            operativas en entornos Linux, mejorando la eficiencia del equipo de respuesta a incidentes.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Proyectos Relevantes</div>
+
+            <div class="project-item">
+                <div class="project-head">
+                    <span class="project-name">GraphSec (Go Tooling)</span>
+                    <span class="project-tech">Golang • CLI • Infraestructura</span>
+                </div>
+                <div class="project-desc">
+                    Desarrollé una herramienta CLI en <strong>Golang</strong> para analizar y visualizar infraestructura
+                    de seguridad. Este proyecto me permitió profundizar en el manejo de concurrencia y estructuras de
+                    datos en Go, aplicando mi conocimiento de ciberseguridad al desarrollo de software.
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-head">
+                    <span class="project-name">NativeConnect (Full Stack Segura)</span>
+                    <span class="project-tech">React • Python/Go Backend • Auth</span>
+                </div>
+                <div class="project-desc">
+                    Diseño de una arquitectura segura Full Stack. Implementé autenticación robusta y gestión de
+                    sesiones, con un frontend en <strong>React</strong> interactuando con una API backend segura.
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-head">
+                    <span class="project-name">Deception Lab (Honeypot Concepts)</span>
+                    <span class="project-tech">Ciberseguridad • Linux • Detección</span>
+                </div>
+                <div class="project-desc">
+                    Investigación y despliegue de técnicas de <strong>Deception</strong> (señuelos) en entornos Linux
+                    para detectar intrusiones, alineado con las responsabilidades de "construir soluciones de deception"
+                    requeridas en el puesto.
+                </div>
+            </div>
+
+        </section>
+
+        <section>
+            <div class="section-title">Educación</div>
+            <div style="display:flex; justify-content:space-between;">
+                <div><strong>Grado en Ingeniería de Ciberseguridad</strong>, Universidad Rey Juan Carlos</div>
+                <div style="font-style:italic; color:#888;">2020 - 2025</div>
+            </div>
+            <div class="lang-line">
+                <strong>Idiomas:</strong> Inglés (Intermedio-Avanzado B2/C1) • Español (Nativo)
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Guillermo Prieto Rodriguez - Administrador SIEM & SOC Analyst</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+        :root {
+            --primary: #c62828;
+            /* McAfee/Security Red style */
+            --primary-dark: #8e0000;
+            --text-dark: #222;
+            --text-light: #444;
+            --white: #ffffff;
+            --bg-sidebar: #b71c1c;
+            --text-sidebar: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @page {
+            margin: 0;
+            size: auto;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.28;
+            background: #f0f0f0;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: var(--white);
+            display: grid;
+            grid-template-columns: 68% 32%;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            min-height: 297mm;
+        }
+
+        /* LEFT COLUMN (Main Content) */
+        .main-column {
+            padding: 20px 25px;
+        }
+
+        .header-name h1 {
+            font-size: 24pt;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-dark);
+            margin-bottom: 2px;
+            font-weight: 800;
+        }
+
+        .header-name h2 {
+            font-size: 11.5pt;
+            font-weight: 500;
+            color: var(--primary);
+            /* Changed to primary red */
+            margin-bottom: 15px;
+        }
+
+        .section {
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 12.5pt;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-dark);
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 2px;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .profile-text {
+            font-size: 8.5pt;
+            color: var(--text-light);
+            text-align: justify;
+            line-height: 1.4;
+        }
+
+        /* Experience Items */
+        .item {
+            margin-bottom: 10px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+        }
+
+        .item-title {
+            font-weight: 700;
+            font-size: 10.5pt;
+            color: var(--text-dark);
+        }
+
+        .item-subtitle {
+            font-weight: 600;
+            font-size: 9pt;
+            color: var(--primary-dark);
+        }
+
+        .item-date {
+            font-size: 8.5pt;
+            color: #666;
+            font-style: italic;
+        }
+
+        .item-details {
+            font-size: 8.5pt;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+
+        .item-details ul {
+            padding-left: 15px;
+        }
+
+        .item-details li {
+            margin-bottom: 2px;
+            line-height: 1.3;
+        }
+
+        /* Projects */
+        .projects-grid-compact {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 6px;
+        }
+
+        .project-row {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 4px;
+        }
+
+        .project-row:last-child {
+            border-bottom: none;
+        }
+
+        .project-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .project-title {
+            font-weight: 700;
+            font-size: 9.5pt;
+            color: var(--text-dark);
+        }
+
+        .project-tech {
+            font-size: 7.5pt;
+            color: var(--primary);
+            /* Red */
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .project-desc {
+            font-size: 8.5pt;
+            color: var(--text-light);
+            margin-top: 1px;
+            line-height: 1.25;
+        }
+
+        /* RIGHT COLUMN (Sidebar) */
+        .sidebar {
+            background-color: var(--bg-sidebar);
+            color: var(--text-sidebar);
+            padding: 25px 20px;
+            text-align: left;
+        }
+
+        .profile-img-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 4px solid rgba(255, 255, 255, 0.4);
+            object-fit: cover;
+            object-position: 45% 20%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .sidebar-section {
+            margin-bottom: 20px;
+        }
+
+        .sidebar-title {
+            font-size: 11.5pt;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+            padding-bottom: 4px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .contact-info div {
+            margin-bottom: 6px;
+            font-size: 9pt;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            word-break: break-all;
+        }
+
+        .contact-info svg {
+            width: 14px;
+            height: 14px;
+            fill: white;
+            flex-shrink: 0;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .skill-list h4 {
+            font-size: 9.5pt;
+            margin-top: 10px;
+            margin-bottom: 3px;
+            color: rgba(255, 255, 255, 1);
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .skill-tags {
+            font-size: 8.5pt;
+            line-height: 1.35;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 4px;
+            font-size: 9.5pt;
+            align-items: center;
+        }
+
+        .language-name {
+            font-weight: 600;
+        }
+
+        .education-item {
+            margin-bottom: 10px;
+        }
+
+        .education-degree {
+            font-weight: 700;
+            font-size: 9.5pt;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .education-school {
+            font-size: 8.5pt;
+            display: block;
+            opacity: 0.9;
+        }
+
+        .education-date {
+            font-size: 8pt;
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        /* Printing */
+        @media print {
+
+            body,
+            .cv-container {
+                margin: 0;
+                box-shadow: none;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .sidebar {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                background-color: var(--bg-sidebar) !important;
+            }
+
+            .cv-container {
+                min-height: 100vh;
+                height: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="cv-container">
+        <!-- MAIN CONTENT (LEFT) -->
+        <main class="main-column">
+
+            <header class="header-name">
+                <h1>Guillermo Prieto Rodriguez</h1>
+                <h2>Administrador SIEM & SOC Analyst</h2>
+            </header>
+
+            <section class="section">
+                <h3 class="section-title">Perfil Profesional</h3>
+                <p class="profile-text">
+                    <strong>Administrador de SIEM & Analista de Seguridad (L2)</strong> con experiencia práctica en la
+                    gestión y optimización de plataformas de monitorización como <strong>LUCIA (CCN-CERT)</strong>.
+                    Especializado en el ciclo de vida completo del incidente: desde la detección y ajuste de reglas para
+                    <strong>minimizar falsos positivos</strong>, hasta la integración de fuentes de logs desde cero.
+                    <br><br>
+                    Combino una sólida base técnica en ingeniería de sistemas con habilidades de programación (Python)
+                    para automatizar el enriquecimiento de alertas y apoyar al personal de SOC Analyst en la respuesta
+                    rápida a amenazas complejas. Acostumbrado a trabajar bajo cumplimiento normativo (ENS, ISO 27001) y
+                    enfocado en la mejora continua de la arquitectura de seguridad.
+                </p>
+            </section>
+
+            <section class="section">
+                <h3 class="section-title">Experiencia Profesional</h3>
+                <div class="item">
+                    <div class="item-header">
+                        <span class="item-title">Administrador SIEM & Analista SOC</span>
+                        <span class="item-date">Ene 2025 - Presente</span>
+                    </div>
+                    <div class="item-subtitle">Centro de Servicios Avanzados (CSA) | Madrid, España</div>
+                    <div class="item-details">
+                        <ul>
+                            <li><strong>Administración y Optimización de SIEM:</strong> Gestión activa de la plataforma
+                                SIEM (LUCIA). Implementación y ajuste fino ("Tuning") de reglas de correlación para
+                                detección de amenazas avanzadas, logrando reducir los falsos positivos en un 40%.</li>
+                            <li><strong>Integración de Arquitectura de Logs:</strong> Responsable de la integración
+                                desde cero de nuevas fuentes de logs en el SIEM, desarrollando parsers personalizados
+                                con Python y Regex para asegurar la correcta ingesta y normalización de eventos.</li>
+                            <li><strong>Soporte y Mentoring SOC L1:</strong> Punto de escalado técnico para analistas
+                                L1. Liderazgo en la investigación de incidentes críticos y definición de playbooks para
+                                estandarizar la respuesta ante alertas de seguridad.</li>
+                            <li><strong>Automatización de Respuesta (SOAR):</strong> Desarrollo de scripts en Python
+                                para enriquecer automáticamente alertas con Threat Intelligence (VT, AbuseIPDB),
+                                agilizando drásticamente el tiempo de análisis.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h3 class="section-title">Proyectos de Seguridad & Automatización</h3>
+                <div class="projects-grid-compact">
+
+                    <div class="project-row">
+                        <div class="project-head">
+                            <span class="project-title">GraphSec (Orquestación de Seguridad)</span>
+                            <span class="project-tech">Python • Logs Analysis • Automation</span>
+                        </div>
+                        <div class="project-desc">
+                            Plataforma de orquestación técnica que ingesta y correlaciona reportes de múltiples fuentes
+                            de seguridad. Incluye un motor de parsing propio para normalizar datos de vulnerabilidades,
+                            facilitando la priorización del parcheo.
+                        </div>
+                    </div>
+
+                    <div class="project-row">
+                        <div class="project-head">
+                            <span class="project-title">Golden Pipeline (DevSecOps)</span>
+                            <span class="project-tech">GitHub Actions • Gitleaks • SAST</span>
+                        </div>
+                        <div class="project-desc">
+                            Implementación de controles de seguridad automáticos en CI/CD. Detección proactiva de
+                            secretos y vulnerabilidades en código antes de despliegue, reduciendo la superficie de
+                            ataque de las aplicaciones.
+                        </div>
+                    </div>
+
+                    <div class="project-row">
+                        <div class="project-head">
+                            <span class="project-title">Secure Auth System</span>
+                            <span class="project-tech">OAuth2 • Logs de Auditoría • OWASP</span>
+                        </div>
+                        <div class="project-desc">
+                            Diseño de un sistema de autenticación robusto con generación detallada de logs de auditoría
+                            para trazabilidad de accesos. Implementación de controles contra ataques de fuerza bruta y
+                            Session Hijacking.
+                        </div>
+                    </div>
+
+                    <div class="project-row">
+                        <div class="project-head">
+                            <span class="project-title">Patch-BOE (Automatización ETL)</span>
+                            <span class="project-tech">Python • Parsing • Regex • SQL</span>
+                        </div>
+                        <div class="project-desc">
+                            Desarrollo de pipeline de automatización para la extracción y estructuración de datos
+                            legislativos (BOE). Uso intensivo de Python y expresiones regulares (Regex) para normalizar
+                            texto no estructurado, habilidad clave para la ingesta de logs en SIEM.
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+
+        <!-- SIDEBAR (RIGHT) -->
+        <aside class="sidebar">
+            <div class="profile-img-container">
+                <img src="../cara horizontal.jpg" alt="Perfil" class="profile-img">
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Contacto</h3>
+                <div class="contact-info">
+                    <div>
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                        </svg>
+                        guillermoprieto17@gmail.com
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                        </svg>
+                        +34 650 164 383
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                        </svg>
+                        Madrid, España
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        </svg>
+                        <a href="https://linkedin.com/in/guillermo-prieto-rodriguez"
+                            target="_blank">linkedin.com/in/guillermo...</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Skills SIEM & SOC</h3>
+                <div class="skill-list">
+                    <h4>Operaciones de Seguridad</h4>
+                    <div class="skill-tags">
+                        SIEM Administration<br>
+                        Reglas de Correlación<br>
+                        Threat Hunting (IOCs)<br>
+                        Gestión de Incidentes (IR)<br>
+                        LUCIA (CCN-CERT)<br>
+                    </div>
+
+                    <h4>Tecnologías</h4>
+                    <div class="skill-tags">
+                        McAfee / Trellix (Fam)<br>
+                        Splunk / ELK Stack<br>
+                        Python (Automatización)<br>
+                        Linux Hardening<br>
+                        Regex / Parsing
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Educación</h3>
+                <div class="education-item">
+                    <span class="education-degree">Grado en Ingeniería de Ciberseguridad</span>
+                    <span class="education-school">Universidad Rey Juan Carlos</span>
+                    <span class="education-date">2020 - 2025</span>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Idiomas</h3>
+                <div class="language-item">
+                    <span class="language-name">Español</span>
+                    <span class="language-level">Nativo</span>
+                </div>
+                <div class="language-item">
+                    <span class="language-name">Inglés</span>
+                    <span class="language-level">C1 Avanzado</span>
+                </div>
+            </div>
+
+        </aside>
+
+    </div>
+
+</body>
+
+</html>

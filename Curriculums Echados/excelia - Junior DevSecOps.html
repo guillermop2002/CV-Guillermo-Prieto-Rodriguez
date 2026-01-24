@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Guillermo Prieto Rodriguez - Junior DevSecOps (Excelia)</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+        :root {
+            /* Excelia Branding colors (Blue/Green/Clean) */
+            --primary: #008CBA;
+            /* Professional Tech Blue */
+            --accent: #2C3E50;
+            --text-main: #333;
+            --bg-light: #f4f7f6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-main);
+            background: #fff;
+            font-size: 9.5pt;
+            line-height: 1.5;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px 50px;
+            min-height: 297mm;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+        }
+
+        .header-left {
+            margin-right: 30px;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+        }
+
+        .header-center {
+            flex: 1;
+        }
+
+        .header-center h1 {
+            font-size: 22pt;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            letter-spacing: -0.5px;
+        }
+
+        .header-center h2 {
+            font-size: 11pt;
+            font-weight: 500;
+            color: var(--primary);
+            text-transform: uppercase;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 9pt;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .header-right a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--primary);
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+
+        /* SUMMARY */
+        .profile-summary {
+            text-align: justify;
+            color: var(--text-main);
+            margin-bottom: 20px;
+        }
+
+        /* SKILLS GRID */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            background: var(--bg-light);
+            padding: 15px;
+            border-radius: 6px;
+        }
+
+        .skill-item h4 {
+            font-size: 9pt;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+        }
+
+        .skill-list {
+            list-style: none;
+            font-size: 9pt;
+        }
+
+        .skill-list li {
+            margin-bottom: 3px;
+        }
+
+        /* EXPERIENCE */
+        .exp-item {
+            margin-bottom: 20px;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 3px;
+        }
+
+        .role {
+            font-weight: 700;
+            font-size: 10.5pt;
+            color: var(--accent);
+        }
+
+        .company {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .date {
+            font-size: 9pt;
+            font-style: italic;
+            color: #888;
+        }
+
+        .exp-desc ul {
+            padding-left: 18px;
+            margin-top: 5px;
+        }
+
+        .exp-desc li {
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+
+        /* PROJECTS */
+        .project-item {
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 3px solid #eee;
+        }
+
+        .project-item:hover {
+            border-left-color: var(--primary);
+        }
+
+        .project-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3px;
+        }
+
+        .project-title {
+            font-weight: 700;
+            font-size: 10pt;
+            color: var(--accent);
+        }
+
+        .project-tech {
+            font-size: 8pt;
+            font-family: monospace;
+            font-weight: 600;
+            color: #666;
+        }
+
+        .project-desc {
+            font-size: 9pt;
+            color: var(--text-main);
+            margin-top: 3px;
+        }
+
+        .lang-line {
+            font-size: 9pt;
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px solid #eee;
+            color: #555;
+        }
+
+        @media print {
+            body {
+                margin: 0;
+            }
+
+            .cv-container {
+                width: 100%;
+                margin: 0;
+                padding: 40px;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cv-container">
+
+        <header>
+            <div class="header-left">
+                <img src="../cara horizontal.jpg" alt="Profile" class="profile-img">
+            </div>
+            <div class="header-center">
+                <h1>Guillermo Prieto</h1>
+                <h2>Junior DevSecOps Engineer</h2>
+            </div>
+            <div class="header-right">
+                <div>Madrid, España (Remoto/Híbrido)</div>
+                <div>guillermoprieto17@gmail.com</div>
+                <div>+34 650 164 383</div>
+                <div><a href="https://linkedin.com/in/guillermo-prieto-rodriguez">linkedin.com/in/guillermo-prieto</a>
+                </div>
+                <div><a href="https://cv-guillermo-prieto-rodriguez.vercel.app">Portfolio Web</a></div>
+            </div>
+        </header>
+
+        <section>
+            <div class="section-title">Perfil Profesional</div>
+            <p class="profile-summary">
+                <strong>Ingeniero Junior DevSecOps</strong> con sólida base en ciberseguridad y automatización cloud.
+                Apasionado por la <strong>Gestión de Secretos</strong> y la integración de seguridad en el ciclo de vida
+                del desarrollo.
+                <br><br>
+                Poseo experiencia práctica desplegando infraestructura como código (<strong>Terraform</strong>) y
+                configurando pipelines de seguridad (SAST/Gitleaks). Busco unirme a un equipo innovador como Excelia
+                para especializarme en la gestión segura de credenciales en entornos <strong>Kubernetes/AKS</strong> y
+                seguir creciendo en buenas prácticas Cloud.
+            </p>
+        </section>
+
+        <section>
+            <div class="section-title">Habilidades Técnicas</div>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <h4>Cloud & Seguridad</h4>
+                    <ul class="skill-list">
+                        <li><strong>Gestión de Secretos</strong> (Gitleaks/K8s)</li>
+                        <li><strong>Terraform</strong> (IaC) & Automatización</li>
+                        <li>Kubernetes / Docker</li>
+                        <li>WAF / Firewall • SIEM (LUCIA)</li>
+                    </ul>
+                </div>
+                <div class="skill-item">
+                    <h4>DevOps & Scripting</h4>
+                    <ul class="skill-list">
+                        <li>CI/CD (GitHub Actions)</li>
+                        <li>Python • Bash Scripting</li>
+                        <li>Automatización de Procesos</li>
+                        <li>Linux / SysAdmin</li>
+                    </ul>
+                </div>
+                <div class="skill-item">
+                    <h4>Certificaciones & Idiomas</h4>
+                    <ul class="skill-list">
+                        <li>OWASP Top 10</li>
+                        <li>Cloud Security (En Progreso)</li>
+                        <li><strong>Inglés:</strong> C1 - Avanzado</li>
+                        <li><strong>Español:</strong> Nativo</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Experiencia Profesional</div>
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <span class="role">Ingeniero DevSecOps Junior</span>
+                        <span class="company"> | Centro de Servicios Avanzados (CSA)</span>
+                    </div>
+                    <span class="date">Ene 2025 - Presente</span>
+                </div>
+                <div class="exp-desc">
+                    <ul>
+                        <li><strong>Gestión de Seguridad:</strong> Implementación de políticas de detección de secretos
+                            en repositorios utilizando <strong>Gitleaks</strong> y <strong>TruffleHog</strong> para
+                            prevenir fugas de credenciales.</li>
+                        <li><strong>Infraestructura como Código:</strong> Uso de <strong>Terraform</strong> para el
+                            despliegue y gestión de recursos, asegurando configuraciones consistentes y seguras.</li>
+                        <li><strong>Monitorización (SIEM):</strong> Gestión de alertas en plataformas SIEM, integrando
+                            logs de Firewalls y WAF para la detección temprana de amenazas.</li>
+                        <li><strong>Automatización Cloud:</strong> Desarrollo de scripts en Python para automatizar
+                            tareas rutinarias de mantenimiento y seguridad en la nube.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Proyectos Relevantes</div>
+
+            <div class="project-item">
+                <div class="project-head">
+                    <span class="project-title">Secure "Golden Pipeline" (Gestión de Secretos)</span>
+                    <span class="project-tech">GitHub Actions • Gitleaks • Vault (Conceptos)</span>
+                </div>
+                <div class="project-desc">
+                    Diseño de pipeline CI/CD con foco en la seguridad de la cadena de suministro. Implementa el escaneo
+                    automático de <strong>secretos y credenciales</strong> antes de cada commit, bloqueando código
+                    inseguro.
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-head">
+                    <span class="project-title">GraphSec (Visibilidad IaC)</span>
+                    <span class="project-tech">Terraform • Python • Cloud Security</span>
+                </div>
+                <div class="project-desc">
+                    Herramienta para visualizar y auditar código <strong>Terraform</strong>. Permite validar visualmente
+                    las relaciones entre grupos de seguridad y recursos cloud, facilitando la revisión de
+                    infraestructuras seguras.
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-head">
+                    <span class="project-title">NativeConnect (Auth Segura)</span>
+                    <span class="project-tech">OAuth2 • Gestión de Sesiones</span>
+                </div>
+                <div class="project-desc">
+                    Implementación de un sistema de autenticación robusto, manejando el ciclo de vida de tokens y
+                    credenciales de usuario de forma segura (Hashicorp/Salting standards).
+                </div>
+            </div>
+
+        </section>
+
+        <section>
+            <div class="section-title">Educación</div>
+            <div style="display:flex; justify-content:space-between;">
+                <div><strong>Grado en Ingeniería de Ciberseguridad</strong>, Universidad Rey Juan Carlos</div>
+                <div style="font-style:italic; color:#888;">2020 - 2025</div>
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>

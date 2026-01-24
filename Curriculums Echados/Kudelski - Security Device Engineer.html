@@ -4,17 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Guillermo Prieto Rodriguez - Backend Engineer (Affirm)</title>
+    <title>CV - Guillermo Prieto Rodriguez - Security Device Engineer (Kudelski)</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Calibre:wght@300;400;500;600&family=Inter:wght@300;400;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700&family=Open+Sans:wght@400;600&display=swap');
 
         :root {
-            /* Affirm-ish Branding: Clean, Trusted, Fintech Blue/Purple/Black */
-            --primary: #4C25C1;
-            /* Affirm Purple-Blue */
-            --text-main: #1D1D1F;
-            --text-light: #5E5E65;
-            --bg-light: #F7F7F9;
+            /* Kudelski Branding: Orange, Dark Gray/Black, Modern Tech */
+            --primary: #F37021;
+            /* Kudelski Orange approx */
+            --dark: #222222;
+            --text-main: #333;
+            --bg-light: #F9F9F9;
         }
 
         * {
@@ -24,7 +24,7 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Open Sans', sans-serif;
             color: var(--text-main);
             background: #fff;
             font-size: 9.5pt;
@@ -55,25 +55,25 @@
         }
 
         .profile-img {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            border-radius: 5px;
             object-fit: cover;
             margin-right: 25px;
-            border: 2px solid var(--primary);
+            border-left: 4px solid var(--primary);
         }
 
         .header-info h1 {
+            font-family: 'Exo 2', sans-serif;
             font-size: 24pt;
             font-weight: 700;
-            color: var(--text-main);
+            color: var(--dark);
             margin-bottom: 4px;
-            letter-spacing: -0.5px;
         }
 
         .header-info h2 {
             font-size: 11pt;
-            font-weight: 500;
+            font-weight: 600;
             color: var(--primary);
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -82,13 +82,15 @@
         .header-right {
             text-align: right;
             font-size: 9pt;
-            color: var(--text-light);
+            color: #555;
+            line-height: 1.6;
         }
 
         .header-right a {
-            color: var(--primary);
+            color: var(--dark);
             text-decoration: none;
             font-weight: 600;
+            border-bottom: 1px dotted var(--primary);
         }
 
         /* SECTIONS */
@@ -97,22 +99,25 @@
         }
 
         .section-title {
+            font-family: 'Exo 2', sans-serif;
             font-size: 11pt;
             font-weight: 700;
             text-transform: uppercase;
-            color: var(--text-main);
-            letter-spacing: 0.5px;
-            border-bottom: 1px solid #ddd;
-            margin-bottom: 12px;
-            padding-bottom: 4px;
+            color: var(--dark);
+            border-left: 5px solid var(--primary);
+            padding-left: 10px;
+            margin-bottom: 15px;
+            background: #f4f4f4;
+            display: flex;
+            align-items: center;
+            height: 24px;
         }
 
         /* SUMMARY */
         .profile-summary {
             color: var(--text-main);
             text-align: justify;
-            margin-bottom: 15px;
-            font-size: 9.5pt;
+            margin-bottom: 20px;
         }
 
         /* SKILLS GRID */
@@ -123,19 +128,30 @@
             margin-bottom: 20px;
         }
 
-        .skill-item h4 {
+        .skill-group h4 {
             font-size: 9pt;
             font-weight: 700;
             color: var(--primary);
-            margin-bottom: 4px;
+            margin-bottom: 6px;
             text-transform: uppercase;
         }
 
         .skill-list {
             list-style: none;
             font-size: 9pt;
-            color: var(--text-main);
-            line-height: 1.6;
+        }
+
+        .skill-list li {
+            margin-bottom: 4px;
+            display: flex;
+            align-items: start;
+        }
+
+        .skill-list li::before {
+            content: "›";
+            color: var(--primary);
+            margin-right: 6px;
+            font-weight: bold;
         }
 
         /* EXPERIENCE */
@@ -147,13 +163,13 @@
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 3px;
+            margin-bottom: 4px;
         }
 
         .job-title {
             font-weight: 700;
             font-size: 10.5pt;
-            color: var(--text-main);
+            color: var(--dark);
         }
 
         .company {
@@ -186,20 +202,23 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 3px;
+            margin-bottom: 4px;
         }
 
         .project-name {
             font-weight: 700;
             font-size: 10pt;
-            color: var(--text-main);
+            color: var(--dark);
         }
 
         .project-tech {
             font-size: 8pt;
             font-family: monospace;
             font-weight: 600;
-            color: var(--primary);
+            color: #555;
+            background: #eee;
+            padding: 2px 5px;
+            border-radius: 2px;
         }
 
         .project-desc {
@@ -211,8 +230,9 @@
         .lang-line {
             font-size: 9pt;
             margin-top: 10px;
-            color: var(--text-light);
-            border-top: 1px solid #eee;
+            color: #555;
+            text-align: right;
+            border-top: 1px solid #ddd;
             padding-top: 8px;
         }
 
@@ -239,11 +259,11 @@
                 <img src="../cara horizontal.jpg" alt="Profile" class="profile-img">
                 <div class="header-info">
                     <h1>Guillermo Prieto</h1>
-                    <h2>Software Engineer, Backend</h2>
+                    <h2>Security Device Engineer</h2>
                 </div>
             </div>
             <div class="header-right">
-                <div>Madrid, Spain (Remote)</div>
+                <div>Madrid, Spain</div>
                 <div>guillermoprieto17@gmail.com</div>
                 <div>+34 650 164 383</div>
                 <div><a href="https://linkedin.com/in/guillermo-prieto-rodriguez">linkedin.com/in/guillermo-prieto</a>
@@ -255,50 +275,46 @@
         <section>
             <div class="section-title">Professional Summary</div>
             <p class="profile-summary">
-                <strong>Software Engineer</strong> with experience in designing and launching scalable <strong>backend
-                    systems</strong> using <strong>Python</strong> and distributed technologies (AWS, Kubernetes, SQL).
+                <strong>Cybersecurity Engineer</strong> with a strong background in **System Administration (Linux)**
+                and Security Operations. Experienced in managing and monitoring security devices (Firewalls, SIEM,
+                Vulnerability Scanners) within critical environments.
                 <br><br>
-                Aligned with Affirm's mission of building "honest and friendly" financial products, I bring a strong
-                reliability mindset (SRE/Observability) from my background in DevSecOps. I specialize in building robust
-                solutions that handle high volumes while strictly maintaining data integrity and system availability.
-                Eager to join the Collections team to help optimize recovery strategies through clean, testable, and
-                extensible code.
+                I thrive in fast-paced operational roles where I can serve as an escalation point for complex technical
+                issues. Passionate about automating repetitive tasks and "continuously improving processes," I am eager
+                to join Kudelski Security to help deliver best-in-class Managed Detection and Response (MDR) services.
             </p>
         </section>
 
         <section>
             <div class="section-title">Technical Skills</div>
             <div class="skills-grid">
-                <div class="skill-item">
-                    <h4>Backend Engineering</h4>
+                <div class="skill-group">
+                    <h4>Device Management & Ops</h4>
                     <ul class="skill-list">
-                        <li><strong>Python</strong> (API Design & Collections)</li>
-                        <li><strong>SQL</strong> (MySQL/PostgreSQL)</li>
-                        <li>RESTful APIs • Microservices</li>
-                        <li>Distributed Systems</li>
+                        <li><strong>Linux System Admin</strong> (Strong)</li>
+                        <li>Config & Change Management</li>
+                        <li>SIEM / Log Management</li>
+                        <li>On-Call / Incident Handling</li>
                     </ul>
                 </div>
-                <div class="skill-item">
-                    <h4>Infrastructure & Reliability</h4>
+                <div class="skill-group">
+                    <h4>Security Technologies</h4>
                     <ul class="skill-list">
-                        <li><strong>AWS</strong> & <strong>Kubernetes</strong></li>
-                        <li>Observability (Monitoring/Alerting)</li>
-                        <li>CI/CD & Deployment Strategies</li>
-                        <li>High Availability Design</li>
+                        <li><strong>Firewalls & Network Sec</strong></li>
+                        <li>Vulnerability Scanning</li>
+                        <li>NGAV / Endpoint Protection</li>
+                        <li>Operational Procedures (SOPs)</li>
                     </ul>
                 </div>
-                <div class="skill-item">
-                    <h4>Security & Quality</h4>
+                <div class="skill-group">
+                    <h4>Automation & Scripting</h4>
                     <ul class="skill-list">
-                        <li>Secure Coding Practices</li>
-                        <li>Unit & Integration Testing</li>
-                        <li>Code Review & Collaboration</li>
-                        <li>Incident Response (On-call)</li>
+                        <li><strong>Python</strong> for Automation</li>
+                        <li>Bash Scripting</li>
+                        <li>Device Health Monitoring</li>
+                        <li>Infrastructure as Code (IaC)</li>
                     </ul>
                 </div>
-            </div>
-            <div class="lang-line">
-                <strong>Languages:</strong> Spanish (Native) • English (C1 Advanced) • French (Basic)
             </div>
         </section>
 
@@ -306,21 +322,23 @@
             <div class="section-title">Experience</div>
             <div class="exp-item">
                 <div class="exp-header">
-                    <span class="job-title">Backend Software Engineer (DevSecOps)</span>
+                    <span class="job-title">DevSecOps Engineer (Operations Focus)</span>
                     <span class="date">Jan 2025 - Present</span>
                 </div>
                 <span class="company">Centro de Servicios Avanzados (CSA)</span>
                 <div class="job-desc">
                     <ul>
-                        <li><strong>Scalable Systems Design:</strong> Designed and implemented backend automation
-                            services in <strong>Python</strong> to handle incident data processing at scale, ensuring
-                            99.9% uptime.</li>
-                        <li><strong>Database Optimization:</strong> Optimized <strong>SQL</strong> queries for large
-                            datasets (logs/alerts), improving retrieval speeds by 40% for internal dashboards.</li>
-                        <li><strong>Reliability Engineering:</strong> Implemented monitoring and alerting (On-call
-                            rotation) to detect and resolve system bottlenecks before they impacted users.</li>
-                        <li><strong>Code Quality:</strong> Championed code reviews and wrote extensive unit/integration
-                            tests to ensure the robustness of mission-critical security tools.</li>
+                        <li><strong>Device Management:</strong> Managed the configuration and health of security tools
+                            across client environments. Served as a technical escalation point for troubleshooting
+                            complex configuration issues.</li>
+                        <li><strong>Incident Response:</strong> Responded to operational incidents and service requests
+                            in a timely manner, ensuring SLAs were met and client satisfaction remained high.</li>
+                        <li><strong>Process Improvement:</strong> Contributed to the creation and maintenance of
+                            Standard Operating Procedures (SOPs) to empower Tier 1 analysts and standardize
+                            troubleshooting workflows.</li>
+                        <li><strong>Upgrade Strategy:</strong> Collaborated with the platform team to plan and execute
+                            updates for security devices (SIEM/Scanners), ensuring feature alignment and system
+                            stability.</li>
                     </ul>
                 </div>
             </div>
@@ -331,35 +349,35 @@
 
             <div class="project-item">
                 <div class="project-head">
-                    <span class="project-name">Patch-BOE (Legal Data Processing)</span>
-                    <span class="project-tech">Python • SQL • OpenAI API • ETL</span>
+                    <span class="project-name">Secure Pipeline (Device Config Automation)</span>
+                    <span class="project-tech">Python • Ansible • Bash</span>
                 </div>
                 <div class="project-desc">
-                    Built a backend pipeline that ingests, cleans, and summarizes complex legal texts from the Spanish
-                    Official Gazette. Demonstrates ability to "take a simple problem" (text overload) and build an
-                    automated solution using <strong>Python</strong> and <strong>Databases</strong>.
+                    Automated the configuration and deployment of security scanning tools using <strong>Python</strong>
+                    scripts. Reduced manual setup time and ensured consistent configuration compliance across all
+                    devices.
                 </div>
             </div>
 
             <div class="project-item">
                 <div class="project-head">
-                    <span class="project-name">AI Chatbot Service (High Scale)</span>
-                    <span class="project-tech">Cloudflare Workers • Distributed Systems</span>
+                    <span class="project-name">GraphSec (Infrastructure Visualizer)</span>
+                    <span class="project-tech">Linux • System Admin • Connectivity</span>
                 </div>
                 <div class="project-desc">
-                    Engineered a distributed API handling high-concurrency requests. Focused on reliability and latency
-                    optimization, similar to the requirements for handling payment recovery transactions.
+                    Built a tool to visualize network relationships and security group rules. Required deep
+                    understanding of <strong>Network Security</strong> concepts and Linux system interactions.
                 </div>
             </div>
 
             <div class="project-item">
                 <div class="project-head">
-                    <span class="project-name">NativeConnect (Secure Auth)</span>
-                    <span class="project-tech">Python • OAuth2 • Sessions • Security</span>
+                    <span class="project-name">NativeConnect (Identity Operations)</span>
+                    <span class="project-tech">Ops • Monitoring • Security</span>
                 </div>
                 <div class="project-desc">
-                    Designed a secure authentication backend ensuring strict session management and data protection.
-                    Relevant to Affirm's need for handling sensitive financial user data securely.
+                    Implemented monitoring for authentication services to detect operational health issues. Designed
+                    procedures for handling service degradation and rapid recovery.
                 </div>
             </div>
 
@@ -370,6 +388,9 @@
             <div style="display:flex; justify-content:space-between;">
                 <div><strong>BSc in Cybersecurity Engineering</strong>, Universidad Rey Juan Carlos</div>
                 <div style="font-style:italic; color:#888;">2020 - 2025</div>
+            </div>
+            <div class="lang-line">
+                <strong>Languages:</strong> English (Fluent/C1) • Spanish (Native) • French (Basic)
             </div>
         </section>
 

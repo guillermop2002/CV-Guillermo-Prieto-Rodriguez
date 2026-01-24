@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Guillermo Prieto Rodriguez - Cyber Threat Intelligence</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            /* Intel 471 / Threat Intel vibe: Dark, sleek, professional */
+            --primary: #0088cc;
+            /* Cyber Blue */
+            --primary-dark: #005580;
+            --text-dark: #1f2937;
+            --text-light: #4b5563;
+            --bg-sidebar: #111827;
+            /* Almost Black */
+            --text-sidebar: #f9fafb;
+            --accent: #2563eb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.4;
+            background: #f3f4f6;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            /* Main content wider */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            min-height: 297mm;
+        }
+
+        /* LEFT COLUMN (Main Content) */
+        .main-column {
+            padding: 30px;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 26pt;
+            letter-spacing: -0.5px;
+            color: #111;
+            font-weight: 800;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-size: 13pt;
+            color: var(--primary);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .section-title {
+            font-size: 12pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--primary-dark);
+            border-bottom: 1px solid #e5e7eb;
+            margin-top: 20px;
+            margin-bottom: 12px;
+            padding-bottom: 3px;
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-summary {
+            font-size: 9.5pt;
+            color: var(--text-light);
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        .experience-item,
+        .project-item {
+            margin-bottom: 15px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .job-title {
+            font-weight: 700;
+            font-size: 10.5pt;
+            color: #111;
+        }
+
+        .job-company {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 9.5pt;
+        }
+
+        .job-date {
+            font-size: 9pt;
+            color: #6b7280;
+            font-style: italic;
+        }
+
+        .job-details ul {
+            padding-left: 18px;
+            margin-top: 5px;
+        }
+
+        .job-details li {
+            font-size: 9pt;
+            color: var(--text-light);
+            margin-bottom: 3px;
+        }
+
+        .project-tech {
+            font-size: 8pt;
+            background: #eff6ff;
+            color: var(--accent);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+
+        /* RIGHT COLUMN (Sidebar) */
+        .sidebar {
+            background-color: var(--bg-sidebar);
+            color: var(--text-sidebar);
+            padding: 30px 20px;
+        }
+
+        .profile-img-container {
+            width: 130px;
+            height: 130px;
+            margin: 0 auto 25px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--primary);
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .sidebar-section {
+            margin-bottom: 25px;
+        }
+
+        .sidebar-title {
+            font-size: 11pt;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 5px;
+        }
+
+        .contact-info div {
+            font-size: 9pt;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info svg {
+            width: 16px;
+            margin-right: 10px;
+            fill: var(--text-sidebar);
+        }
+
+        .skill-category {
+            margin-bottom: 15px;
+        }
+
+        .skill-category h4 {
+            font-size: 9.5pt;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #d1d5db;
+        }
+
+        .skill-tags span {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 8.5pt;
+            margin-right: 4px;
+            margin-bottom: 4px;
+        }
+
+        @media print {
+            body {
+                background: none;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                margin: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            .sidebar {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cv-container">
+        <!-- LEFT COLUMN -->
+        <main class="main-column">
+            <header>
+                <h1>Guillermo Prieto</h1>
+                <h2>Cybersecurity & Threat Intelligence Engineer</h2>
+            </header>
+
+            <section>
+                <div class="section-title">Professional Summary</div>
+                <p class="profile-summary">
+                    <strong>Cybersecurity Engineer</strong> with operational experience in <strong>SOC/CSIRT
+                        environments</strong> and a strong focus on <strong>Threat Intelligence</strong> and Incident
+                    Response. Passionate about tracking malicious actors and automating defense mechanisms.
+                    <br><br>
+                    Currently optimizing SOC operations at CSA, where I leverage <strong>cyber intelligence
+                        sources</strong> to enrich alerts and reduce false positives. My technical background includes
+                    <strong>Python automation</strong> for data ingestion (ETL), regex parsing for unstructured logs,
+                    and threat hunting based on IOCs. I am eager to join Intel 471's mission to provide high-fidelity
+                    intelligence, applying my "can-do" attitude and technical curiosity to the fight against cybercrime.
+                </p>
+            </section>
+
+            <section>
+                <div class="section-title">Professional Experience</div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <span class="job-title">Cybersecurity Engineer (SOC & Threat Ops)</span>
+                        <span class="job-date">Jan 2025 - Present</span>
+                    </div>
+                    <div class="job-company">Centro de Servicios Avanzados (CSA)</div>
+                    <div class="job-details">
+                        <ul>
+                            <li><strong>Threat Intelligence Integration:</strong> Enriched SIEM (LUCIA) alerts by
+                                integrating external Threat Feeds (OSINT/Commercial), improving detection fidelity for
+                                critical incidents.</li>
+                            <li><strong>Incident Response & Hunting:</strong> Investigated security incidents by
+                                correlating IOCs (Indicators of Compromise) and TTPs mapped to MITRE ATT&CK framework.
+                            </li>
+                            <li><strong>Automation & Scripting:</strong> Developed Python scripts to parse and normalize
+                                unstructured log data from diverse sources, facilitating faster analysis and ingestion
+                                into the intelligence platform.</li>
+                            <li><strong>Security Operations:</strong> Managed daily SOC alerts, tuning correlation rules
+                                to reduce noise (false positives) and ensuring timely escalation of confirmed threats.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="section-title">Relevant Projects</div>
+
+                <div class="project-item">
+                    <div class="job-header">
+                        <span class="job-title">Threat Data Pipeline (ETL Automation)</span>
+                        <span class="project-tech">Python • Parsing • Regex</span>
+                    </div>
+                    <div class="job-details">
+                        <ul>
+                            <li>Built an automated pipeline (Patch-BOE) to extract, parse, and structure regulatory data
+                                from unstructured text sources using <strong>Regex and NLP</strong>.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="job-header">
+                        <span class="job-title">GraphSec (Security Orchestration)</span>
+                        <span class="project-tech">React • Python • Graph Theory</span>
+                    </div>
+                    <div class="job-details">
+                        <ul>
+                            <li>Developed a visual orchestration tool modeling relationships between assets, threats,
+                                and controls, demonstrating skills in <strong>Security Architecture</strong>
+                                visualization.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="job-header">
+                        <span class="job-title">AI Chatbot with RAG & Workers</span>
+                        <span class="project-tech">Cloudflare • Vector DB • LLM</span>
+                    </div>
+                    <div class="job-details">
+                        <ul>
+                            <li>Deployed a serverless AI assistant with Retrieval-Augmented Generation (RAG) on
+                                Cloudflare, enabling context-aware query responses.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="section-title">Education</div>
+                <div class="experience-item" style="margin-bottom: 5px;">
+                    <div class="job-header">
+                        <span class="job-title">BSc in Cybersecurity Engineering</span>
+                        <span class="job-date">2020 - 2025</span>
+                    </div>
+                    <div class="job-company">Universidad Rey Juan Carlos (URJC)</div>
+                </div>
+            </section>
+        </main>
+
+        <!-- RIGHT COLUMN (Sidebar) -->
+        <aside class="sidebar">
+            <div class="profile-img-container">
+                <img src="../cara horizontal.jpg" alt="Profile" class="profile-img">
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">Contact</div>
+                <div class="contact-info">
+                    <div>
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                        </svg>
+                        guillermoprieto17@gmail.com
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                        </svg>
+                        +34 650 164 383
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                        </svg>
+                        Madrid, Spain (Remote Ready)
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        </svg>
+                        <a href="https://linkedin.com/in/guillermo-prieto-rodriguez"
+                            style="color:white; text-decoration:none;">LinkedIn Profile</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">Core Skills</div>
+
+                <div class="skill-category">
+                    <h4>Threat Intelligence</h4>
+                    <div class="skill-tags">
+                        <span>MITRE ATT&CK</span>
+                        <span>IOC Analysis</span>
+                        <span>OSINT</span>
+                        <span>TTPs Hunting</span>
+                        <span>YARA Rules</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Technical Ops</h4>
+                    <div class="skill-tags">
+                        <span>SIEM (LUCIA)</span>
+                        <span>Python Scripting</span>
+                        <span>Log Parsing (Regex)</span>
+                        <span>Linux Hardening</span>
+                        <span>Incident Response</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">Languages</div>
+                <div class="contact-info">
+                    <div style="justify-content: space-between;">
+                        <span>Spanish</span>
+                        <span style="opacity:0.7;">Native</span>
+                    </div>
+                    <div style="justify-content: space-between;">
+                        <span>English</span>
+                        <span style="opacity:0.7;">C1 Advanced</span>
+                    </div>
+                </div>
+            </div>
+
+        </aside>
+    </div>
+</body>
+
+</html>

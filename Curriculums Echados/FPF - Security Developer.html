@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Guillermo Prieto Rodriguez - Security Developer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&family=Inter:wght@300;400;600;700&display=swap');
+
+        :root {
+            /* Hacker/Dev vibe but clean for FPF */
+            --primary: #10b981;
+            /* Emerald Green (Open Source/Secure vibe) */
+            --text-dark: #111827;
+            --text-grey: #4b5563;
+            --border-color: #e5e7eb;
+            --code-font: 'Fira Code', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.4;
+            background: #fff;
+            font-size: 9.5pt;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            min-height: 297mm;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--text-dark);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-img {
+            width: 75px;
+            height: 75px;
+            border-radius: 12px;
+            margin-right: 20px;
+            object-fit: cover;
+            border: 2px solid var(--text-dark);
+        }
+
+        .header-info h1 {
+            font-size: 22pt;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+
+        .header-info h2 {
+            font-family: var(--code-font);
+            font-size: 11pt;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 9pt;
+            font-family: var(--code-font);
+            color: var(--text-grey);
+        }
+
+        .header-right a {
+            color: var(--text-dark);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--text-dark);
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-family: var(--code-font);
+            font-size: 12pt;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--text-dark);
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::before {
+            content: ">";
+            margin-right: 8px;
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        .summary {
+            font-size: 9.5pt;
+            color: var(--text-grey);
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        /* TECHNICAL SKILLS (Tags) */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .skill-tag {
+            background: #f3f4f6;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 8.5pt;
+            font-family: var(--code-font);
+            font-weight: 500;
+            border: 1px solid #e5e7eb;
+        }
+
+        .skill-tag.highlight {
+            background: #ecfdf5;
+            color: #047857;
+            border-color: #a7f3d0;
+        }
+
+        /* EXPERIENCE & PROJECTS */
+        .item {
+            margin-bottom: 18px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .item-title {
+            font-weight: 700;
+            font-size: 10.5pt;
+        }
+
+        .item-subtitle {
+            font-family: var(--code-font);
+            font-size: 9pt;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .item-meta {
+            font-size: 9pt;
+            color: #6b7280;
+            font-style: italic;
+        }
+
+        .item-desc ul {
+            padding-left: 18px;
+            margin-top: 5px;
+        }
+
+        .item-desc li {
+            margin-bottom: 3px;
+            color: var(--text-grey);
+            font-size: 9.5pt;
+        }
+
+        .project-stack {
+            font-family: var(--code-font);
+            font-size: 8pt;
+            color: #6b7280;
+            margin-left: 10px;
+        }
+
+        @media print {
+            .cv-container {
+                box-shadow: none;
+                margin: 0;
+                width: 100%;
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cv-container">
+
+        <header>
+            <div class="header-left">
+                <img src="../cara horizontal.jpg" alt="Profile" class="profile-img">
+                <div class="header-info">
+                    <h1>Guillermo Prieto</h1>
+                    <h2>&lt;Security Software Developer /&gt;</h2>
+                </div>
+            </div>
+            <div class="header-right">
+                <div>guillermoprieto17@gmail.com</div>
+                <div>+34 650 164 383</div>
+                <div><a href="https://github.com/guillermop2002">github.com/guillermop2002</a></div>
+                <div><a href="https://cv-guillermo-prieto-rodriguez.vercel.app/english">Online Portfolio</a></div>
+                <div><a href="https://www.linkedin.com/in/guillermo-prieto-rodriguez-8640b9291/">LinkedIn Profile</a>
+                </div>
+            </div>
+        </header>
+
+        <section>
+            <div class="section-title">Overview</div>
+            <p class="summary">
+                <strong>Security-focused Developer</strong> and Cybersecurity Engineer with a strong interest in
+                <strong>Web Integrity</strong> and Open Source privacy tools. I combine hands-on software development
+                experience (JavaScript/TypeScript, React, Python) with adversarial thinking gained through <strong>CTF
+                    competitions and SOC operations</strong>.
+                <br><br>
+                Deeply familiar with <strong>browser security models</strong> (CSP, SOP, XSS mitigation) and secure
+                development lifecycles (SDL). I am eager to contribute to the WEBCAT project, applying my skills in code
+                analysis and tool building to protect digital rights and journalistic integrity.
+            </p>
+        </section>
+
+        <section>
+            <div class="section-title">Technical Arsenal</div>
+            <div class="skills-container">
+                <span class="skill-tag highlight">Web Security (XSS/CSP/SOP)</span>
+                <span class="skill-tag highlight">JavaScript / TypeScript</span>
+                <span class="skill-tag">React.js</span>
+                <span class="skill-tag">Web Extensions API</span>
+                <span class="skill-tag">Python (Automation)</span>
+                <span class="skill-tag">Rust (Basic)</span>
+                <span class="skill-tag">Git / GitHub Actions</span>
+                <span class="skill-tag">CTF / Adversarial Analysis</span>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Relevant Projects & Code</div>
+
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Secure CI/CD "Golden Pipeline"</span>
+                    <span class="project-stack">[GitHub Actions, Semgrep, Gitleaks]</span>
+                </div>
+                <div class="item-desc">
+                    <ul>
+                        <li>Architected a secure-by-default pipeline incorporating <strong>SAST (Semgrep)</strong> and
+                            Secret Scanning (Gitleaks) to prevent vulnerable code from reaching production.</li>
+                        <li>Automated security checks for XSS and injection flaws, mirroring the "code integrity"
+                            principles needed for secure browser environments.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">AI Chatbot with Cloudflare Workers</span>
+                    <span class="project-stack">[TypeScript, Workers, RAG]</span>
+                </div>
+                <div class="item-desc">
+                    <ul>
+                        <li>Developed a serverless application using <strong>Cloudflare Workers (JavaScript/V8
+                                environment)</strong>, managing strict resource limits and security headers.</li>
+                        <li>Implemented Retrieval-Augmented Generation (RAG) with vector databases, ensuring data
+                            privacy and integrity in responses.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">GraphSec (Infrastructure Analysis)</span>
+                    <span class="project-stack">[React, Graph Theory, Python]</span>
+                </div>
+                <div class="item-desc">
+                    <ul>
+                        <li>Built a visual tool to model security relationships between assets and threats.
+                            <strong>Hands-on React development</strong> experience handling complex state interactions
+                            and DOM manipulation.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Professional Experience</div>
+
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Cybersecurity Engineer (SOC/CSIRT)</span>
+                    <span class="item-meta">Jan 2025 - Present</span>
+                </div>
+                <span class="item-subtitle">Centro de Servicios Avanzados (CSA)</span>
+                <div class="item-desc">
+                    <ul>
+                        <li><strong>Adversarial Analysis:</strong> Investigating web-based attacks (XSS, SQLi) and
+                            analyzing attacker TTPs to improve detection rules.</li>
+                        <li><strong>Automation:</strong> Developing Python tools for threat data parsing and enrichment,
+                            treating security operations as a software engineering problem.</li>
+                        <li><strong>Compliance & Integrity:</strong> Aligning systems with high-security schemes (ENS),
+                            ensuring data integrity and auditability.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Education & Competitions</div>
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">BSc in Cybersecurity Engineering</span>
+                    <span class="item-meta">2020 - 2025</span>
+                </div>
+                <span class="item-subtitle">Universidad Rey Juan Carlos (URJC)</span>
+                <div class="item-desc">
+                    Focus on Secure Software Development and Web Security. Active participant in <strong>CTF
+                        Competitions</strong> (Capture The Flag), specializing in Web Exploitation and Forensics.
+                </div>
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Guillermo Prieto Rodriguez - Software Engineer (Canonical)</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&family=Open+Sans:wght@400;600&display=swap');
+
+        :root {
+            /* Ubuntu/Canonical Branding: Orange, Aubergine, Warm Grey */
+            --ubuntu-orange: #E95420;
+            --ubuntu-warm-grey: #AEA79F;
+            --text-main: #333;
+            --bg-light: #F7F7F7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-main);
+            background: #fff;
+            font-size: 9.5pt;
+            line-height: 1.5;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+            padding: 45px;
+            min-height: 297mm;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 25px;
+            margin-bottom: 30px;
+            border-bottom: 3px solid var(--ubuntu-orange);
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 25px;
+            border: 2px solid var(--ubuntu-orange);
+        }
+
+        .header-info h1 {
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 24pt;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 4px;
+        }
+
+        .header-info h2 {
+            font-size: 11pt;
+            font-weight: 500;
+            color: var(--ubuntu-orange);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 9pt;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .header-right a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px dotted var(--ubuntu-orange);
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 11pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--text-main);
+            border-left: 5px solid var(--ubuntu-orange);
+            padding-left: 10px;
+            margin-bottom: 15px;
+            background: #f9f9f9;
+            display: flex;
+            align-items: center;
+            height: 24px;
+        }
+
+        /* SUMMARY - ACADEMIC & OPEN SOURCE */
+        .profile-summary {
+            color: var(--text-main);
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        /* SKILLS GRID */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .skill-group h4 {
+            font-size: 9pt;
+            font-weight: 700;
+            color: var(--ubuntu-orange);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+        }
+
+        .skill-list {
+            list-style: none;
+            font-size: 9pt;
+        }
+
+        .skill-list li {
+            margin-bottom: 4px;
+            border-bottom: 1px dotted #e5e5e5;
+            padding-bottom: 2px;
+        }
+
+        .skill-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* ACADEMIC TRACK RECORD (Canonical Values) */
+        .academic-sec {
+            margin-bottom: 20px;
+            background: #fdfdfd;
+            border: 1px solid #eee;
+            padding: 15px;
+            border-radius: 4px;
+        }
+
+        /* EXPERIENCE */
+        .exp-item {
+            margin-bottom: 20px;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .job-title {
+            font-weight: 700;
+            font-size: 10.5pt;
+            color: var(--text-main);
+        }
+
+        .company {
+            font-weight: 600;
+            color: var(--ubuntu-orange);
+        }
+
+        .date {
+            font-size: 9pt;
+            font-style: italic;
+            color: #888;
+        }
+
+        .job-desc ul {
+            padding-left: 17px;
+            margin-top: 6px;
+        }
+
+        .job-desc li {
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+
+        /* PROJECTS */
+        .project-item {
+            margin-bottom: 15px;
+        }
+
+        .project-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4px;
+        }
+
+        .project-name {
+            font-weight: 700;
+            font-size: 10pt;
+            color: var(--text-main);
+        }
+
+        .project-tech {
+            font-size: 8pt;
+            font-family: monospace;
+            font-weight: 600;
+            color: #666;
+        }
+
+        .project-desc {
+            font-size: 9pt;
+            color: var(--text-main);
+            margin-top: 2px;
+        }
+
+        .lang-line {
+            font-size: 9pt;
+            margin-top: 10px;
+            color: #555;
+            text-align: right;
+            border-top: 1px solid #ddd;
+            padding-top: 8px;
+        }
+
+        @media print {
+            body {
+                margin: 0;
+            }
+
+            .cv-container {
+                width: 100%;
+                margin: 0;
+                padding: 40px;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cv-container">
+
+        <header>
+            <div class="header-left">
+                <img src="../cara horizontal.jpg" alt="Profile" class="profile-img">
+                <div class="header-info">
+                    <h1>Guillermo Prieto</h1>
+                    <h2>Software Engineer & Cybersecurity</h2>
+                </div>
+            </div>
+            <div class="header-right">
+                <div>Madrid, Spain (Remote)</div>
+                <div>guillermoprieto17@gmail.com</div>
+                <div>+34 650 164 383</div>
+                <div><a href="https://linkedin.com/in/guillermo-prieto-rodriguez">linkedin.com/in/guillermo-prieto</a>
+                </div>
+                <div><a href="https://cv-guillermo-prieto-rodriguez.vercel.app">Portfolio Web</a></div>
+            </div>
+        </header>
+
+        <section>
+            <div class="section-title">Professional Summary</div>
+            <p class="profile-summary">
+                <strong>Software Engineer</strong> and <strong>Open Source Enthusiast</strong> with a strong academic
+                background in Cybersecurity
+                Engineering. I am passionate about low-level systems, Linux distributions, and building high-performance
+                automation in <strong>Python</strong> and <strong>Go</strong>.
+                <br><br>
+                With experience in <strong>Debian/Snap packaging</strong> concepts and cloud infrastructure (Terraform),
+                I am eager
+                to join Canonical to contribute to Ubuntu's ecosystem—whether in Foundations, Server, or Automation. I
+                bring a "go above and beyond" mindset, demonstrated by designing secure architectures from scratch and
+                automating complex CI/CD pipelines.
+            </p>
+        </section>
+
+        <section>
+            <div class="section-title">Academic & Technical Excellence</div>
+            <div class="academic-sec">
+                <div style="font-weight: 700; margin-bottom: 5px;">BSc in Cybersecurity Engineering | Universidad Rey
+                    Juan Carlos (2020 - 2025)</div>
+                <div style="font-size: 9pt; margin-bottom: 10px;">
+                    Graduated with a focus on Secure Software Development and Systems Engineering.
+                </div>
+                <div style="font-size: 9pt;">
+                    <strong>Relevant Coursework:</strong> Operating Systems (Linux Kernel internals), Distributed
+                    Systems, Cryptography, Compiler Principles, Secure Coding (C/C++).
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Skills Overview</div>
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <h4>Systems & Languages</h4>
+                    <ul class="skill-list">
+                        <li><strong>Python & C</strong> (Core)</li>
+                        <li><strong>Go (Golang)</strong> (Intermediate)</li>
+                        <li>Linux Admin / Bash Scripting</li>
+                        <li>Memory Management</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h4>Ubuntu & Automation</h4>
+                    <ul class="skill-list">
+                        <li><strong>CI/CD Pipelines</strong> (GitHub Actions)</li>
+                        <li>Package Integration (Debian/Apt)</li>
+                        <li>Infrastructure as Code (Terraform)</li>
+                        <li>System Debugging & Triage</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h4>Engineering Practices</h4>
+                    <ul class="skill-list">
+                        <li><strong>Open Source</strong> Contribution</li>
+                        <li>Documentation Authoring</li>
+                        <li>Secure Architecture Design</li>
+                        <li>Distributed Collaboration</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Experience</div>
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span class="job-title">Software Engineer (Infrastructure Focus)</span>
+                    <span class="date">Jan 2025 - Present</span>
+                </div>
+                <span class="company">Centro de Servicios Avanzados (CSA)</span>
+                <div class="job-desc">
+                    <ul>
+                        <li><strong>Automation Engineering:</strong> Built the machinery responsible for automated
+                            security testing using <strong>Python</strong> and GitHub Actions, ensuring robust software
+                            delivery.</li>
+                        <li><strong>Systems Integration:</strong> Integrated disparate open source tools (trivy,
+                            gitleaks) into a unified pipeline, handling package dependencies and version compatibility
+                            challenges.</li>
+                        <li><strong>Linux & Cloud:</strong> Managed Linux-based environments on Cloud infrastructure,
+                            utilizing <strong>Terraform</strong> to provision and maintain reproducible system states.
+                        </li>
+                        <li><strong>Documentation:</strong> Authored technical documentation for internal tools,
+                            improving the developer experience and facilitating knowledge transfer in a distributed
+                            team.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Open Source & Personal Projects</div>
+
+            <div class="project-item">
+                <div class="project-head">
+                    <span class="project-name">GraphSec (Go/Python Tooling)</span>
+                    <span class="project-tech">Go • Terraform • Systems</span>
+                </div>
+                <div class="project-desc">
+                    Developed a CLI tool to parse and visualize infrastructure state files. Required deep understanding
+                    of file parsing and data structures. Used <strong>Go</strong> to improve performance and binary
+                    portability across Linux distros.
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-head">
+                    <span class="project-name">NativeConnect (Architecture)</span>
+                    <span class="project-tech">Python • C • Security</span>
+                </div>
+                <div class="project-desc">
+                    Designed a secure authentication system, managing low-level session handling and cryptographic
+                    primitives. Focused on resilience and performance.
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-head">
+                    <span class="project-name">Patch-BOE (Automated Analysis)</span>
+                    <span class="project-tech">Python • Automation • ETL</span>
+                </div>
+                <div class="project-desc">
+                    Built an automated pipeline to ingest and process large datasets of legal text. Demonstrated ability
+                    to "design, build and ship robust solutions" for complex data problems.
+                </div>
+            </div>
+
+        </section>
+
+        <section>
+            <div class="lang-line">
+                <strong>Languages:</strong> English (Fluent - Professional) • Spanish (Native)
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>

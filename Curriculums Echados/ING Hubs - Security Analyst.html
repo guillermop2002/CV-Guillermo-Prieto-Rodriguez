@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Guillermo Prieto Rodriguez - Security Analyst</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+        :root {
+            /* ING Branding Colors */
+            --ing-orange: #FF6200;
+            --ing-navy: #1D1D1B;
+            /* Almost black */
+            --ing-blue: #525199;
+            /* Secondary accent if needed */
+            --text-main: #333;
+            --text-light: #555;
+            --bg-gray: #f4f4f4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-main);
+            background: #fff;
+            font-size: 9.5pt;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+            min-height: 297mm;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* HEADER */
+        .header {
+            background: linear-gradient(135deg, var(--ing-orange) 0%, #ff8c00 100%);
+            color: white;
+            padding: 35px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 4px solid white;
+            object-fit: cover;
+            margin-right: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-info h1 {
+            font-size: 26pt;
+            font-weight: 700;
+            margin-bottom: 5px;
+            letter-spacing: -0.5px;
+        }
+
+        .header-info h2 {
+            font-size: 14pt;
+            font-weight: 400;
+            opacity: 0.95;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 9pt;
+            line-height: 1.6;
+        }
+
+        .header-right div {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .header-right svg {
+            width: 14px;
+            height: 14px;
+            fill: white;
+            margin-left: 8px;
+        }
+
+        .header-right a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* CONTENT */
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            padding: 40px;
+            gap: 40px;
+        }
+
+        .main-column {
+            /* padding-right: 20px; */
+        }
+
+        .section-title {
+            font-size: 13pt;
+            font-weight: 700;
+            color: var(--ing-orange);
+            text-transform: uppercase;
+            border-bottom: 2px solid #eee;
+            margin-bottom: 20px;
+            padding-bottom: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-summary {
+            color: var(--text-light);
+            text-align: justify;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        /* EXPERIENCE ITEMS */
+        .exp-item {
+            margin-bottom: 25px;
+            position: relative;
+            padding-left: 20px;
+            border-left: 3px solid #eee;
+        }
+
+        .exp-item:hover {
+            border-left-color: var(--ing-orange);
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+
+        .role {
+            font-size: 11pt;
+            font-weight: 700;
+            color: var(--ing-navy);
+        }
+
+        .company {
+            font-size: 10pt;
+            color: var(--ing-orange);
+            font-weight: 600;
+        }
+
+        .date {
+            font-size: 9pt;
+            color: #888;
+            font-style: italic;
+        }
+
+        .details ul {
+            padding-left: 18px;
+            margin-top: 8px;
+        }
+
+        .details li {
+            margin-bottom: 5px;
+            color: var(--text-light);
+            line-height: 1.4;
+        }
+
+        /* PROJECTS */
+        .project-item {
+            margin-bottom: 20px;
+        }
+
+        .project-card {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid var(--ing-navy);
+        }
+
+        .proj-title {
+            font-weight: 700;
+            font-size: 10.5pt;
+            color: var(--ing-navy);
+        }
+
+        .proj-stack {
+            font-size: 8.5pt;
+            color: var(--ing-orange);
+            font-weight: 500;
+            margin-left: 8px;
+        }
+
+        .proj-desc {
+            font-size: 9pt;
+            margin-top: 5px;
+            color: var(--text-light);
+        }
+
+        /* SIDEBAR (Right) */
+        .sidebar-section {
+            margin-bottom: 30px;
+        }
+
+        .skill-category {
+            margin-bottom: 15px;
+        }
+
+        .skill-header {
+            font-weight: 700;
+            font-size: 10pt;
+            color: var(--ing-navy);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .tag {
+            background: #f0f0f0;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 9pt;
+            color: #444;
+            font-weight: 500;
+        }
+
+        .tag.highlight {
+            background: rgba(255, 98, 0, 0.1);
+            color: #cc4e00;
+        }
+
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                margin: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cv-container">
+        <!-- HEADER -->
+        <header class="header">
+            <div class="header-left">
+                <img src="../cara horizontal.jpg" alt="Profile" class="profile-img">
+                <div class="header-info">
+                    <h1>Guillermo Prieto</h1>
+                    <h2>Security Analyst (SOC & Analytics)</h2>
+                </div>
+            </div>
+            <div class="header-right">
+                <div>
+                    GuillermoPrieto17@gmail.com
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                    </svg>
+                </div>
+                <div>
+                    +34 650 164 383
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M20 15.5c-1.25 0-2.45-.2-3.57-.57-.35-.11-.74-.03-1.02.24l-2.2 2.2c-2.83-1.44-5.15-3.75-6.59-6.59l2.2-2.21c.28-.26.36-.65.25-1C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z" />
+                    </svg>
+                </div>
+                <div>
+                    Madrid, Spain
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                    </svg>
+                </div>
+                <div>
+                    <a href="https://linkedin.com/in/guillermo-prieto-rodriguez">LinkedIn Profile</a>
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+                    </svg>
+                </div>
+            </div>
+        </header>
+
+        <div class="content-wrapper">
+            <!-- MAIN CONTENT (Left) -->
+            <main class="main-column">
+                <section>
+                    <div class="section-title">Professional Summary</div>
+                    <p class="profile-summary">
+                        <strong>Security Analyst</strong> with active experience in <strong>SOC (Security Operations
+                            Center)</strong> and a degree in Cybersecurity Engineering. I specialize in <strong>event
+                            analysis, anomaly detection, and log correlation</strong> using SIEM technologies (LUCIA).
+                        <br><br>
+                        Passionate about identifying security threats and improving detection capabilities. I combine
+                        analytical thinking with practical skills in Python scripting and Threat Intelligence (MITRE
+                        ATT&CK). Eager to join ING Hubs' Security Analytics team, ready to work in shifts and contribute
+                        to the 24/7 defense of critical banking infrastructure.
+                    </p>
+                </section>
+
+                <section>
+                    <div class="section-title">Professional Experience</div>
+
+                    <div class="exp-item">
+                        <div class="exp-header">
+                            <div>
+                                <div class="role">Security Analyst (SOC)</div>
+                                <div class="company">Centro de Servicios Avanzados (CSA)</div>
+                            </div>
+                            <div class="date">Jan 2025 - Present</div>
+                        </div>
+                        <div class="details">
+                            <ul>
+                                <li><strong>Security Event Analysis:</strong> Monitoring and analyzing alerts from SIEM
+                                    (LUCIA) and EDR platforms, investigating anomalies in network traffic and system
+                                    logs.</li>
+                                <li><strong>Incident Response:</strong> Triaging security incidents, differentiating
+                                    between false positives and real threats (OWASP / MITRE mapped), and escalating
+                                    according to playbooks.</li>
+                                <li><strong>Log Correlation:</strong> Correlating logs from various sources (Network,
+                                    Endpoints, OS) to reconstruct attack scenarios and identify root causes.</li>
+                                <li><strong>Reporting & Communication:</strong> Documenting incidents and communicating
+                                    findings to technical teams, ensuring clear information flow.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="section-title">Key Projects (Analytics & Logs)</div>
+
+                    <div class="project-item">
+                        <div class="project-card">
+                            <div class="proj-title">Log Parsing & Automation (Patch-BOE) <span class="proj-stack">Python
+                                    • Regex • Data Management</span></div>
+                            <div class="proj-desc">
+                                Developed automated scripts (ETL) to ingest, parse, and structure large datasets of
+                                unstructured text. Relevant for <strong>SIEM log ingestion</strong> and normalization
+                                tasks.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-card">
+                            <div class="proj-title">Secure Web Architecture (Golden Pipeline) <span
+                                    class="proj-stack">OWASP • SAST • CI/CD</span></div>
+                            <div class="proj-desc">
+                                Implemented a security pipeline detecting vulnerabilities (OWASP Top 10) in code before
+                                deployment, demonstrating understanding of application security and secure SDLC.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-card">
+                            <div class="proj-title">GraphSec (Security Viz) <span class="proj-stack">React • Data
+                                    Visualization • Python</span></div>
+                            <div class="proj-desc">
+                                Created a visualization tool to model relationships between security assets and threats.
+                                Demonstrates ability to present complex security data logically, a key skill for
+                                dashboarding and reporting.
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <!-- SIDEBAR (Right) -->
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <div class="section-title" style="font-size:11pt;">Education</div>
+                    <div style="margin-bottom:10px;">
+                        <div style="font-weight:700; font-size:10pt;">BSc Cybersecurity Engineering</div>
+                        <div style="color:var(--text-light); font-size:9pt;">Universidad Rey Juan Carlos</div>
+                        <div style="color:#888; font-size:9pt; font-style:italic;">2020 - 2025</div>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <div class="section-title" style="font-size:11pt;">Skills & Tech</div>
+
+                    <div class="skill-category">
+                        <div class="skill-header">Security Operations</div>
+                        <div class="skill-tags">
+                            <span class="tag highlight">SOC Analysis</span>
+                            <span class="tag highlight">SIEM (LUCIA)</span>
+                            <span class="tag">Event Correlation</span>
+                            <span class="tag">Anomaly Detection</span>
+                            <span class="tag">MITRE ATT&CK</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-header">Technical Foundations</div>
+                        <div class="skill-tags">
+                            <span class="tag">Linux / Unix</span>
+                            <span class="tag">Windows Events</span>
+                            <span class="tag">Network Protocols</span>
+                            <span class="tag">OWASP Top 10</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-header">Programming</div>
+                        <div class="skill-tags">
+                            <span class="tag highlight">Python (Automation)</span>
+                            <span class="tag">Regex</span>
+                            <span class="tag">SQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <div class="section-title" style="font-size:11pt;">Languages</div>
+                    <div style="display:flex; justify-content:space-between; margin-bottom:5px;">
+                        <strong>Spanish</strong> <span>Native</span>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; margin-bottom:5px;">
+                        <strong>English</strong> <span>C1 Advanced</span>
+                    </div>
+                    <div style="display:flex; justify-content:space-between;">
+                        <strong>French</strong> <span>Basic</span>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+</body>
+
+</html>

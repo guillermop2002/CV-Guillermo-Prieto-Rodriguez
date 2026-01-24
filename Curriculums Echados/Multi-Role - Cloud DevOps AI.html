@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Guillermo Prieto Rodriguez - Engeniero DevOps, Cloud & AI</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Lato:wght@300;400;700&display=swap');
+
+        :root {
+            /* General Purpose Tech: Clean Blue/Grey */
+            --primary: #0A66C2;
+            --dark: #111;
+            --text-main: #333;
+            --bg-light: #F3F6F8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--text-main);
+            background: #fff;
+            font-size: 9.5pt;
+            line-height: 1.5;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+            padding: 45px;
+            min-height: 297mm;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 25px;
+            margin-bottom: 30px;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 5px;
+            object-fit: cover;
+            margin-right: 25px;
+            border: 2px solid var(--primary);
+        }
+
+        .header-info h1 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 24pt;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 4px;
+        }
+
+        .header-info h2 {
+            font-size: 11pt;
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 9pt;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .header-right a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-family: 'Roboto', sans-serif;
+            font-size: 11pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--dark);
+            border-left: 4px solid var(--primary);
+            padding-left: 10px;
+            margin-bottom: 15px;
+            background: #f9f9f9;
+            display: flex;
+            align-items: center;
+            height: 26px;
+        }
+
+        /* PROFILE SUMMARY WITH KEYWORDS */
+        .profile-summary {
+            color: var(--text-main);
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        /* SKILLS GRID - OPTIMIZED FOR 4 ROLES */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .skill-group h4 {
+            font-size: 9pt;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+        }
+
+        .skill-list {
+            list-style: none;
+            font-size: 9pt;
+        }
+
+        .skill-list li {
+            margin-bottom: 4px;
+            border-bottom: 1px dotted #e0e0e0;
+            padding-bottom: 2px;
+        }
+
+        /* EXPERIENCE */
+        .exp-item {
+            margin-bottom: 20px;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .job-title {
+            font-weight: 700;
+            font-size: 10.5pt;
+            color: var(--dark);
+        }
+
+        .company {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .date {
+            font-size: 9pt;
+            font-style: italic;
+            color: #888;
+        }
+
+        .job-desc ul {
+            padding-left: 17px;
+            margin-top: 6px;
+        }
+
+        .job-desc li {
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+
+        /* PROJECTS */
+        .project-item {
+            margin-bottom: 15px;
+        }
+
+        .project-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4px;
+        }
+
+        .project-name {
+            font-weight: 700;
+            font-size: 10pt;
+            color: var(--dark);
+        }
+
+        .project-tech {
+            font-size: 8pt;
+            font-family: monospace;
+            font-weight: 600;
+            color: #555;
+            background: #eef;
+            padding: 2px 5px;
+            border-radius: 2px;
+        }
+
+        .project-desc {
+            font-size: 9pt;
+            color: var(--text-main);
+            margin-top: 2px;
+        }
+
+        .lang-line {
+            font-size: 9pt;
+            margin-top: 10px;
+            color: #555;
+            text-align: right;
+            border-top: 1px solid #ddd;
+            padding-top: 8px;
+        }
+
+        @media print {
+            body {
+                margin: 0;
+            }
+
+            .cv-container {
+                width: 100%;
+                margin: 0;
+                padding: 40px;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cv-container">
+
+        <header>
+            <div class="header-left">
+                <img src="../cara horizontal.jpg" alt="Profile" class="profile-img">
+                <div class="header-info">
+                    <h1>Guillermo Prieto</h1>
+                    <h2>Cybersecurity, DevOps & AI Engineer</h2>
+                </div>
+            </div>
+            <div class="header-right">
+                <div>Madrid, España (Híbrido)</div>
+                <div>guillermoprieto17@gmail.com</div>
+                <div>+34 650 164 383</div>
+                <div><a href="https://linkedin.com/in/guillermo-prieto-rodriguez">linkedin.com/in/guillermo-prieto</a>
+                </div>
+                <div><a href="https://cv-guillermo-prieto-rodriguez.vercel.app">Portfolio Web</a></div>
+            </div>
+        </header>
+
+        <section>
+            <div class="section-title">Perfil Profesional</div>
+            <p class="profile-summary">
+                <strong>Ingeniero de Ciberseguridad</strong> con un perfil multidisciplinar que abarca desde la
+                <strong>Arquitectura de Redes y Cloud</strong> hasta la automatización <strong>DevOps</strong>. Dispongo
+                de una sólida base técnica gestionando infraestructuras críticas (Linux/Windows), redes (VPNs,
+                Balanceadores) y pipelines CI/CD seguros.
+                <br><br>
+                A su vez, soy un <strong>entusiasta del Desarrollo y la IA</strong> (self-taught). Combino mi
+                experiencia en operaciones con la construcción de agentes <strong>RAG</strong> y soluciones serverless
+                (Cloudflare Workers), buscando siempre aplicar innovación para optimizar procesos y modernizar entornos
+                tecnológicos complejos.
+            </p>
+        </section>
+
+        <section>
+            <div class="section-title">Habilidades Técnicas</div>
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <h4>Cloud & DevOps</h4>
+                    <ul class="skill-list">
+                        <li><strong>Azure & AWS Core</strong> (VM, VNets, IAM)</li>
+                        <li>Terraform / Ansible (IaC)</li>
+                        <li>Docker / Kubernetes (AKS)</li>
+                        <li>CI/CD (Azure DevOps, GitHub)</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h4>IA & Desarrollo</h4>
+                    <ul class="skill-list">
+                        <li><strong>Python</strong> (Automatización/IA)</li>
+                        <li>RAG / LangChain / OpenAI API</li>
+                        <li>Scripting (Bash, PowerShell)</li>
+                        <li>Frontend Básico (React/Angular)</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h4>Redes & Operaciones</h4>
+                    <ul class="skill-list">
+                        <li>Monitorización (Prometheus/Grafana)</li>
+                        <li>Linux/Windows Administration</li>
+                        <li>VPN / DNS / Balanceadores</li>
+                        <li>Gestión de Backups (Azure Backup)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Experiencia Profesional</div>
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span class="job-title">DevOps Engineer (Cloud & Automation)</span>
+                    <span class="date">Ene 2025 - Presente</span>
+                </div>
+                <span class="company">Centro de Servicios Avanzados (CSA)</span>
+                <div class="job-desc">
+                    <ul>
+                        <li><strong>Infraestructura Cloud (Azure/AWS):</strong> Despliegue y administración de
+                            infraestructuras utilizando <strong>Terraform</strong>. Configuración de redes (VNets),
+                            balanceadores y almacenamiento, garantizando la resiliencia y seguridad.</li>
+                        <li><strong>CI/CD & Automatización:</strong> Diseño y mantenimiento de pipelines automatizados
+                            para el despliegue de aplicaciones y microservicios, integrando pruebas de seguridad y
+                            calidad.</li>
+                        <li><strong>IA Aplicada (Agentes):</strong> Desarrollo de demos y PoCs de <strong>agentes
+                                conversacionales</strong> utilizando Python y LLMs, mejorando la eficiencia operativa
+                            mediante automatización inteligente.</li>
+                        <li><strong>Operación y Monitorización:</strong> Gestión de sistemas Linux/Windows,
+                            monitorización de servicios y resolución de incidencias en entornos productivos, asegurando
+                            SLAs y alta disponibilidad.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Proyectos Relevantes</div>
+
+            <div class="project-item">
+                <div class="project-head">
+                    <span class="project-name">AI Chatbot & RAG (IA Generativa)</span>
+                    <span class="project-tech">Cloudflare Workers • LangChain • OpenAI</span>
+                </div>
+                <div class="project-desc">
+                    Diseño y construcción de un agente conversacional <strong>serverless</strong> con <strong>Cloudflare
+                        Workers</strong>. Implementación de técnicas RAG para consulta documental inteligente,
+                    demostrando capacidad para adoptar arquitecturas modernas (Edge Computing) de forma autodidacta.
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-head">
+                    <span class="project-name">Secure "Golden Pipeline" (DevOps)</span>
+                    <span class="project-tech">CI/CD • Terraform • Automation</span>
+                </div>
+                <div class="project-desc">
+                    Arquitectura de pipelines de despliegue automatizado. Implementación de Infraestructura como Código
+                    (IaC) para estandarizar entornos y reducir tiempos de entrega (Time-to-Market).
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-head">
+                    <span class="project-name">GraphSec (Redes & Visualización)</span>
+                    <span class="project-tech">Python • Networking • Cloud</span>
+                </div>
+                <div class="project-desc">
+                    Herramienta para visualizar topologías de red y reglas de seguridad en la nube. Requiere
+                    conocimientos profundos de protocolos y arquitectura de red para mapear conexiones correctamente.
+                </div>
+            </div>
+
+        </section>
+
+        <section>
+            <div class="section-title">Educación</div>
+            <div style="display:flex; justify-content:space-between;">
+                <div><strong>Grado en Ingeniería de Ciberseguridad</strong>, Universidad Rey Juan Carlos</div>
+                <div style="font-style:italic; color:#888;">2020 - 2025</div>
+            </div>
+            <div class="lang-line">
+                <strong>Idiomas:</strong> Inglés (B2/C1 - Proficiente) • Español (Nativo)
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>

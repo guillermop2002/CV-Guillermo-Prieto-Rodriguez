@@ -32,7 +32,7 @@ function Navbar({ theme, toggleTheme }) {
                     <li onClick={closeMenu}><a href="#sobre-mi">Sobre Mí</a></li>
                     <li onClick={closeMenu}><a href="#experiencia">Experiencia</a></li>
                     <li onClick={closeMenu}><a href="#proyectos">Proyectos</a></li>
-                    <li onClick={closeMenu}><Link to="/portfolio">Portfolio</Link></li>
+                    <li onClick={closeMenu}><Link to="/portfolio-es" className="portfolio-nav-link">Portfolio</Link></li>
                     <li onClick={closeMenu}><a href="#habilidades">Habilidades</a></li>
                     <li onClick={closeMenu}><a href="#educacion">Educación</a></li>
                     <li onClick={closeMenu}><a href="#contacto">Contacto</a></li>

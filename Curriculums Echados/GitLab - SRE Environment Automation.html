@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Guillermo Prieto Rodriguez - SRE (GitLab)</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        :root {
+            /* GitLab Branding Colors */
+            --gitlab-orange: #FC6D26;
+            --gitlab-purple: #E24329;
+            --gitlab-dark: #292961;
+            /* Dark purple/navy for text */
+            --text-main: #333;
+            --bg-light: #FAFAFA;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background: #fff;
+            font-size: 9.5pt;
+            line-height: 1.5;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px 50px;
+            min-height: 297mm;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--gitlab-orange);
+            padding-bottom: 20px;
+        }
+
+        .header-left {
+            margin-right: 25px;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid var(--gitlab-orange);
+            object-fit: cover;
+        }
+
+        .header-center {
+            flex: 1;
+        }
+
+        .header-center h1 {
+            font-size: 22pt;
+            font-weight: 800;
+            color: var(--gitlab-dark);
+            letter-spacing: -0.5px;
+            margin-bottom: 2px;
+        }
+
+        .header-center h2 {
+            font-size: 11pt;
+            font-weight: 600;
+            color: var(--gitlab-orange);
+            text-transform: uppercase;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 9pt;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .header-right a {
+            color: var(--gitlab-dark);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px dotted var(--gitlab-orange);
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 10.5pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--gitlab-dark);
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+
+        .section-title::before {
+            content: "//";
+            color: var(--gitlab-orange);
+            margin-right: 8px;
+            font-family: monospace;
+            font-weight: 800;
+        }
+
+        /* SUMMARY */
+        .profile-summary {
+            text-align: justify;
+            color: var(--text-main);
+            margin-bottom: 20px;
+        }
+
+        /* SKILLS GRID */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            background: var(--bg-light);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+
+        .skill-col h4 {
+            font-size: 9pt;
+            font-weight: 700;
+            color: var(--gitlab-dark);
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .skill-list {
+            list-style: none;
+            font-size: 9pt;
+        }
+
+        .skill-list li {
+            margin-bottom: 3px;
+        }
+
+        /* EXPERIENCE */
+        .exp-item {
+            margin-bottom: 20px;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 3px;
+        }
+
+        .role {
+            font-weight: 700;
+            font-size: 10.5pt;
+            color: var(--gitlab-dark);
+        }
+
+        .company {
+            font-weight: 600;
+            color: var(--gitlab-orange);
+        }
+
+        .date {
+            font-size: 9pt;
+            font-style: italic;
+            color: #888;
+        }
+
+        .exp-desc ul {
+            padding-left: 16px;
+            margin-top: 5px;
+        }
+
+        .exp-desc li {
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+
+        /* PROJECTS (GitLab style: clean cards) */
+        .project-item {
+            margin-bottom: 15px;
+            padding: 12px;
+            border: 1px solid #eee;
+            border-radius: 6px;
+        }
+
+        .project-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .project-title {
+            font-weight: 700;
+            font-size: 10pt;
+            color: var(--gitlab-dark);
+        }
+
+        .project-stack {
+            font-size: 8pt;
+            font-family: monospace;
+            color: var(--gitlab-orange);
+            font-weight: 600;
+        }
+
+        .project-desc {
+            font-size: 9pt;
+            color: var(--text-main);
+        }
+
+        .lang-line {
+            font-size: 9pt;
+            margin-top: 10px;
+            padding: 8px;
+            background: #fff;
+            color: #666;
+            border-top: 1px solid #eee;
+        }
+
+        @media print {
+            body {
+                margin: 0;
+            }
+
+            .cv-container {
+                width: 100%;
+                margin: 0;
+                padding: 40px;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cv-container">
+
+        <header>
+            <div class="header-left">
+                <img src="../cara horizontal.jpg" alt="Profile" class="profile-img">
+            </div>
+            <div class="header-center">
+                <h1>Guillermo Prieto</h1>
+                <h2>Site Reliability Engineer (SRE)</h2>
+            </div>
+            <div class="header-right">
+                <div>Madrid, Spain (Remote)</div>
+                <div>guillermoprieto17@gmail.com</div>
+                <div>+34 650 164 383</div>
+                <div><a href="https://linkedin.com/in/guillermo-prieto-rodriguez">linkedin.com/in/guillermo-prieto</a>
+                </div>
+                <div><a href="https://cv-guillermo-prieto-rodriguez.vercel.app">Portfolio Web</a></div>
+            </div>
+        </header>
+
+        <section>
+            <div class="section-title">Professional Summary</div>
+            <p class="profile-summary">
+                <strong>Site Reliability Engineer</strong> passionate about <strong>Environment Automation</strong> and
+                Infrastructure as Code. I specialize in building scalable, self-healing platforms using
+                <strong>Terraform, Kubernetes, and Golang/Python</strong>.
+                <br><br>
+                Aligned with GitLab's values of collaboration and transparency (Open Core), I advocate for "Everything
+                as Code". My background in Cybersecurity (DevSecOps) ensures I build reliability and security into
+                automation pipelines by default. Eager to join the Dedicated team to help scale GitLab's managed
+                environments for thousands of tenants.
+            </p>
+        </section>
+
+        <section>
+            <div class="section-title">Technical Skills</div>
+            <div class="skills-grid">
+                <div class="skill-col">
+                    <h4>Infrastructure Automation</h4>
+                    <ul class="skill-list">
+                        <li><strong>Terraform</strong> (Modules & State)</li>
+                        <li><strong>Kubernetes</strong> (Scaling/Debug)</li>
+                        <li>Ansible • Helm Charts</li>
+                        <li>GitLab CI/CD Pipelines</li>
+                    </ul>
+                </div>
+                <div class="skill-col">
+                    <h4>Backend & Tooling</h4>
+                    <ul class="skill-list">
+                        <li><strong>Go (Golang)</strong> • Python</li>
+                        <li>Scripting (Bash)</li>
+                        <li>Infrastructure Tooling</li>
+                        <li>Git-based Workflows</li>
+                    </ul>
+                </div>
+                <div class="skill-col">
+                    <h4>Observability & Reliability</h4>
+                    <ul class="skill-list">
+                        <li>Prometheus • Grafana</li>
+                        <li>Incident Response (On-call)</li>
+                        <li>SLOs / Error Budgets</li>
+                        <li>Multi-tenant Architecture</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="lang-line">
+                <strong>Languages:</strong> Spanish (Native) • English (C1 Advanced) • French (Basic)
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Experience</div>
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <span class="role">DevSecOps Engineer (SRE Focus)</span>
+                        <span class="company"> | Centro de Servicios Avanzados (CSA)</span>
+                    </div>
+                    <span class="date">Jan 2025 - Present</span>
+                </div>
+                <div class="exp-desc">
+                    <ul>
+                        <li><strong>Environment Automation:</strong> Built <strong>Python/Go</strong> tooling to
+                            automate the lifecycle of security environments, reducing provisioning time by 50% through
+                            self-service APIs.</li>
+                        <li><strong>Kubernetes Reliability:</strong> Managed multi-tenant K8s clusters, troubleshooting
+                            crash loops, networking issues, and optimizing resource requests for stability.</li>
+                        <li><strong>Observability:</strong> Implemented monitoring stacks (ELK/Prometheus) to track
+                            environment health signals, enabling proactive incident response.</li>
+                        <li><strong>Incident Response:</strong> Participated in on-call rotations, triaging production
+                            alerts and documenting runbooks to "remove manual toil" for future incidents.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Relevant Projects</div>
+
+            <div class="project-item">
+                <div class="project-head">
+                    <span class="project-title">GraphSec (Terraform State Visualization)</span>
+                    <span class="project-stack">Golang • Terraform • React</span>
+                </div>
+                <div class="project-desc">
+                    Built a tool that parses <strong>Terraform State</strong> files to visualize infrastructure
+                    dependencies. Extended functionality using Go to interact with cloud provider APIs, treating
+                    infrastructure strictly as code.
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-head">
+                    <span class="project-title">Secure CI/CD "Golden Pipeline"</span>
+                    <span class="project-stack">GitLab CI/GitHub Actions • Automation</span>
+                </div>
+                <div class="project-desc">
+                    Architected a reusable pipeline ensuring safe deployments. Automated the injection of security best
+                    practices (SAST, Secret Scanning) into the environment lifecycle without manual intervention.
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-head">
+                    <span class="project-title">AI Chatbot on Edge (Scalability)</span>
+                    <span class="project-stack">Cloudflare Workers • Serverless • Python</span>
+                </div>
+                <div class="project-desc">
+                    Deployed a highly scalable, distributed AI application. Solved challenges related to "managing many
+                    tenant environments" by using edge computing (Cloudflare) for isolation and performance.
+                </div>
+            </div>
+
+        </section>
+
+        <section>
+            <div class="section-title">Education</div>
+            <div style="display:flex; justify-content:space-between;">
+                <div>
+                    <strong>BSc in Cybersecurity Engineering</strong>, Universidad Rey Juan Carlos
+                </div>
+                <div style="font-style:italic; color:#888;">2020 - 2025</div>
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>
