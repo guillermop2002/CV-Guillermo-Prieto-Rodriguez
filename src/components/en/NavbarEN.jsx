@@ -29,7 +29,6 @@ function NavbarEN({ theme, toggleTheme }) {
                 </a>
 
                 <ul className={`navbar-links ${isMenuOpen ? 'active' : ''}`}>
-                    <li onClick={closeMenu}><a href="#home">Home</a></li>
                     <li onClick={closeMenu}><a href="#about">About</a></li>
                     <li onClick={closeMenu}><a href="#experience">Experience</a></li>
                     <li onClick={closeMenu}><a href="#projects">Projects</a></li>
