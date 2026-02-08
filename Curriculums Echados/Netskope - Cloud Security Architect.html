@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Guillermo Prieto Rodriguez - Cloud Security Architect</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --primary: #0071CE;
+            /* Netskope Blue */
+            --dark: #0f172a;
+            --text-main: #334155;
+            --text-light: #64748b;
+            --bg-light: #f1f5f9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background: #fff;
+            line-height: 1.5;
+            font-size: 9.5pt;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px 50px;
+            min-height: 297mm;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            align-items: center;
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+        }
+
+        .header-left {
+            flex: 1;
+        }
+
+        .header-left h1 {
+            font-size: 22pt;
+            font-weight: 800;
+            color: var(--dark);
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+            margin-bottom: 5px;
+        }
+
+        .header-left h2 {
+            font-size: 12pt;
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 9pt;
+            color: var(--text-light);
+        }
+
+        .header-right div {
+            margin-bottom: 2px;
+        }
+
+        .header-right a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--dark);
+            border-left: 4px solid var(--primary);
+            padding-left: 10px;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+            background: linear-gradient(90deg, var(--bg-light) 0%, transparent 100%);
+            padding-top: 2px;
+            padding-bottom: 2px;
+        }
+
+        /* PROFILE */
+        .profile-text {
+            text-align: justify;
+            color: var(--text-main);
+            margin-bottom: 15px;
+        }
+
+        /* SKILLS */
+        .skills-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+
+        .skills-table td {
+            padding: 6px 0;
+            vertical-align: top;
+        }
+
+        .skill-cat {
+            width: 150px;
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 9pt;
+        }
+
+        .skill-list {
+            font-size: 9pt;
+            color: var(--text-main);
+        }
+
+        /* EXPERIENCE */
+        .exp-item {
+            margin-bottom: 20px;
+        }
+
+        .exp-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 6px;
+        }
+
+        .exp-role {
+            font-weight: 700;
+            font-size: 10.5pt;
+            color: var(--dark);
+        }
+
+        .exp-company {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .exp-date {
+            font-size: 9pt;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .exp-details ul {
+            padding-left: 18px;
+            margin-top: 5px;
+        }
+
+        .exp-details li {
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+
+        /* PROJECTS CARD STYLE */
+        .proj-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .proj-card {
+            background: var(--bg-light);
+            padding: 15px;
+            border-radius: 4px;
+            border-left: 3px solid var(--text-light);
+        }
+
+        .proj-title {
+            font-weight: 700;
+            color: var(--dark);
+            font-size: 10pt;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .proj-tech {
+            font-size: 8pt;
+            color: var(--primary);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .proj-desc {
+            font-size: 9pt;
+            color: var(--text-main);
+        }
+
+        @media print {
+            .cv-container {
+                width: 100%;
+                margin: 0;
+                padding: 30px;
+                box-shadow: none;
+            }
+
+            .section-title {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cv-container">
+
+        <header>
+            <div class="header-left">
+                <h1>Guillermo Prieto</h1>
+                <h2>Cloud Security & Infrastructure Architect</h2>
+            </div>
+            <div class="header-right">
+                <div>Madrid, Spain (Remote)</div>
+                <div>+34 650 164 383</div>
+                <div>guillermoprieto17@gmail.com</div>
+                <div><a href="https://linkedin.com/in/guillermo-prieto-rodriguez">linkedin.com/in/guillermo-prieto</a>
+                </div>
+            </div>
+        </header>
+
+        <section>
+            <div class="section-title">Executive Summary</div>
+            <p class="profile-text">
+                <strong>Cloud Security Architect</strong> with a "Secure-by-Design" philosophy and a hands-on
+                engineering background. I specialize in designing and implementing comprehensive security architectures
+                for hybrid cloud environments, moving beyond theoretical compliance to enforce technical controls via
+                <strong>Policy-as-Code</strong>.
+                <br><br>
+                Operating as a high-autonomy technical expert, I bridge the gap between abstract security requirements
+                (ISO 27001, ENS, NIST) and engineering reality (Kubernetes, Terraform, API Gateways). I have
+                successfully architected security solutions for public sector critical infrastructure, proving my
+                ability to define threat models and implement robust defenses at scale without impeding development
+                velocity.
+            </p>
+        </section>
+
+        <section>
+            <div class="section-title">Security Architecture Skills</div>
+            <table class="skills-table">
+                <tr>
+                    <td class="skill-cat">Cloud Security</td>
+                    <td class="skill-list">Architecture Design (AWS/GCP/Hybrid) • IAM Strategy • Network Segmentation •
+                        Zero Trust Principles</td>
+                </tr>
+                <tr>
+                    <td class="skill-cat">DevSecOps & Code</td>
+                    <td class="skill-list">Policy as Code (OPA/Checkov) • Infrastructure as Code (Terraform) • Secure
+                        CI/CD Design • Python Automation</td>
+                </tr>
+                <tr>
+                    <td class="skill-cat">Compliance & GRC</td>
+                    <td class="skill-list">ISO 27001 • ENS (National Security Scheme) • NIST Frameworks • Threat
+                        Modeling (STRIDE) • Risk Analysis</td>
+                </tr>
+                <tr>
+                    <td class="skill-cat">App & Container Sec</td>
+                    <td class="skill-list">Kubernetes Security (Hardening) • API Security (OAuth2/OIDC) • OWASP ASVS •
+                        Container Scanning</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <div class="section-title">Professional Experience</div>
+            <div class="exp-item">
+                <div class="exp-head">
+                    <div>
+                        <span class="exp-role">Cloud Security Architect (Lead Implementation)</span>
+                        <span class="exp-company"> | Centro de Servicios Avanzados (CSA)</span>
+                    </div>
+                    <span class="exp-date">Jan 2025 - Present</span>
+                </div>
+                <div class="exp-details">
+                    <ul>
+                        <li><strong>Architectural Design:</strong> Defined and documented the security architecture for
+                            a hybrid cloud platform serving public administration entities. Designed the <strong>Network
+                                Security Groups</strong>, <strong>IAM roles</strong>, and <strong>KMS
+                                strategies</strong> to meet strict ENS High compliance requirements.</li>
+                        <li><strong>Threat Modeling:</strong> Conducted threat modeling sessions for new microservices,
+                            identifying potential attack vectors in the design phase and prescribing specific
+                            mitigations (e.g., mTLS for service-to-service communication).</li>
+                        <li><strong>Policy as Code:</strong> Implemented automated guardrails using
+                            <strong>Terraform</strong> and static analysis tools. This ensured that no non-compliant
+                            infrastructure (e.g., public S3 buckets, unencrypted EBS) could be provisioned in
+                            production.</li>
+                        <li><strong>Security Engineering:</strong> Acted as the sole security engineer responsible for
+                            the technical implementation of these designs, writing the code to enforce the architecture
+                            I designed.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-head">
+                    <div>
+                        <span class="exp-role">Security Engineer & Developer (Freelance)</span>
+                        <span class="exp-company"> | Various Projects</span>
+                    </div>
+                    <span class="exp-date">2020 - 2024</span>
+                </div>
+                <div class="exp-details">
+                    <ul>
+                        <li><strong>Secure Application Design:</strong> Architected "NativeConnect", a secure
+                            authentication system. Designed the OAuth2 flow and session management strategy to prevent
+                            common web attacks (XSS, CSRF), adhering to secure design principles.</li>
+                        <li><strong>Infrastructure Hardening:</strong> Audited and hardened client infrastructure.
+                            Implemented network segmentation and least-privilege access controls to reduce the attack
+                            surface.</li>
+                        <li><strong>Quantitative Risk System:</strong> Designed effective high-throughput systems
+                            (Cerebro) where data integrity and availability were critical architectural drivers.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Use Case Projects</div>
+            <div class="proj-grid">
+                <div class="proj-card">
+                    <div class="proj-title">
+                        <span>GraphSec (Architecture Viz)</span>
+                        <span class="proj-tech">Asset Management • Python • Graph Theory</span>
+                    </div>
+                    <div class="proj-desc">
+                        Developed a tool to visualize security relationships between infrastructure assets. Helps in
+                        auditing the "intended" vs "actual" architecture by mapping dependencies and attack paths.
+                    </div>
+                </div>
+
+                <div class="proj-card">
+                    <div class="proj-title">
+                        <span>Compliant Cluster Blueprint</span>
+                        <span class="proj-tech">Kubernetes • OPA • Terraform</span>
+                    </div>
+                    <div class="proj-desc">
+                        Created a reusable "architecture blueprint" for secure Kubernetes clusters. Pre-configured with
+                        Pod Security Policies (now PSS), Network Policies, and audit logging to meet regulatory
+                        standards out-of-the-box.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Education</div>
+            <div class="exp-item">
+                <div class="exp-head">
+                    <div>
+                        <span class="exp-role">BSc Cybersecurity Engineering</span>
+                        <span class="exp-company"> | Universidad Rey Juan Carlos (URJC)</span>
+                    </div>
+                    <span class="exp-date">2020 - 2025</span>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>

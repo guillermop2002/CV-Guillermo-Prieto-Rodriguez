@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Guillermo Prieto Rodriguez - Site Reliability Engineer (Node.js)</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --primary: #0f172a;
+            /* Slate 900 */
+            --accent: #2563eb;
+            /* Royal Blue */
+            --text-main: #334155;
+            /* Slate 700 */
+            --text-light: #64748b;
+            /* Slate 500 */
+            --bg-light: #f8fafc;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background: #fff;
+            line-height: 1.5;
+            font-size: 9.5pt;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px 50px;
+            min-height: 297mm;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+        }
+
+        .header-left {
+            margin-right: 30px;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+        }
+
+        .header-center {
+            flex: 1;
+        }
+
+        .header-center h1 {
+            font-size: 20pt;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+            margin-bottom: 5px;
+        }
+
+        .header-center h2 {
+            font-size: 11pt;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 9pt;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .header-right a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--primary);
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+
+        /* PROFILE */
+        .profile-text {
+            text-align: justify;
+            color: var(--text-main);
+        }
+
+        /* EXPERIENCE */
+        .exp-item {
+            margin-bottom: 20px;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .exp-role {
+            font-weight: 700;
+            font-size: 10.5pt;
+            color: var(--primary);
+        }
+
+        .exp-company {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .exp-date {
+            font-size: 9pt;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .exp-details ul {
+            padding-left: 16px;
+            margin-top: 8px;
+        }
+
+        .exp-details li {
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+
+        /* PROJECTS GRID */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            row-gap: 25px;
+        }
+
+        .project-card {
+            /* No border, clean look */
+        }
+
+        .project-head {
+            margin-bottom: 4px;
+        }
+
+        .project-title {
+            font-weight: 700;
+            font-size: 10pt;
+            color: var(--primary);
+        }
+
+        .project-tech {
+            display: block;
+            font-size: 8pt;
+            color: var(--accent);
+            font-weight: 600;
+            font-family: monospace;
+            margin-top: 2px;
+            text-transform: uppercase;
+        }
+
+        .project-desc {
+            font-size: 9pt;
+            color: var(--text-main);
+            line-height: 1.4;
+        }
+
+        /* SKILLS & LANGUAGES */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-cat h4 {
+            font-size: 9.5pt;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .skill-list {
+            list-style: none;
+            font-size: 9pt;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* EDUCATION */
+        .edu-item {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .edu-degree {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .edu-school {
+            margin-left: 10px;
+            color: var(--text-main);
+        }
+
+        .edu-date {
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        @media print {
+            body {
+                margin: 0;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                width: 100%;
+                padding: 30px;
+                margin: 0;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cv-container">
+
+        <header>
+            <div class="header-left">
+                <img src="../cara horizontal.jpg" alt="Profile" class="profile-img">
+            </div>
+            <div class="header-center">
+                <h1>Guillermo Prieto</h1>
+                <h2>Site Reliability Engineer (SRE) & Node.js Developer</h2>
+            </div>
+            <div class="header-right">
+                <div>Madrid, Spain (Remote)</div>
+                <div>guillermoprieto17@gmail.com</div>
+                <div>+34 650 164 383</div>
+                <div><a href="https://linkedin.com/in/guillermo-prieto-rodriguez">linkedin.com/in/guillermo-prieto</a>
+                </div>
+                <div><a href="https://cv-guillermo-prieto-rodriguez.vercel.app">Portfolio Web</a></div>
+            </div>
+        </header>
+
+        <section>
+            <div class="section-title">Professional Profile</div>
+            <p class="profile-text">
+                <strong>Site Reliability Engineer</strong> with a strong developer background in <strong>Node.js
+                    ecosystem</strong> and Security. I specialize in <strong>automating operational toil</strong>,
+                hardening infrastructure, and improving platform observability.
+                <br><br>
+                My experience bridges the gap between software development and operations. I build <strong>scalable
+                    CI/CD pipelines</strong>, manage containerized environments (Docker/Kubernetes concepts), and write
+                <strong>performant Node.js/Python code</strong>. With a deep focus on security (DevSecOps), I ensure
+                reliability doesn't come at the cost of safety. I am eager to apply my troubleshooting skills to
+                high-traffic platforms, optimizing performance and reducing latency.
+            </p>
+        </section>
+
+        <section>
+            <div class="section-title">Technical Skills</div>
+            <div class="skills-grid">
+                <div class="skill-cat">
+                    <h4>Node.js & Development</h4>
+                    <ul class="skill-list">
+                        <li><strong>Node.js Env:</strong> Express • Next.js</li>
+                        <li><strong>Performance:</strong> Event Loop • Async</li>
+                        <li>Python Scripting • Bash</li>
+                        <li>API Development & Optimization</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>SRE & Infrastructure</h4>
+                    <ul class="skill-list">
+                        <li><strong>Containers:</strong> Docker • K8s concepts</li>
+                        <li><strong>Observability:</strong> Logging • Alerting</li>
+                        <li>Terraform (IaC) • Cloud (AWS)</li>
+                        <li>CI/CD: GitHub Actions • Pipelines</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>Data & Security</h4>
+                    <ul class="skill-list">
+                        <li><strong>Databases:</strong> PostgreSQL • Redis</li>
+                        <li>Platform Hardening • OWASP</li>
+                        <li>Incident Response • Troubleshooting</li>
+                        <li>Network Security • HTTP/DNS</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section style="margin-top:-15px; margin-bottom: 20px;">
+            <div style="font-size:9pt; border-top:1px solid #eee; padding-top:5px; color:#555;">
+                <strong>Languages:</strong> Spanish (Native) • English (C1 - Full Professional Proficiency)
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Professional Experience</div>
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <span class="exp-role">SRE & Automation Engineer</span>
+                        <span class="exp-company"> | Centro de Servicios Avanzados (CSA)</span>
+                    </div>
+                    <span class="exp-date">Jan 2025 - Present</span>
+                </div>
+                <div class="exp-details">
+                    <ul>
+                        <li><strong>Automating Toil:</strong> Designed and implemented automation workflows
+                            (Python/Scripting) that reduced manual operational tasks by 50%, allowing the team to focus
+                            on engineering challenges.</li>
+                        <li><strong>Platform Hardening:</strong> Led initiatives to improve the security and reliability
+                            of internal platforms, conducting vulnerability assessments and implementing robust access
+                            controls.</li>
+                        <li><strong>Observability & Monitoring:</strong> Enhanced system visibility by integrating
+                            logging and alerting solutions (SIEM/CloudWatch), enabling faster Root Cause Analysis (RCA)
+                            for production issues.</li>
+                        <li><strong>CI/CD Optimization:</strong> Managed deployment pipelines, ensuring that reliable
+                            and tested code reaches production securely. Implemented automated quality gates
+                            (SAST/Linting).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Key Projects</div>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Dreizeer Platform (High-Traffic Node.js)</div>
+                        <span class="project-tech">Next.js • Node.js • Redis • Vercel</span>
+                    </div>
+                    <div class="project-desc">
+                        Engineered a high-performance web platform utilizing <strong>Node.js</strong> server-side
+                        rendering. Optimized for speed (100/100 Core Web Vitals) using aggressive caching strategies and
+                        efficient resource utilization.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Reliable CI/CD "Golden Pipeline"</div>
+                        <span class="project-tech">GitHub Actions • DevOps • Automation</span>
+                    </div>
+                    <div class="project-desc">
+                        Built a standardized pipeline to ensure software reliability and security. Automates testing,
+                        linting, and security scans for every commit, preventing bad code from breaking production.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Cloud Infrastructure Orchestrator</div>
+                        <span class="project-tech">Terraform • Python • State Mgmt</span>
+                    </div>
+                    <div class="project-desc">
+                        Developed a tool to parse and visualize Infrastructure as Code (Terraform) states. Helps
+                        identify configuration drift and ensures infrastructure consistency across environments.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">NativeConnect (Auth Service)</div>
+                        <span class="project-tech">Node.js Concepts • OAuth2 • Security</span>
+                    </div>
+                    <div class="project-desc">
+                        Backend service focusing on secure and reliable authentication. Implemented session management
+                        with Redis and ensuring low-latency response times for login flows.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Education</div>
+            <div class="edu-item">
+                <div>
+                    <span class="edu-degree">BSc in Cybersecurity Engineering</span>
+                    <span class="edu-school">, Universidad Rey Juan Carlos (URJC)</span>
+                </div>
+                <span class="edu-date">2020 - 2025</span>
+            </div>
+            <div style="font-size: 9pt; margin-top: 5px; color: var(--text-main);">
+                <strong>Focus:</strong> Secure Software Development, Network Engineering, Systems Administration.
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>

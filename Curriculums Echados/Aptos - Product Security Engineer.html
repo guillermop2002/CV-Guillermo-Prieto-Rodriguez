@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Guillermo Prieto Rodriguez - Product Security Engineer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --primary: #0f172a;
+            --accent: #06d6a0;
+            /* Web3/Aptos teal-green */
+            --text-main: #334155;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background: #fff;
+            line-height: 1.5;
+            font-size: 9.5pt;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px 50px;
+            min-height: 297mm;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+        }
+
+        .header-left {
+            margin-right: 30px;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+        }
+
+        .header-center {
+            flex: 1;
+        }
+
+        .header-center h1 {
+            font-size: 20pt;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+            margin-bottom: 5px;
+        }
+
+        .header-center h2 {
+            font-size: 11pt;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 9pt;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .header-right a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--primary);
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+
+        .profile-text {
+            text-align: justify;
+            color: var(--text-main);
+        }
+
+        .exp-item {
+            margin-bottom: 20px;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .exp-role {
+            font-weight: 700;
+            font-size: 10.5pt;
+            color: var(--primary);
+        }
+
+        .exp-company {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .exp-date {
+            font-size: 9pt;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .exp-details ul {
+            padding-left: 16px;
+            margin-top: 8px;
+        }
+
+        .exp-details li {
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            row-gap: 25px;
+        }
+
+        .project-card {}
+
+        .project-head {
+            margin-bottom: 4px;
+        }
+
+        .project-title {
+            font-weight: 700;
+            font-size: 10pt;
+            color: var(--primary);
+        }
+
+        .project-tech {
+            display: block;
+            font-size: 8pt;
+            color: var(--accent);
+            font-weight: 600;
+            font-family: monospace;
+            margin-top: 2px;
+            text-transform: uppercase;
+        }
+
+        .project-desc {
+            font-size: 9pt;
+            color: var(--text-main);
+            line-height: 1.4;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-cat h4 {
+            font-size: 9.5pt;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .skill-list {
+            list-style: none;
+            font-size: 9pt;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .edu-item {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .edu-degree {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .edu-school {
+            margin-left: 10px;
+            color: var(--text-main);
+        }
+
+        .edu-date {
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        @media print {
+            body {
+                margin: 0;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                width: 100%;
+                padding: 30px;
+                margin: 0;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cv-container">
+
+        <header>
+            <div class="header-left">
+                <img src="../cara horizontal.jpg" alt="Profile" class="profile-img">
+            </div>
+            <div class="header-center">
+                <h1>Guillermo Prieto</h1>
+                <h2>Product Security Engineer | AppSec & Vulnerability Research</h2>
+            </div>
+            <div class="header-right">
+                <div>Madrid, Spain (Remote - EU Timezone)</div>
+                <div>guillermoprieto17@gmail.com</div>
+                <div>+34 650 164 383</div>
+                <div><a
+                        href="https://www.linkedin.com/in/guillermo-prieto-rodriguez-8640b9291/">linkedin.com/in/guillermo-prieto</a>
+                </div>
+                <div><a href="https://cv-guillermo-prieto-rodriguez.vercel.app/english">Portfolio Web</a></div>
+            </div>
+        </header>
+
+        <section>
+            <div class="section-title">Professional Profile</div>
+            <p class="profile-text">
+                <strong>Security Engineer</strong> with a deep focus on <strong>Application Security, code auditing, and
+                    vulnerability research</strong>. I approach security from a builder's perspective: understanding how
+                software is designed and exploiting that knowledge to find and fix weaknesses before attackers do.
+                <br><br>
+                My background combines hands-on <strong>penetration testing</strong> and <strong>secure code
+                    review</strong> with development experience in <strong>C, Java, and Python</strong>. I design and
+                build <strong>security automation tools</strong> (SAST integration, fuzzing frameworks) and thrive in
+                environments where security is embedded into the development lifecycle.
+            </p>
+        </section>
+
+        <section>
+            <div class="section-title">Technical Skills</div>
+            <div class="skills-grid">
+                <div class="skill-cat">
+                    <h4>Security Research</h4>
+                    <ul class="skill-list">
+                        <li>Vulnerability Research</li>
+                        <li>Penetration Testing (Web/Infra)</li>
+                        <li>Secure Code Review (OWASP)</li>
+                        <li>Bug Bounty Triage</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>Security Tooling</h4>
+                    <ul class="skill-list">
+                        <li>SAST (Semgrep, CodeQL)</li>
+                        <li>Fuzzing Frameworks</li>
+                        <li>Burp Suite • Metasploit</li>
+                        <li>Static Analysis Pipelines</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>Development</h4>
+                    <ul class="skill-list">
+                        <li>C • Java • Python</li>
+                        <li>JavaScript • React</li>
+                        <li>Git Workflows • CI/CD</li>
+                        <li>Docker • Linux Internals</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section style="margin-top:-15px; margin-bottom: 20px;">
+            <div style="font-size:9pt; border-top:1px solid #eee; padding-top:5px; color:#555;">
+                <strong>Languages:</strong> Spanish (Native) • English (C1 - Fluent)
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Professional Experience</div>
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <span class="exp-role">Security Engineer (SecOps & AppSec)</span>
+                        <span class="exp-company"> | Centro de Servicios Avanzados (CSA)</span>
+                    </div>
+                    <span class="exp-date">Jan 2025 - Present</span>
+                </div>
+                <div class="exp-details">
+                    <ul>
+                        <li><strong>Vulnerability Research & Penetration Testing:</strong> Conducted rigorous security
+                            assessments on critical infrastructure and web applications, identifying and documenting
+                            high-severity vulnerabilities with clear remediation guidance.</li>
+                        <li><strong>Secure Code Auditing:</strong> Performed manual code reviews and automated SAST
+                            scans to identify common vulnerability patterns (OWASP Top 10, CWEs) in application code
+                            before production deployment.</li>
+                        <li><strong>Security Tooling Development:</strong> Designed and built <strong>Python</strong>
+                            automation scripts for security analysis, integrating with CI/CD pipelines to enforce
+                            security gates and reducing triage time by 50%.</li>
+                        <li><strong>Incident Response & Triage:</strong> Managed security incident lifecycle, including
+                            bug reports and vulnerability disclosures, ensuring timely response and root cause analysis.
+                        </li>
+                        <li><strong>Developer Guidance:</strong> Provided security training and best practices to
+                            engineering teams, influencing secure development culture across the organization.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Key Projects</div>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">GraphSec-IaC (Security Orchestration)</div>
+                        <span class="project-tech">Python • Static Analysis • Checkov • Trivy</span>
+                    </div>
+                    <div class="project-desc">
+                        Developed a security orchestration platform that correlates findings from multiple static
+                        analyzers with infrastructure graphs. Features a custom Python parser for IaC security research
+                        and automated vulnerability detection.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Secure CI/CD "Golden Pipeline"</div>
+                        <span class="project-tech">GitHub Actions • Semgrep • Gitleaks • SAST</span>
+                    </div>
+                    <div class="project-desc">
+                        Built an automated security pipeline integrating SAST tools (Semgrep) and secret scanning.
+                        Enforces "Security as Code" by blocking vulnerable or leaky commits before merge.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">NativeConnect (Secure Auth System)</div>
+                        <span class="project-tech">Python • OAuth2 • Secure Coding</span>
+                    </div>
+                    <div class="project-desc">
+                        Designed a "Secure-by-Default" authentication system. Implemented defense-in-depth: HTTPOnly
+                        cookies, robust input validation, and session management to prevent OWASP Top 10
+                        vulnerabilities.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">CTF & Vulnerability Research</div>
+                        <span class="project-tech">Burp Suite • Metasploit • Exploit Dev</span>
+                    </div>
+                    <div class="project-desc">
+                        Active participant in Capture The Flag (CTF) competitions and online security platforms
+                        (HackTheBox, TryHackMe). Continuously sharpening vulnerability research and exploitation skills.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Education</div>
+            <div class="edu-item">
+                <div>
+                    <span class="edu-degree">BSc in Cybersecurity Engineering</span>
+                    <span class="edu-school">, Universidad Rey Juan Carlos (URJC)</span>
+                </div>
+                <span class="edu-date">2020 - 2025</span>
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>

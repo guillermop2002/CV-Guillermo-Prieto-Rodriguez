@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Guillermo Prieto Rodriguez - Engineering Manager</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --primary: #171321;
+            /* GitLab Dark */
+            --accent: #6b4fbb;
+            /* GitLab Purple-ish */
+            --text-main: #333;
+            --text-light: #666;
+            --bg-light: #fca32610;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background: #fff;
+            line-height: 1.5;
+            font-size: 9.5pt;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px 50px;
+            min-height: 297mm;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent);
+            margin-right: 30px;
+        }
+
+        .header-center {
+            flex: 1;
+        }
+
+        .header-center h1 {
+            font-size: 20pt;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+            margin-bottom: 5px;
+        }
+
+        .header-center h2 {
+            font-size: 11pt;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 9pt;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .header-right a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--primary);
+            border-bottom: 1px solid var(--accent);
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+        }
+
+        /* PROFILE */
+        .profile-text {
+            text-align: justify;
+            color: var(--text-main);
+        }
+
+        /* EXP */
+        .exp-item {
+            margin-bottom: 20px;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .exp-role {
+            font-weight: 700;
+            font-size: 10.5pt;
+            color: var(--primary);
+        }
+
+        .exp-company {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .exp-date {
+            font-size: 9pt;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .exp-details ul {
+            padding-left: 16px;
+            margin-top: 8px;
+        }
+
+        .exp-details li {
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+
+        /* SKILLS */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-cat h4 {
+            font-size: 9.5pt;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .skill-list {
+            list-style: none;
+            font-size: 9pt;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cv-container">
+
+        <header>
+            <img src="../cara horizontal.jpg" alt="Profile" class="profile-img">
+            <div class="header-center">
+                <h1>Guillermo Prieto</h1>
+                <h2>Engineering Manager - Cloud Capacity</h2>
+            </div>
+            <div class="header-right">
+                <div>Madrid, Spain (Remote)</div>
+                <div>guillermoprieto17@gmail.com</div>
+                <div>+34 650 164 383</div>
+                <div><a href="https://linkedin.com/in/guillermo-prieto-rodriguez">linkedin.com/in/guillermo-prieto</a>
+                </div>
+            </div>
+        </header>
+
+        <section>
+            <div class="section-title">Professional Profile</div>
+            <p class="profile-text">
+                <strong>Engineering Leader</strong> with deep technical roots in <strong>Cloud Infrastructure and
+                    SRE</strong>. I specialize in building high-performing, distributed teams that manage large-scale
+                SaaS environments. My focus is on <strong>Cloud Capacity Planning</strong>, ensuring infrastructure is
+                not just available but cost-efficient and scalable.
+                <br><br>
+                I combine technical expertise in multi-tenant architectures (GCP/AWS) with a passion for <strong>people
+                    management</strong>—mentoring engineers, defining technical roadmaps, and fostering an inclusive,
+                asynchronous culture. I am eager to help GitLab's Cloud Capacity team consolidate tooling and scale
+                reliably.
+            </p>
+        </section>
+
+        <section>
+            <div class="section-title">Leadership & Management</div>
+            <div class="skills-grid">
+                <div class="skill-cat">
+                    <h4>Team Leadership</h4>
+                    <ul class="skill-list">
+                        <li>Remote Team Management</li>
+                        <li>Mentoring & Career Growth</li>
+                        <li>Incident Mgmt (On-Call)</li>
+                        <li>Agile Roadmap Planning</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>Technical Domain</h4>
+                    <ul class="skill-list">
+                        <li><strong>Cloud Capacity:</strong> AWS/GCP Scaling</li>
+                        <li><strong>SRE:</strong> SLOs/SLIs • Error Budgets</li>
+                        <li>Multi-tenant SaaS Arch</li>
+                        <li>Secure-by-default Infra</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>Execution</h4>
+                    <ul class="skill-list">
+                        <li>Vendor Relations (Cloud)</li>
+                        <li>Strategic Consolidation</li>
+                        <li>Cross-functional Ops</li>
+                        <li>Asynchronous Comm</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Professional Experience</div>
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <span class="exp-role">Engineering Lead (Infrastructure & Security)</span>
+                        <span class="exp-company"> | Centro de Servicios Avanzados (CSA)</span>
+                    </div>
+                    <span class="exp-date">Jan 2025 - Present</span>
+                </div>
+                <div class="exp-details">
+                    <ul>
+                        <li><strong>Team Leadership:</strong> Lead a cross-functional team of engineers in the design
+                            and operation of secure cloud infrastructure. Responsible for technical guidance, backlog
+                            prioritization, and fostering a culture of ownership.</li>
+                        <li><strong>Capacity Planning:</strong> Managed the consolidation of hybrid-cloud assets,
+                            optimizing resource allocation to ensure scalability for multi-tenant services while
+                            controlling costs.</li>
+                        <li><strong>Process Improvements:</strong> Standardized incident response workflows and
+                            introduced "Post-Mortem" culture to drive continuous improvement in system reliability.</li>
+                        <li><strong>Mentorship:</strong> Actively mentored junior engineers, helping them grow into
+                            senior technical roles by providing regular feedback and creating personalized development
+                            plans.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <span class="exp-role">SaaS Infrastructure Architect</span>
+                        <span class="exp-company"> | Freelance / Projects</span>
+                    </div>
+                    <span class="exp-date">2020 - 2024</span>
+                </div>
+                <div class="exp-details">
+                    <ul>
+                        <li><strong>Scalability Projects:</strong> Designed auto-scaling architectures for high-traffic
+                            SaaS applications, ensuring 99.9% availability during peak loads.</li>
+                        <li><strong>Infrastructure Consolidation:</strong> Led migration projects to unify disparately
+                            hosted services into cohesive cloud environments (GCP/AWS), simplifying operations for
+                            client teams.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Technical Background</div>
+            <div class="projects-grid">
+                <div class="exp-item">
+                    <strong>CoreStack:</strong> Deep understanding of Kubernetes, Terraform, and Cloud Monitoring
+                    (Prometheus/Grafana) necessary to guide technical decision-making and support the team during
+                    complex incidents.
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Education</div>
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span class="exp-role">BSc in Cybersecurity Engineering</span>
+                    <span class="exp-company"> | Universidad Rey Juan Carlos</span>
+                </div>
+                <span class="exp-date">2020 - 2025</span>
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>

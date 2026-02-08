@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Guillermo Prieto Rodriguez - Quality Engineer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --primary: #0f172a;
+            /* Slate 900 */
+            --accent: #2563eb;
+            /* Royal Blue */
+            --text-main: #334155;
+            /* Slate 700 */
+            --text-light: #64748b;
+            /* Slate 500 */
+            --bg-light: #f8fafc;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background: #fff;
+            line-height: 1.5;
+            font-size: 9.5pt;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px 50px;
+            min-height: 297mm;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+        }
+
+        .header-left {
+            margin-right: 30px;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+        }
+
+        .header-center {
+            flex: 1;
+        }
+
+        .header-center h1 {
+            font-size: 20pt;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+            margin-bottom: 5px;
+        }
+
+        .header-center h2 {
+            font-size: 11pt;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 9pt;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .header-right a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--primary);
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+
+        /* PROFILE */
+        .profile-text {
+            text-align: justify;
+            color: var(--text-main);
+        }
+
+        /* EXPERIENCE */
+        .exp-item {
+            margin-bottom: 20px;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .exp-role {
+            font-weight: 700;
+            font-size: 10.5pt;
+            color: var(--primary);
+        }
+
+        .exp-company {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .exp-date {
+            font-size: 9pt;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .exp-details ul {
+            padding-left: 16px;
+            margin-top: 8px;
+        }
+
+        .exp-details li {
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+
+        /* PROJECTS GRID */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            row-gap: 25px;
+        }
+
+        .project-card {
+            /* No border, clean look */
+        }
+
+        .project-head {
+            margin-bottom: 4px;
+        }
+
+        .project-title {
+            font-weight: 700;
+            font-size: 10pt;
+            color: var(--primary);
+        }
+
+        .project-tech {
+            display: block;
+            font-size: 8pt;
+            color: var(--accent);
+            font-weight: 600;
+            font-family: monospace;
+            margin-top: 2px;
+            text-transform: uppercase;
+        }
+
+        .project-desc {
+            font-size: 9pt;
+            color: var(--text-main);
+            line-height: 1.4;
+        }
+
+        /* SKILLS & LANGUAGES */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-cat h4 {
+            font-size: 9.5pt;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .skill-list {
+            list-style: none;
+            font-size: 9pt;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* EDUCATION */
+        .edu-item {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .edu-degree {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .edu-school {
+            margin-left: 10px;
+            color: var(--text-main);
+        }
+
+        .edu-date {
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        @media print {
+            body {
+                margin: 0;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                width: 100%;
+                padding: 30px;
+                margin: 0;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cv-container">
+
+        <header>
+            <div class="header-left">
+                <img src="../cara horizontal.jpg" alt="Profile" class="profile-img">
+            </div>
+            <div class="header-center">
+                <h1>Guillermo Prieto</h1>
+                <h2>Quality Engineer (QA) & Test Automation</h2>
+            </div>
+            <div class="header-right">
+                <div>Madrid, Spain (Remote)</div>
+                <div>guillermoprieto17@gmail.com</div>
+                <div>+34 650 164 383</div>
+                <div><a href="https://linkedin.com/in/guillermo-prieto-rodriguez">linkedin.com/in/guillermo-prieto</a>
+                </div>
+                <div><a href="https://cv-guillermo-prieto-rodriguez.vercel.app">Portfolio Web</a></div>
+            </div>
+        </header>
+
+        <section>
+            <div class="section-title">Professional Profile</div>
+            <p class="profile-text">
+                <strong>Quality Engineer</strong> with a developer mindset, specialized in <strong>Test Automation
+                    (Python)</strong> and defining quality gates within CI/CD pipelines. My background in Security
+                Engineering ensures I bring a holistic approach to quality, covering functional requirements as well as
+                <strong>non-functional aspects</strong> like Security, Reliability, and Performance.
+                <br><br>
+                I am proficient in writing clean, maintainable automation scripts and treating <strong>"Pipelines as
+                    Code"</strong>. I thrive in distributed systems environments, validating complex requirements and
+                championing a DevOps culture where feedback loops are short and efficient. Eager to apply my technical
+                rigor to the challenging domain of AI in life sciences.
+            </p>
+        </section>
+
+        <section>
+            <div class="section-title">Technical Skills</div>
+            <div class="skills-grid">
+                <div class="skill-cat">
+                    <h4>Test Automation & QA</h4>
+                    <ul class="skill-list">
+                        <li><strong>Scripting:</strong> Python • Bash</li>
+                        <li><strong>Levels:</strong> E2E • Integration • Unit</li>
+                        <li>Non-functional: Performance • Security</li>
+                        <li>Test Strategy Design</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>DevOps & CI/CD</h4>
+                    <ul class="skill-list">
+                        <li><strong>Pipelines as Code:</strong> GitHub Actions</li>
+                        <li>Jenkins • Quality Gates</li>
+                        <li>Containerization (Docker)</li>
+                        <li>Git & Git Flow Mastery</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>Infrastructure & Tools</h4>
+                    <ul class="skill-list">
+                        <li><strong>Cloud:</strong> AWS • Azure (Concepts)</li>
+                        <li>Linux/UNIX Environment</li>
+                        <li>Infrastructure as Code (Terraform)</li>
+                        <li>Security Testing (OWASP)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section style="margin-top:-15px; margin-bottom: 20px;">
+            <div style="font-size:9pt; border-top:1px solid #eee; padding-top:5px; color:#555;">
+                <strong>Languages:</strong> Spanish (Native) • English (C1 - Full Professional Proficiency)
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Professional Experience</div>
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <span class="exp-role">QA Automation & DevSecOps Engineer</span>
+                        <span class="exp-company"> | Centro de Servicios Avanzados (CSA)</span>
+                    </div>
+                    <span class="exp-date">Jan 2025 - Present</span>
+                </div>
+                <div class="exp-details">
+                    <ul>
+                        <li><strong>Pipelines as Code:</strong> Implemented automated quality gates in CI/CD pipelines
+                            (SAST, Linting, Unit Tests), ensuring that every code change meets strict quality standards
+                            before deployment.</li>
+                        <li><strong>Test Automation:</strong> Developed <strong>Python</strong> and Bash scripts to
+                            automate tedious, repetitive testing tasks, reducing regression testing time by 50% and
+                            increasing team velocity.</li>
+                        <li><strong>Non-Functional Testing:</strong> Led initiatives for reliability and security
+                            testing, conducting vulnerability assessments and ensuring system fault-tolerance under
+                            load.</li>
+                        <li><strong>Quality Culture:</strong> Championed "Quality-by-Design" practices, collaborating
+                            with development teams to improve testability and observability of services from the design
+                            phase.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Key Projects</div>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Secure CI/CD "Golden Pipeline"</div>
+                        <span class="project-tech">GitHub Actions • Quality Gates</span>
+                    </div>
+                    <div class="project-desc">
+                        Designed a standardized pipeline that enforces quality and security checks. Acts as a
+                        gatekeeper, preventing buggy or insecure code from reaching production environments.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">GraphSec-IaC (Test Strategy)</div>
+                        <span class="project-tech">Python • Unit Testing • Validation</span>
+                    </div>
+                    <div class="project-desc">
+                        Engineering project where I implemented a comprehensive test strategy for an IaC tool. Wrote
+                        automated test cases to validate graph processing logic and infrastructure parsing accuracy.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Automated Risk Assessment</div>
+                        <span class="project-tech">Automation • Scripting • Reliability</span>
+                    </div>
+                    <div class="project-desc">
+                        Created a Python-based tool to automate the complex task of risk calculation. Verified the
+                        tool's reliability through extensive functional testing against known data sets.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">NativeConnect (Performance)</div>
+                        <span class="project-tech">Load Testing • Security Testing</span>
+                    </div>
+                    <div class="project-desc">
+                        Conducted non-functional testing for an Identity Management system. Validated response times
+                        (performance) and tested defense mechanisms against brute-force attacks (security).
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Education</div>
+            <div class="edu-item">
+                <div>
+                    <span class="edu-degree">BSc in Cybersecurity Engineering</span>
+                    <span class="edu-school">, Universidad Rey Juan Carlos (URJC)</span>
+                </div>
+                <span class="edu-date">2020 - 2025</span>
+            </div>
+            <div style="font-size: 9pt; margin-top: 5px; color: var(--text-main);">
+                <strong>Focus:</strong> Software Testing, Secure Development Lifecycle (SDLC), Systems Engineering.
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>

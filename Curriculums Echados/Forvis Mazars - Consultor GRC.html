@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Guillermo Prieto Rodriguez - Consultor GRC</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --primary: #0f172a;
+            /* Slate 900 */
+            --accent: #2563eb;
+            /* Royal Blue */
+            --text-main: #334155;
+            /* Slate 700 */
+            --text-light: #64748b;
+            /* Slate 500 */
+            --bg-light: #f8fafc;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background: #fff;
+            line-height: 1.5;
+            font-size: 9.5pt;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px 50px;
+            min-height: 297mm;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+        }
+
+        .header-left {
+            margin-right: 30px;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+        }
+
+        .header-center {
+            flex: 1;
+        }
+
+        .header-center h1 {
+            font-size: 20pt;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+            margin-bottom: 5px;
+        }
+
+        .header-center h2 {
+            font-size: 11pt;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 9pt;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .header-right a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--primary);
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+
+        /* PROFILE */
+        .profile-text {
+            text-align: justify;
+            color: var(--text-main);
+        }
+
+        /* EXPERIENCE */
+        .exp-item {
+            margin-bottom: 20px;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .exp-role {
+            font-weight: 700;
+            font-size: 10.5pt;
+            color: var(--primary);
+        }
+
+        .exp-company {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .exp-date {
+            font-size: 9pt;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .exp-details ul {
+            padding-left: 16px;
+            margin-top: 8px;
+        }
+
+        .exp-details li {
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+
+        /* PROJECTS GRID */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            row-gap: 25px;
+        }
+
+        .project-card {
+            /* No border, clean look */
+        }
+
+        .project-head {
+            margin-bottom: 4px;
+        }
+
+        .project-title {
+            font-weight: 700;
+            font-size: 10pt;
+            color: var(--primary);
+        }
+
+        .project-tech {
+            display: block;
+            font-size: 8pt;
+            color: var(--accent);
+            font-weight: 600;
+            font-family: monospace;
+            margin-top: 2px;
+            text-transform: uppercase;
+        }
+
+        .project-desc {
+            font-size: 9pt;
+            color: var(--text-main);
+            line-height: 1.4;
+        }
+
+        /* SKILLS & LANGUAGES */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-cat h4 {
+            font-size: 9.5pt;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .skill-list {
+            list-style: none;
+            font-size: 9pt;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* EDUCATION */
+        .edu-item {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .edu-degree {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .edu-school {
+            margin-left: 10px;
+            color: var(--text-main);
+        }
+
+        .edu-date {
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        @media print {
+            body {
+                margin: 0;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                width: 100%;
+                padding: 30px;
+                margin: 0;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cv-container">
+
+        <header>
+            <div class="header-left">
+                <img src="../cara horizontal.jpg" alt="Profile" class="profile-img">
+            </div>
+            <div class="header-center">
+                <h1>Guillermo Prieto</h1>
+                <h2>Consultor de GRC y Ciberseguridad (Perfil Técnico)</h2>
+            </div>
+            <div class="header-right">
+                <div>Madrid, España</div>
+                <div>guillermoprieto17@gmail.com</div>
+                <div>+34 650 164 383</div>
+                <div><a href="https://linkedin.com/in/guillermo-prieto-rodriguez">linkedin.com/in/guillermo-prieto</a>
+                </div>
+                <div><a href="https://cv-guillermo-prieto-rodriguez.vercel.app">Portfolio Web</a></div>
+            </div>
+        </header>
+
+        <section>
+            <div class="section-title">Perfil Profesional</div>
+            <p class="profile-text">
+                <strong>Ingeniero de Ciberseguridad</strong> especializado en el cumplimiento normativo y la adecuación
+                técnica a estándares de seguridad (<strong>GRC</strong>). Mi perfil combina la capacidad técnica para
+                auditar sistemas e infraestructuras con el conocimiento de marcos regulatorios como el <strong>ENS
+                    (Esquema Nacional de Seguridad)</strong>, <strong>ISO 27001</strong> y el <strong>RGPD</strong>.
+                <br><br>
+                Aporto una visión práctica a la consultoría de Privacidad y GRC: no solo entiendo qué dice la norma,
+                sino <strong>cómo se implementa técnicamente</strong> (cifrado, gestión de accesos, logs, etc.). Busco
+                unirme a Forvis Mazars para aportar este valor diferencial, ayudando a clientes a traducir obligaciones
+                legales en controles de seguridad efectivos y medibles.
+            </p>
+        </section>
+
+        <section>
+            <div class="section-title">Competencias Clave</div>
+            <div class="skills-grid">
+                <div class="skill-cat">
+                    <h4>Normativa & GRC</h4>
+                    <ul class="skill-list">
+                        <li><strong>Marcos:</strong> ENS • ISO 27001 • RGPD</li>
+                        <li><strong>Análisis de Riesgos:</strong> DPIA • PILAR</li>
+                        <li>Auditoría de Sistemas (Controles Técnicos)</li>
+                        <li>Políticas de Seguridad</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>Auditoría Técnica</h4>
+                    <ul class="skill-list">
+                        <li><strong>Controles:</strong> Identidad • Cifrado • Logs</li>
+                        <li>Revisión de Evidencias Técnicas</li>
+                        <li>Inventario de Activos (ROPA)</li>
+                        <li>Evaluación de Proveedores</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>Soft Skills</h4>
+                    <ul class="skill-list">
+                        <li>Redacción de Informes Técnicos</li>
+                        <li>Comunicación Cliente/Técnico</li>
+                        <li>Atención al Detalle</li>
+                        <li>Inglés (Nivel Profesional B2+)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section style="margin-top:-15px; margin-bottom: 20px;">
+            <div style="font-size:9pt; border-top:1px solid #eee; padding-top:5px; color:#555;">
+                <strong>Idiomas:</strong> Español (Nativo) • Inglés (Fluido - Hablado y Escrito)
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Experiencia Profesional</div>
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <span class="exp-role">Consultor de Seguridad y Cumplimiento (Junior)</span>
+                        <span class="exp-company"> | Centro de Servicios Avanzados (CSA)</span>
+                    </div>
+                    <span class="exp-date">Ene 2025 - Presente</span>
+                </div>
+                <div class="exp-details">
+                    <ul>
+                        <li><strong>Adecuación al ENS:</strong> Apoyo en el análisis de deficiencias (Gap Analysis) para
+                            la certificación en el Esquema Nacional de Seguridad. Revisión de controles técnicos en
+                            sistemas Linux/Windows.</li>
+                        <li><strong>Gestión de Riesgos:</strong> Mantenimiento de registros de riesgos y participación
+                            en evaluaciones de impacto (DPIAs) para nuevos proyectos tecnológicos.</li>
+                        <li><strong>Auditoría Técnica:</strong> Recolección y validación de evidencias técnicas
+                            (configuraciones, logs, backups) para auditorías internas de ISO 27001.</li>
+                        <li><strong>Medidas de Seguridad RGPD:</strong> Verificación de la implementación efectiva de
+                            medidas de seguridad (art. 32 RGPD) como la seudonimización y el cifrado de datos
+                            personales.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Proyectos Relevantes</div>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Mapeo de Datos y Activos (GraphSec)</div>
+                        <span class="project-tech">Inventario • Flujo de Datos • RGPD Art. 30</span>
+                    </div>
+                    <div class="project-desc">
+                        Desarrollo de una metodología y herramienta para visualizar el flujo de datos entre sistemas.
+                        Facilita la creación del Registro de Actividades de Tratamiento (RAT) al identificar dónde
+                        residen los datos.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Automatización de Evidencias</div>
+                        <span class="project-tech">Scripting • Auditoría Continua • Compliance</span>
+                    </div>
+                    <div class="project-desc">
+                        Creación de scripts para automatizar la extracción de evidencias de seguridad (ej. listados de
+                        usuarios, parches). Mejora la eficiencia en procesos de Due Diligence.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Revisión de Configuraciones Seguras</div>
+                        <span class="project-tech">Hardening • CIS Benchmarks</span>
+                    </div>
+                    <div class="project-desc">
+                        Auditoría de configuraciones base en servidores y aplicaciones para asegurar el cumplimiento con
+                        políticas corporativas y estándares de la industria.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Análisis de Impacto en Privacidad (Privacy by Design)</div>
+                        <span class="project-tech">Evaluación Riesgos • Desarrollo Seguro</span>
+                    </div>
+                    <div class="project-desc">
+                        Colaboración con equipos de desarrollo para integrar requisitos de privacidad desde el diseño en
+                        nuevas aplicaciones ("Privacy by Design").
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Formación Académica</div>
+            <div class="edu-item">
+                <div>
+                    <span class="edu-degree">Grado en Ingeniería de Ciberseguridad</span>
+                    <span class="edu-school">, Universidad Rey Juan Carlos (URJC)</span>
+                </div>
+                <span class="edu-date">2020 - 2025</span>
+            </div>
+            <div style="font-size: 9pt; margin-top: 5px; color: var(--text-main);">
+                <strong>Menciones Relevantes:</strong> Aspectos Legales de la Ciberseguridad, Gestión de Riesgos,
+                Auditoría de Sistemas.
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>

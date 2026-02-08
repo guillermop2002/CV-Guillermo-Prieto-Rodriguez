@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Guillermo Prieto Rodriguez - Security Engineer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+        :root {
+            --bg-color: #0d1117;
+            --text-main: #c9d1d9;
+            --text-dim: #8b949e;
+            --accent: #58a6ff;
+            /* GitHub Blue-ish */
+            --green: #2ea043;
+            --border: #30363d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--text-main);
+            background: var(--bg-color);
+            line-height: 1.5;
+            font-size: 9pt;
+            /* Monospace needs to be smaller */
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #0d1117;
+            padding: 40px 50px;
+            min-height: 297mm;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* HEADER */
+        header {
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .profile-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 2px solid var(--green);
+            opacity: 0.9;
+        }
+
+        .header-info h1 {
+            font-size: 16pt;
+            color: var(--text-main);
+            margin-bottom: 5px;
+        }
+
+        .header-info h2 {
+            font-size: 10pt;
+            color: var(--green);
+            margin-bottom: 0;
+        }
+
+        .header-contact {
+            text-align: right;
+            font-size: 8.5pt;
+            color: var(--text-dim);
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 10pt;
+            color: var(--accent);
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .section-title::before {
+            content: "./";
+            color: var(--text-dim);
+            margin-right: 5px;
+        }
+
+        /* CONTENT */
+        p {
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: rgba(56, 139, 253, 0.15);
+            color: #58a6ff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 8pt;
+            border: 1px solid rgba(56, 139, 253, 0.4);
+        }
+
+        .tag.green {
+            background: rgba(46, 160, 67, 0.15);
+            color: #3fb950;
+            border-color: rgba(46, 160, 67, 0.4);
+        }
+
+        .exp-item {
+            margin-bottom: 25px;
+        }
+
+        .exp-head {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .exp-role {
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .exp-company {
+            color: var(--text-dim);
+        }
+
+        .exp-date {
+            color: var(--text-dim);
+            font-size: 8.5pt;
+        }
+
+        .exp-details ul {
+            padding-left: 20px;
+            margin-top: 5px;
+        }
+
+        .exp-details li {
+            margin-bottom: 4px;
+            color: var(--text-dim);
+            font-size: 8.5pt;
+        }
+
+        /* PROJECTS console style */
+        .project-item {
+            border: 1px solid var(--border);
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            background: #161b22;
+        }
+
+        .proj-name {
+            font-weight: 700;
+            color: var(--green);
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .proj-desc {
+            font-size: 8.5pt;
+            color: var(--text-dim);
+        }
+
+        @media print {
+            body {
+                background: #fff;
+                color: #000;
+            }
+
+            .cv-container {
+                background: #fff;
+                color: #000;
+                width: 100%;
+                margin: 0;
+                padding: 30px;
+            }
+
+            .section-title,
+            .tag,
+            a,
+            .header-info h2,
+            .proj-name {
+                color: #000;
+                font-weight: bold;
+                border: none;
+            }
+
+            .tag {
+                border: 1px solid #000;
+            }
+
+            header {
+                border-bottom: 2px solid #000;
+            }
+
+            .section-title {
+                border-bottom: 1px solid #ccc;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cv-container">
+
+        <header>
+            <div class="header-left">
+                <img src="../cara horizontal.jpg" alt="img" class="profile-img">
+                <div class="header-info">
+                    <h1>Guillermo Prieto</h1>
+                    <h2>> Infrastructure & Security Engineer</h2>
+                </div>
+            </div>
+            <div class="header-contact">
+                <div>Madrid / Remote</div>
+                <div>guillermoprieto17@gmail.com</div>
+                <div>github.com/GuillermoPrieto</div>
+                <div><a href="https://cv-guillermo-prieto-rodriguez.vercel.app">Portfolio Web</a></div>
+            </div>
+        </header>
+
+        <section>
+            <div class="section-title">manifesto</div>
+            <p>
+                I am a <strong>Security Engineer</strong> with a builder's mindset. I don't just secure infrastructure;
+                I treat it as code, automate the hell out of it, and ensure it scales.
+                <br><br>
+                While my background is in <strong>Cybersecurity and Cloud Infrastructure</strong>, I spend my
+                "hack-time" building high-performance systems like <strong>arbitrage engines</strong> (sports/odds) that
+                process real-time streams—problems that mirror the challenges of high-frequency trading in Web3. I want
+                to leave the legacy world behind and help Chainflip build the cornerstone of cross-chain liquidity.
+            </p>
+        </section>
+
+        <section>
+            <div class="section-title">stack_trace</div>
+            <div class="skill-tags">
+                <span class="tag green">Security Engineering</span>
+                <span class="tag green">Network Hardening</span>
+                <span class="tag green">Python/Go/Rust(learning)</span>
+                <span class="tag">Kubernetes</span>
+                <span class="tag">Terraform</span>
+                <span class="tag">CI/CD Pipelines</span>
+                <span class="tag">Redis/NoSQL</span>
+                <span class="tag">Quantitative Logic</span>
+                <span class="tag">High-Throughput Systems</span>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">runtime_experience</div>
+            <div class="exp-item">
+                <div class="exp-head">
+                    <div>
+                        <span class="exp-role">Security & Infrastructure Engineer</span>
+                        <span class="exp-company"> // Centro de Servicios Avanzados (CSA)</span>
+                    </div>
+                    <span class="exp-date">2025 - Present</span>
+                </div>
+                <div class="exp-details">
+                    <ul>
+                        <li><strong>Hardening & Compliance:</strong> Audited and hardened cloud infrastructure (AWS/GCP)
+                            for public sector clients. Implemented policy-as-code to prevent misconfigurations before
+                            deployment.</li>
+                        <li><strong>Infrastructure Automation:</strong> Replaced manual ops with Terraform and
+                            Kubernetes. Architected secure environments that auto-scale based on load.</li>
+                        <li><strong>Security Tooling:</strong> Built custom tooling to integrate scanners (SAST/DAST)
+                            into CI/CD pipelines, "shifting left" security for dev teams.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-head">
+                    <div>
+                        <span class="exp-role">Freelance Software Engineer</span>
+                        <span class="exp-company"> // Self-Employed</span>
+                    </div>
+                    <span class="exp-date">2020 - 2024</span>
+                </div>
+                <div class="exp-details">
+                    <ul>
+                        <li><strong>Full-Stack & Data:</strong> Built various web applications and data processing bots
+                            for clients. Handled everything from React frontends to serverless backend deployments.</li>
+                        <li><strong>Client Ops:</strong> Operated as a "one-man army", gathering requirements,
+                            architecting solutions, and delivering production code.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">side_quests (aka The Fun Stuff)</div>
+
+            <div class="project-item">
+                <span class="proj-name">Cerebro: High-Frequency Arbitrage Engine</span>
+                <span class="proj-desc">
+                    Unlike standard web apps, this system was built for speed. It scrapes real-time odds from multiple
+                    bookmakers, normalizes the data (fuzzy matching team names), and identifies arbitrage opportunities
+                    (forks) in milliseconds.
+                    <br><br>
+                    <strong>Tech:</strong> Python/Go, Redis (Pub/Sub for speed), Docker, Distributed Worker
+                    Architecture.
+                    <br>
+                    <strong>Why it matters:</strong> It proves I can handle "Quantitative Trading" logic and
+                    high-throughput data streams, essential for a decentralized exchange protocol.
+                </span>
+            </div>
+
+            <div class="project-item">
+                <span class="proj-name">GraphSec: Infrastructure Visualization</span>
+                <span class="proj-desc">
+                    A tool to map and visualize complex relationships between infrastructure assets and security
+                    policies. Solved the "visibility" problem in complex monitoring environments.
+                    <br>
+                    <strong>Tech:</strong> React (D3.js/Vis.js), Neo4j (Graph DB).
+                </span>
+            </div>
+
+            <div class="project-item">
+                <span class="proj-name">Home Lab & Kubernetes</span>
+                <span class="proj-desc">
+                    I run my own bare-metal Kubernetes cluster to experiment with GitOps (ArgoCD), networking (MetalLB),
+                    and self-hosted services. This is my playground for breaking things safely.
+                </span>
+            </div>
+
+        </section>
+
+        <section>
+            <div class="section-title">init</div>
+            <div class="exp-item">
+                <div class="exp-head">
+                    <span class="exp-role">BSc Cybersecurity Engineering</span>
+                    <span class="exp-date">2020 - 2025</span>
+                </div>
+                <div class="exp-company">Universidad Rey Juan Carlos (URJC)</div>
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Guillermo Prieto Rodriguez - DevOps & Security Engineer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --primary: #2d3e50;
+            /* Swiss Re Corporate Blue-Grey tone */
+            --accent: #d32f2f;
+            /* Subtle Red Accent for Security/Alerting (Tasteful) */
+            --text-main: #333;
+            --text-light: #555;
+            --bg-light: #f4f6f8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background: #fff;
+            line-height: 1.5;
+            font-size: 9.5pt;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px 50px;
+            min-height: 297mm;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            align-items: center;
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+            margin-right: 25px;
+        }
+
+        .header-content {
+            flex: 1;
+        }
+
+        .header-content h1 {
+            font-size: 22pt;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+            margin-bottom: 5px;
+        }
+
+        .header-content h2 {
+            font-size: 11pt;
+            font-weight: 600;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 9pt;
+            color: var(--text-light);
+        }
+
+        .header-right a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--primary);
+            background: var(--bg-light);
+            padding: 6px 10px;
+            border-left: 4px solid var(--accent);
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        /* PROFILE */
+        .profile-text {
+            text-align: justify;
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+
+        /* SKILLS */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .skill-cat h4 {
+            font-size: 9.5pt;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 6px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 2px;
+        }
+
+        .skill-list {
+            font-size: 9pt;
+            color: var(--text-main);
+            list-style: none;
+        }
+
+        .skill-list li {
+            margin-bottom: 3px;
+        }
+
+        /* EXPERIENCE */
+        .exp-item {
+            margin-bottom: 15px;
+        }
+
+        .exp-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .exp-role {
+            font-weight: 700;
+            font-size: 10.5pt;
+            color: var(--primary);
+        }
+
+        .exp-company {
+            font-weight: 600;
+            color: #444;
+        }
+
+        .exp-date {
+            font-size: 9pt;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .exp-details ul {
+            padding-left: 18px;
+            margin-top: 5px;
+        }
+
+        .exp-details li {
+            margin-bottom: 3px;
+            color: var(--text-main);
+        }
+
+        /* PROJECTS */
+        .proj-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .proj-card {
+            border: 1px solid #eee;
+            padding: 12px;
+            border-radius: 4px;
+            background: #fff;
+            border-left: 3px solid var(--primary);
+        }
+
+        .proj-header {
+            margin-bottom: 5px;
+        }
+
+        .proj-title {
+            font-weight: 700;
+            font-size: 10pt;
+            color: var(--primary);
+        }
+
+        .proj-tech {
+            font-size: 8pt;
+            font-weight: 600;
+            color: #666;
+            background: #f0f0f0;
+            padding: 2px 5px;
+            border-radius: 3px;
+            margin-left: 5px;
+        }
+
+        .proj-desc {
+            font-size: 9pt;
+            color: var(--text-main);
+            text-align: justify;
+        }
+
+
+        @media print {
+            .cv-container {
+                width: 100%;
+                margin: 0;
+                padding: 30px;
+                box-shadow: none;
+            }
+
+            .section-title {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cv-container">
+
+        <header>
+            <img src="../cara horizontal.jpg" alt="Profile" class="profile-img">
+            <div class="header-content">
+                <h1>Guillermo Prieto</h1>
+                <h2>DevOps & Continuous Security Engineer</h2>
+            </div>
+            <div class="header-right">
+                <div>Madrid, Spain (Remote/Hybrid)</div>
+                <div>+34 650 164 383</div>
+                <div>guillermoprieto17@gmail.com</div>
+                <div><a href="https://linkedin.com/in/guillermo-prieto-rodriguez">linkedin.com/in/guillermo-prieto</a>
+                </div>
+            </div>
+        </header>
+
+        <section>
+            <div class="section-title">Professional Summary</div>
+            <p class="profile-text">
+                <strong>DevOps Engineer specializing in Security Automation</strong> with a strong background in
+                <strong>Kubernetes</strong>, <strong>CI/CD</strong>, and <strong>Data Protection</strong>. I combine 1
+                year of intensive Enterprise Security Operations (SOC) experience with 2 years of advanced R&D
+                engineering.
+                <br><br>
+                I thrive in bridging the gap between Infrastructure and Security. I have proven experience deploying
+                vulnerability scanning solutions, building "Golden Pipelines" that enforce security gates, and writing
+                custom <strong>Python automation</strong> to streamline operations. I am eager to apply my technical
+                skills in Kubernetes and Automation to help Swiss Re's CSA team safeguard sensitive data.
+            </p>
+        </section>
+
+        <section>
+            <div class="section-title">Technical Expertise</div>
+            <div class="skills-grid">
+                <div class="skill-cat">
+                    <h4>DevOps & Orchestration</h4>
+                    <ul class="skill-list">
+                        <li><strong>Kubernetes:</strong> K8s • Helm • AKS/EKS</li>
+                        <li><strong>CI/CD:</strong> Azure DevOps • GitHub Actions</li>
+                        <li><strong>IaC:</strong> Terraform • Ansible</li>
+                        <li><strong>Containers:</strong> Docker • Scanning</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>Security Engineering</h4>
+                    <ul class="skill-list">
+                        <li><strong>Data Security:</strong> Scanning • Integrity</li>
+                        <li><strong>AppSec:</strong> SAST (Semgrep) • Secrets</li>
+                        <li><strong>Compliance:</strong> Policy-as-Code</li>
+                        <li><strong>Identity:</strong> IAM • OAuth2 • API Sec</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>Automation & Dev</h4>
+                    <ul class="skill-list">
+                        <li><strong>Scripting:</strong> Python (Advanced) • Bash</li>
+                        <li><strong>API:</strong> REST Integration • Webhooks</li>
+                        <li><strong>Development:</strong> React • SQL</li>
+                        <li><strong>Agile:</strong> Scrum • DevOps Culture</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Professional Experience</div>
+            <div class="exp-item">
+                <div class="exp-head">
+                    <div>
+                        <span class="exp-role">Cybersecurity Engineer (SecOps & Automation)</span>
+                        <span class="exp-company"> | Centro de Servicios Avanzados (CSA)</span>
+                    </div>
+                    <span class="exp-date">Jan 2025 - Present</span>
+                </div>
+                <div class="exp-details">
+                    <ul>
+                        <li><strong>Security Automation (SOAR):</strong> Developed and maintained custom <strong>Python
+                                automations</strong> to integrate vulnerability data with incident response platforms,
+                            reducing manual triage time by 50%.</li>
+                        <li><strong>Vulnerability Management:</strong> Operated enterprise vulnerability scanning tools,
+                            analyzing findings and collaborating with IT teams to remediate critical risks in a complex
+                            environment.</li>
+                        <li><strong>Compliance & Governance:</strong> Assisted in the technical implementation of
+                            security
+                            frameworks (ENS/ISO 27001), ensuring infrastructure alignment with regulatory requirements.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Independent Engineering & R&D (2022 - 2024)</div>
+            <div class="exp-item">
+                <div class="exp-details" style="margin-top: 5px;">
+                    <p style="font-size: 9pt; color: #555; margin-bottom: 8px;">
+                        <em>Focused period of self-directed engineering, creating production-grade security and DevOps
+                            solutions.</em>
+                    </p>
+                    <ul style="padding-left: 18px;">
+                        <li><strong>Project GraphSec (Data Discovery & Scanning):</strong> Architected a security
+                            orchestration platform that scans infrastructure and correlates findings. Built the entire
+                            <strong>CI/CD pipeline</strong> and React frontend. (Matches capability to operate tools
+                            like BigID).
+                        </li>
+                        <li><strong>Golden Pipeline Initiative:</strong> Designed a standardized CI/CD pipeline template
+                            that enforces security checks (Secret Scanning, SCA, SAST) automatically before deployment
+                            to Kubernetes.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Key Projects</div>
+            <div class="proj-grid">
+
+                <!-- Project: GraphSec -> Mapping to Data Scanning/BigID -->
+                <div class="proj-card">
+                    <div class="proj-header">
+                        <span class="proj-title">GraphSec (Security Scanning)</span>
+                        <span class="proj-tech">Python • Terraform • APIs</span>
+                    </div>
+                    <div class="proj-desc">
+                        Orchestration tool that integrates various security scanners. Parses JSON reports (Data
+                        Integration), visualizes risks, and automates alert generation. Demonstrates ability to build
+                        and operate <strong>Data Discovery</strong> solutions.
+                    </div>
+                </div>
+
+                <!-- Project: Golden Pipeline -> Mapping to CI/CD Requirements -->
+                <div class="proj-card">
+                    <div class="proj-header">
+                        <span class="proj-title">Continuous Security Pipeline</span>
+                        <span class="proj-tech">CI/CD • Kubernetes • Docker</span>
+                    </div>
+                    <div class="proj-desc">
+                        End-to-end "Golden Pipeline" for containerized apps. Enforces security policies (Data Leakage
+                        Prevention) in the build process. Deploys secure artifacts to <strong>Kubernetes</strong>.
+                    </div>
+                </div>
+
+                <!-- Project: Patch-BOE -> Mapping to API Automation -->
+                <div class="proj-card">
+                    <div class="proj-header">
+                        <span class="proj-title">Patch-BOE (Data Automation)</span>
+                        <span class="proj-tech">Python • Data Processing • SQL</span>
+                    </div>
+                    <div class="proj-desc">
+                        Automated data engineering pipeline. Extracts unstructured data (Legal text), processes it using
+                        APIs (LLM), and stores structured insights. Showcases strong <strong>API Integration</strong>
+                        skills.
+                    </div>
+                </div>
+
+                <!-- Project: NativeConnect -> Mapping to Integration/Identity -->
+                <div class="proj-card">
+                    <div class="proj-header">
+                        <span class="proj-title">NativeConnect (Identity Ops)</span>
+                        <span class="proj-tech">OAuth2 • IAM • Secure Dev</span>
+                    </div>
+                    <div class="proj-desc">
+                        Identity management microservice. Implements secure authentication flows and protects user data
+                        integrity. Relevant for integrating security solutions into the IT landscape.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Education & Languages</div>
+            <div class="exp-item">
+                <div class="exp-head">
+                    <div>
+                        <span class="exp-role">BSc in Cybersecurity Engineering</span>
+                        <span class="exp-company"> | Universidad Rey Juan Carlos (URJC)</span>
+                    </div>
+                    <span class="exp-date">2020 - 2025</span>
+                </div>
+                <div style="font-size: 9pt; margin-top: 5px; color: #555;">
+                    <strong>Languages:</strong> Spanish (Native) • English (C1 - Advanced Professional)
+                </div>
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>

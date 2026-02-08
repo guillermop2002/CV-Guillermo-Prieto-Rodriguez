@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Guillermo Prieto Rodriguez - Analista Ciberseguridad (Splunk)</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --primary: #0f172a;
+            /* Slate 900 */
+            --accent: #2563eb;
+            /* Royal Blue */
+            --text-main: #334155;
+            /* Slate 700 */
+            --text-light: #64748b;
+            /* Slate 500 */
+            --bg-light: #f8fafc;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background: #fff;
+            line-height: 1.5;
+            font-size: 9.5pt;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px 50px;
+            min-height: 297mm;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+        }
+
+        .header-left {
+            margin-right: 30px;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+        }
+
+        .header-center {
+            flex: 1;
+        }
+
+        .header-center h1 {
+            font-size: 20pt;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+            margin-bottom: 5px;
+        }
+
+        .header-center h2 {
+            font-size: 11pt;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 9pt;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .header-right a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--primary);
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+
+        /* PROFILE */
+        .profile-text {
+            text-align: justify;
+            color: var(--text-main);
+        }
+
+        /* EXPERIENCE */
+        .exp-item {
+            margin-bottom: 20px;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .exp-role {
+            font-weight: 700;
+            font-size: 10.5pt;
+            color: var(--primary);
+        }
+
+        .exp-company {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .exp-date {
+            font-size: 9pt;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .exp-details ul {
+            padding-left: 16px;
+            margin-top: 8px;
+        }
+
+        .exp-details li {
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+
+        /* PROJECTS GRID */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            row-gap: 25px;
+        }
+
+        .project-card {
+            /* No border, clean look */
+        }
+
+        .project-head {
+            margin-bottom: 4px;
+        }
+
+        .project-title {
+            font-weight: 700;
+            font-size: 10pt;
+            color: var(--primary);
+        }
+
+        .project-tech {
+            display: block;
+            font-size: 8pt;
+            color: var(--accent);
+            font-weight: 600;
+            font-family: monospace;
+            margin-top: 2px;
+            text-transform: uppercase;
+        }
+
+        .project-desc {
+            font-size: 9pt;
+            color: var(--text-main);
+            line-height: 1.4;
+        }
+
+        /* SKILLS & LANGUAGES */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-cat h4 {
+            font-size: 9.5pt;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .skill-list {
+            list-style: none;
+            font-size: 9pt;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* EDUCATION */
+        .edu-item {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .edu-degree {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .edu-school {
+            margin-left: 10px;
+            color: var(--text-main);
+        }
+
+        .edu-date {
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        @media print {
+            body {
+                margin: 0;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                width: 100%;
+                padding: 30px;
+                margin: 0;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cv-container">
+
+        <header>
+            <div class="header-left">
+                <img src="../cara horizontal.jpg" alt="Profile" class="profile-img">
+            </div>
+            <div class="header-center">
+                <h1>Guillermo Prieto</h1>
+                <h2>Analista de Ciberseguridad (Splunk & Identity)</h2>
+            </div>
+            <div class="header-right">
+                <div>Madrid, España</div>
+                <div>guillermoprieto17@gmail.com</div>
+                <div>+34 650 164 383</div>
+                <div><a href="https://linkedin.com/in/guillermo-prieto-rodriguez">linkedin.com/in/guillermo-prieto</a>
+                </div>
+                <div><a href="https://cv-guillermo-prieto-rodriguez.vercel.app">Portfolio Web</a></div>
+            </div>
+        </header>
+
+        <section>
+            <div class="section-title">Perfil Profesional</div>
+            <p class="profile-text">
+                <strong>Analista de Ciberseguridad</strong> con sólida experiencia en monitorización y gestión de
+                eventos de seguridad (SIEM), especializado en el ecosistema <strong>Splunk</strong>. Me enfoco en la
+                creación de casos de uso avanzados, desarrollo de dashboards operativos y ejecutivos, y en la
+                optimización continua de alertas para mejorar la eficiencia del SOC.
+                <br><br>
+                Cuento además con conocimientos en arquitecturas de seguridad robustas, aplicando principios de
+                <strong>ESAE (Red Forest)</strong> para proteger cuentas privilegiadas y mitigar movimientos laterales.
+                Mi perfil combina la capacidad técnica para tunear políticas de <strong>DLP (Fuga de
+                    Información)</strong> con una visión analítica orientada a la resolución de incidentes y la mejora
+                de procesos de seguridad.
+            </p>
+        </section>
+
+        <section>
+            <div class="section-title">Competencias Clave</div>
+            <div class="skills-grid">
+                <div class="skill-cat">
+                    <h4>SIEM & Splunk</h4>
+                    <ul class="skill-list">
+                        <li><strong>Splunk:</strong> SPL Avanzado • Dashboards</li>
+                        <li>Gestión de Alertas & Tuning</li>
+                        <li>Creación de Casos de Uso</li>
+                        <li>Coordinación SOC (N1/N2)</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>Identidad & Dato</h4>
+                    <ul class="skill-list">
+                        <li><strong>ESAE/Tiering:</strong> Admin Security</li>
+                        <li><strong>DLP:</strong> Políticas de Fuga de Datos</li>
+                        <li>Hardening de Directorio Activo</li>
+                        <li>Gestión de Accesos (PAM)</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>General & Soft Skills</h4>
+                    <ul class="skill-list">
+                        <li>Incident Response Playbooks</li>
+                        <li>Capacidad de Análisis</li>
+                        <li>Orientación a Resultados</li>
+                        <li>Inglés (Nivel Profesional Avanzado)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section style="margin-top:-15px; margin-bottom: 20px;">
+            <div style="font-size:9pt; border-top:1px solid #eee; padding-top:5px; color:#555;">
+                <strong>Idiomas:</strong> Español (Nativo) • Inglés (Fluido - C1)
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Experiencia Profesional</div>
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <span class="exp-role">Analista de Seguridad (SIEM & Identity Focus)</span>
+                        <span class="exp-company"> | Centro de Servicios Avanzados (CSA)</span>
+                    </div>
+                    <span class="exp-date">Ene 2025 - Presente</span>
+                </div>
+                <div class="exp-details">
+                    <ul>
+                        <li><strong>Administración y Operación de Splunk:</strong> Desarrollo de consultas complejas
+                            (SPL) para la correlación de eventos de múltiples fuentes. Creación de dashboards
+                            personalizados para visualizar KPIs de seguridad y estado de amenazas en tiempo real.</li>
+                        <li><strong>Gestión del Ciclo de Vida de Casos de Uso:</strong> Identificación de nuevos
+                            vectores de ataque, implementación de reglas de detección y ajuste continuo (tuning) para
+                            minimizar falsos positivos, mejorando la respuesta del equipo SOC N1.</li>
+                        <li><strong>Seguridad de Identidad (ESAE Concepts):</strong> Colaboración en el endurecimiento
+                            de entornos administrativos, implementando principios de separación de privilegios (Tiering
+                            Model) para proteger las "Joyas de la Corona".</li>
+                        <li><strong>Prevención de Fuga de Información (DLP):</strong> Monitorización de alertas de
+                            exfiltración de datos y ajuste de políticas DLP para equilibrar la seguridad con la
+                            operatividad del negocio.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Proyectos Relevantes</div>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Splunk Executive Dashboard</div>
+                        <span class="project-tech">Splunk • XML/Dashboard Studio • KPIs</span>
+                    </div>
+                    <div class="project-desc">
+                        Diseño e implementación de un cuadro de mando integral en Splunk. Proporcionaba visibilidad
+                        ejecutiva sobre el volumen de incidentes, tiempos de respuesta (MTTR) y eficacia de los
+                        controles.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Admin Tiering Hardening (ESAE Pilot)</div>
+                        <span class="project-tech">Active Directory • GPO • Hardening</span>
+                    </div>
+                    <div class="project-desc">
+                        Participación en un proyecto piloto para segregar cuentas administrativas en niveles (Tiers),
+                        restringiendo el inicio de sesión de administradores de dominio en estaciones de trabajo
+                        inseguras.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Automatización de Respuesta (Playbooks)</div>
+                        <span class="project-tech">SOAR Concepts • Python • Procesos</span>
+                    </div>
+                    <div class="project-desc">
+                        Desarrollo y actualización de Playbooks de respuesta ante incidentes para el equipo SOC,
+                        estandarizando las acciones ante alertas de Phishing y Malware.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Análisis de Fugas (DLP Tuning)</div>
+                        <span class="project-tech">Data Protection • Regex • Políticas</span>
+                    </div>
+                    <div class="project-desc">
+                        Análisis de patrones de falsos positivos en la solución DLP corporativa. Reescritura de
+                        expresiones regulares y excepciones para mejorar la precisión de las alertas de datos
+                        confidenciales.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Formación Académica</div>
+            <div class="edu-item">
+                <div>
+                    <span class="edu-degree">Grado en Ingeniería de Ciberseguridad</span>
+                    <span class="edu-school">, Universidad Rey Juan Carlos (URJC)</span>
+                </div>
+                <span class="edu-date">2020 - 2025</span>
+            </div>
+            <div style="font-size: 9pt; margin-top: 5px; color: var(--text-main);">
+                <strong>Menciones Relevantes:</strong> Monitorización de Seguridad (SIEM), Gestión de Identidades,
+                Infraestructuras Críticas.
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>

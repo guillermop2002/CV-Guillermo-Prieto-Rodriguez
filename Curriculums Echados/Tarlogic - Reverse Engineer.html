@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Guillermo Prieto Rodriguez - Reverse Engineer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --primary: #0f172a;
+            /* Slate 900 */
+            --accent: #2563eb;
+            /* Royal Blue */
+            --text-main: #334155;
+            /* Slate 700 */
+            --text-light: #64748b;
+            /* Slate 500 */
+            --bg-light: #f8fafc;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background: #fff;
+            line-height: 1.5;
+            font-size: 9.5pt;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px 50px;
+            min-height: 297mm;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+        }
+
+        .header-left {
+            margin-right: 30px;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+        }
+
+        .header-center {
+            flex: 1;
+        }
+
+        .header-center h1 {
+            font-size: 20pt;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+            margin-bottom: 5px;
+        }
+
+        .header-center h2 {
+            font-size: 11pt;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 9pt;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .header-right a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--primary);
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+
+        /* PROFILE */
+        .profile-text {
+            text-align: justify;
+            color: var(--text-main);
+        }
+
+        /* EXPERIENCE */
+        .exp-item {
+            margin-bottom: 20px;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .exp-role {
+            font-weight: 700;
+            font-size: 10.5pt;
+            color: var(--primary);
+        }
+
+        .exp-company {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .exp-date {
+            font-size: 9pt;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .exp-details ul {
+            padding-left: 16px;
+            margin-top: 8px;
+        }
+
+        .exp-details li {
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+
+        /* PROJECTS GRID */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            row-gap: 25px;
+        }
+
+        .project-card {
+            /* No border, clean look */
+        }
+
+        .project-head {
+            margin-bottom: 4px;
+        }
+
+        .project-title {
+            font-weight: 700;
+            font-size: 10pt;
+            color: var(--primary);
+        }
+
+        .project-tech {
+            display: block;
+            font-size: 8pt;
+            color: var(--accent);
+            font-weight: 600;
+            font-family: monospace;
+            margin-top: 2px;
+            text-transform: uppercase;
+        }
+
+        .project-desc {
+            font-size: 9pt;
+            color: var(--text-main);
+            line-height: 1.4;
+        }
+
+        /* SKILLS & LANGUAGES */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-cat h4 {
+            font-size: 9.5pt;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .skill-list {
+            list-style: none;
+            font-size: 9pt;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* EDUCATION */
+        .edu-item {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .edu-degree {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .edu-school {
+            margin-left: 10px;
+            color: var(--text-main);
+        }
+
+        .edu-date {
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        @media print {
+            body {
+                margin: 0;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                width: 100%;
+                padding: 30px;
+                margin: 0;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cv-container">
+
+        <header>
+            <div class="header-left">
+                <img src="../cara horizontal.jpg" alt="Profile" class="profile-img">
+            </div>
+            <div class="header-center">
+                <h1>Guillermo Prieto</h1>
+                <h2>Ingeniero de Ciberseguridad (Research & Development)</h2>
+            </div>
+            <div class="header-right">
+                <div>Madrid, España (Teletrabajo)</div>
+                <div>guillermoprieto17@gmail.com</div>
+                <div>+34 650 164 383</div>
+                <div><a href="https://linkedin.com/in/guillermo-prieto-rodriguez">linkedin.com/in/guillermo-prieto</a>
+                </div>
+                <div><a href="https://cv-guillermo-prieto-rodriguez.vercel.app">Portfolio Web</a></div>
+            </div>
+        </header>
+
+        <section>
+            <div class="section-title">Perfil Profesional</div>
+            <p class="profile-text">
+                Ingeniero de Ciberseguridad con pasión por el <strong>análisis técnico profundo</strong> y la
+                investigación de vulnerabilidades. Cuento con una sólida base en <strong>programación (Python,
+                    C/C++)</strong> y comprensión de la arquitectura interna de sistemas Unix/Linux.
+                <br><br>
+                Mi perfil se orienta hacia el <strong>Reverse Engineering</strong> y la automatización de análisis de
+                seguridad. Me motiva entender "cómo funcionan las cosas por dentro", desde protocolos de red hasta
+                binarios compilados. Busco unirme al equipo de Tarlogic para desarrollar mi carrera en investigación de
+                seguridad, aportando mi capacidad para crear herramientas propias y mi curiosidad por el hacking de
+                nuevas tecnologías.
+            </p>
+        </section>
+
+        <section>
+            <div class="section-title">Habilidades Técnicas</div>
+            <div class="skills-grid">
+                <div class="skill-cat">
+                    <h4>Reversing & Security</h4>
+                    <ul class="skill-list">
+                        <li><strong>Tools:</strong> Ghidra basics • GDB • Wireshark</li>
+                        <li><strong>Teoría:</strong> Assembly (Conceptos) • ARM</li>
+                        <li>Análisis de Vulnerabilidades</li>
+                        <li>CTFs & Retos de Hacking</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>Desarrollo & Scripting</h4>
+                    <ul class="skill-list">
+                        <li><strong>Lenguajes:</strong> Python • C/C++ • Bash</li>
+                        <li><strong>Control Versiones:</strong> Git (GitFlow)</li>
+                        <li>Desarrollo de Herramientas</li>
+                        <li>Principios SOLID</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>Sistemas & Redes</h4>
+                    <ul class="skill-list">
+                        <li><strong>Linux/Unix:</strong> Administración Avanzada</li>
+                        <li><strong>Protocolos:</strong> TCP/IP • Análisis de Tráfico</li>
+                        <li>Arquitecturas de Red</li>
+                        <li>Inglés (Lectura Técnica Fluida)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section style="margin-top:-15px; margin-bottom: 20px;">
+            <div style="font-size:9pt; border-top:1px solid #eee; padding-top:5px; color:#555;">
+                <strong>Idiomas:</strong> Español (Nativo) • Inglés (Nivel Profesional B2+/C1)
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Experiencia Profesional</div>
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <span class="exp-role">Ingeniero de Seguridad y Desarrollo de Herramientas</span>
+                        <span class="exp-company"> | Centro de Servicios Avanzados (CSA)</span>
+                    </div>
+                    <span class="exp-date">Ene 2025 - Presente</span>
+                </div>
+                <div class="exp-details">
+                    <ul>
+                        <li><strong>Desarrollo de Herramientas de Análisis:</strong> Creación de scripts en
+                            <strong>Python</strong> para automatizar el análisis de seguridad y la recolección de
+                            métricas de red, mejorando la eficiencia del equipo de operaciones.</li>
+                        <li><strong>Análisis de Incidentes:</strong> Investigación técnica de alertas de seguridad,
+                            diseccionando el comportamiento de posibles amenazas en sistemas Linux.</li>
+                        <li><strong>Investigación de Protocolos:</strong> Análisis de tráfico de red (PCAP) para
+                            identificar anomalías y entender comunicaciones propietarias en entornos complejos.</li>
+                        <li><strong>Colaboración Técnica:</strong> Documentación detallada de hallazgos y desarrollo de
+                            pruebas de concepto (PoC) para validar configuraciones de seguridad.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Proyectos & Investigación</div>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Análisis Automatizado (GraphSec)</div>
+                        <span class="project-tech">Python • Estructuras de Datos</span>
+                    </div>
+                    <div class="project-desc">
+                        Desarrollo de una herramienta para modelar y analizar dependencias de sistemas. Aplica teoría de
+                        grafos para identificar caminos críticos y puntos únicos de fallo en arquitecturas complejas.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Retos CTF & Binary Analysis</div>
+                        <span class="project-tech">Ghidra • Reversing • C</span>
+                    </div>
+                    <div class="project-desc">
+                        Participación académica y personal en retos de ingeniería inversa (Crackmes/CTFs). Experiencia
+                        analizando binarios básicos para entender el flujo de ejecución y extraer "flags" o
+                        credenciales.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Motor de Procesamiento (Cerebro)</div>
+                        <span class="project-tech">Python/C++ Concepts • Optimización</span>
+                    </div>
+                    <div class="project-desc">
+                        Implementación de lógica de alto rendimiento para procesamiento de datos en tiempo real. Foco en
+                        la eficiencia de memoria y algoritmos de baja latencia.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Network Protocol Analyzer</div>
+                        <span class="project-tech">Python • Scapy • Wireshark</span>
+                    </div>
+                    <div class="project-desc">
+                        Scripting para manipulación y análisis de paquetes de red. Creación de herramientas
+                        personalizadas para diseccionar protocolos y simular tráfico específico.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Formación Académica</div>
+            <div class="edu-item">
+                <div>
+                    <span class="edu-degree">Grado en Ingeniería de Ciberseguridad</span>
+                    <span class="edu-school">, Universidad Rey Juan Carlos (URJC)</span>
+                </div>
+                <span class="edu-date">2020 - 2025</span>
+            </div>
+            <div style="font-size: 9pt; margin-top: 5px; color: var(--text-main);">
+                <strong>Menciones Relevantes:</strong> Análisis de Malware, Sistemas Operativos, Criptografía,
+                Arquitectura de Computadores.
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>

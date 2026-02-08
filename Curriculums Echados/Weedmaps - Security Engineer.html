@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Guillermo Prieto Rodriguez - Security Engineer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --primary: #0f172a;
+            /* Slate 900 */
+            --accent: #00A8A8;
+            /* Teal/Weedmaps-ish */
+            --text-main: #334155;
+            /* Slate 700 */
+            --text-light: #64748b;
+            /* Slate 500 */
+            --bg-light: #f8fafc;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background: #fff;
+            line-height: 1.5;
+            font-size: 9.5pt;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px 50px;
+            min-height: 297mm;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+        }
+
+        .header-left {
+            margin-right: 30px;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+        }
+
+        .header-center {
+            flex: 1;
+        }
+
+        .header-center h1 {
+            font-size: 20pt;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+            margin-bottom: 5px;
+        }
+
+        .header-center h2 {
+            font-size: 11pt;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 9pt;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .header-right a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--primary);
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+
+        /* PROFILE */
+        .profile-text {
+            text-align: justify;
+            color: var(--text-main);
+        }
+
+        /* EXPERIENCE */
+        .exp-item {
+            margin-bottom: 20px;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .exp-role {
+            font-weight: 700;
+            font-size: 10.5pt;
+            color: var(--primary);
+        }
+
+        .exp-company {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .exp-date {
+            font-size: 9pt;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .exp-details ul {
+            padding-left: 16px;
+            margin-top: 8px;
+        }
+
+        .exp-details li {
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+
+        /* PROJECTS GRID */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            row-gap: 25px;
+        }
+
+        .project-card {
+            /* No border, clean look */
+        }
+
+        .project-head {
+            margin-bottom: 4px;
+        }
+
+        .project-title {
+            font-weight: 700;
+            font-size: 10pt;
+            color: var(--primary);
+        }
+
+        .project-tech {
+            display: block;
+            font-size: 8pt;
+            color: var(--accent);
+            font-weight: 600;
+            font-family: monospace;
+            margin-top: 2px;
+            text-transform: uppercase;
+        }
+
+        .project-desc {
+            font-size: 9pt;
+            color: var(--text-main);
+            line-height: 1.4;
+        }
+
+        /* SKILLS & LANGUAGES */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-cat h4 {
+            font-size: 9.5pt;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .skill-list {
+            list-style: none;
+            font-size: 9pt;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* EDUCATION */
+        .edu-item {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .edu-degree {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .edu-school {
+            margin-left: 10px;
+            color: var(--text-main);
+        }
+
+        .edu-date {
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        @media print {
+            body {
+                margin: 0;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                width: 100%;
+                padding: 30px;
+                margin: 0;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cv-container">
+
+        <header>
+            <div class="header-left">
+                <img src="../cara horizontal.jpg" alt="Profile" class="profile-img">
+            </div>
+            <div class="header-center">
+                <h1>Guillermo Prieto</h1>
+                <h2>Security Engineer - Automation & Cloud</h2>
+            </div>
+            <div class="header-right">
+                <div>Madrid / Remote</div>
+                <div>guillermoprieto17@gmail.com</div>
+                <div>+34 650 164 383</div>
+                <div><a href="https://linkedin.com/in/guillermo-prieto-rodriguez">linkedin.com/in/guillermo-prieto</a>
+                </div>
+                <div><a href="https://cv-guillermo-prieto-rodriguez.vercel.app">Portfolio Web</a></div>
+            </div>
+        </header>
+
+        <section>
+            <div class="section-title">Professional Profile</div>
+            <p class="profile-text">
+                <strong>Hands-on Security Engineer</strong> specializing in <strong>Security Automation</strong> and
+                DevSecOps. I treat security as a product issue, focusing on reducing "time-to-remediate" by building
+                self-service tooling and integrating automated checks into the SDLC.
+                <br><br>
+                My background combines deep technical expertise in <strong>Cloud (AWS)</strong> and <strong>Container
+                    Security (Kubernetes)</strong> with the ability to code solutions in Python/Go. I am driven by the
+                challenge of scaling security practices in fast-paced environments, ensuring that infrastructure is
+                securely scalable and that engineers have the guardrails they need to ship fast.
+            </p>
+        </section>
+
+        <section>
+            <div class="section-title">Core Competencies</div>
+            <div class="skills-grid">
+                <div class="skill-cat">
+                    <h4>Automation & DevSecOps</h4>
+                    <ul class="skill-list">
+                        <li><strong>Pipelines:</strong> GitHub Actions • CI/CD Security</li>
+                        <li><strong>Tools:</strong> SAST • DAST • SCA (Snyk/Trivy)</li>
+                        <li><strong>Scripting:</strong> Python • Bash • Go</li>
+                        <li>Automated Vuln Remediation</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>Cloud & Infrastructure</h4>
+                    <ul class="skill-list">
+                        <li><strong>AWS Security:</strong> IAM • GuardDuty • Organizations</li>
+                        <li><strong>Containers:</strong> Kubernetes (K8s) • Docker</li>
+                        <li><strong>IaC:</strong> Terraform (Security & Policies)</li>
+                        <li>Serverless Security (Lambda)</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>Vulnerability Mgmt</h4>
+                    <ul class="skill-list">
+                        <li>Risk Prioritization (CVSS/Context)</li>
+                        <li>Container Image Scanning</li>
+                        <li>Incident Response (On-Call)</li>
+                        <li>English (Professional Proficiency)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section style="margin-top:-15px; margin-bottom: 20px;">
+            <div style="font-size:9pt; border-top:1px solid #eee; padding-top:5px; color:#555;">
+                <strong>Languages:</strong> Spanish (Native) • English (Fluent - C1)
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Professional Experience</div>
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <span class="exp-role">Security Engineer (Automation Focus)</span>
+                        <span class="exp-company"> | Centro de Servicios Avanzados (CSA)</span>
+                    </div>
+                    <span class="exp-date">Jan 2025 - Present</span>
+                </div>
+                <div class="exp-details">
+                    <ul>
+                        <li><strong>Security Automation Framework:</strong> Developed custom Python scripts to aggregate
+                            vulnerability data from multiple sources (Cloud/Container Scanners), de-duplicate findings,
+                            and automatically create tickets in Jira for engineering remediation.</li>
+                        <li><strong>Pipeline Integration:</strong> Integrated "Shift-Left" security tools (Gitleaks,
+                            Semgrep) into the GitHub Actions CI/CD pipeline, blocking builds with critical dependencies
+                            discrepancies or secrets before deployment.</li>
+                        <li><strong>Kubernetes Security Hardening:</strong> Audited production K8s clusters, identifying
+                            misconfigurations (e.g., privileged containers, missing network policies) and implementing
+                            Gatekeeper (OPA) policies to enforce security standards.</li>
+                        <li><strong>Vuln Management:</strong> Partnered with DevOps teams to prioritize patch cycles for
+                            critical CVEs based on runtime reachability rather than just CVSS scores, significantly
+                            reducing alert fatigue.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Key Projects</div>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Asset Inventory Bot (Auto-Discovery)</div>
+                        <span class="project-tech">Python • AWS API • Jira API</span>
+                    </div>
+                    <div class="project-desc">
+                        Built a serverless bot that polls AWS Cloud Asset Inventory to identify unmanaged resources
+                        (Shadow IT). Automatically tags owners and notifies them via Slack for remediation.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Secure "Golden" Pipeline</div>
+                        <span class="project-tech">CI/CD • Terraform • Compliance Code</span>
+                    </div>
+                    <div class="project-desc">
+                        Designed a reusable pipeline template for new microservices that includes pre-configured
+                        security stages (Linting, SAST, Image Scanning), ensuring a baseline security posture from Day
+                        1.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Serverless Threat Response</div>
+                        <span class="project-tech">Lambda • GuardDuty • SOAR Lite</span>
+                    </div>
+                    <div class="project-desc">
+                        Implemented auto-remediation for specific GuardDuty findings (e.g., isolating an EC2 instance or
+                        revoking IAM keys) using Lambda functions triggered by EventBridge.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Container Runtime Security</div>
+                        <span class="project-tech">Falco • Sysdig • K8s</span>
+                    </div>
+                    <div class="project-desc">
+                        Deep dive into runtime security monitoring for Kubernetes. Configured rules to detect shell
+                        access to pods and unexpected outbound connections.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Education</div>
+            <div class="edu-item">
+                <div>
+                    <span class="edu-degree">BSc in Cybersecurity Engineering</span>
+                    <span class="edu-school">, Universidad Rey Juan Carlos (URJC)</span>
+                </div>
+                <span class="edu-date">2020 - 2025</span>
+            </div>
+            <div style="font-size: 9pt; margin-top: 5px; color: var(--text-main);">
+                <strong>Relevant Focus:</strong> Cloud Security, Automated Defense, Secure Software Development.
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>

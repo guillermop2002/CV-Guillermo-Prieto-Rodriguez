@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Guillermo Prieto Rodriguez - DevOps & Cyber-Training Engineer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --primary: #0f172a;
+            /* Slate 900 */
+            --accent: #2563eb;
+            /* Royal Blue */
+            --text-main: #334155;
+            /* Slate 700 */
+            --text-light: #64748b;
+            /* Slate 500 */
+            --bg-light: #f8fafc;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background: #fff;
+            line-height: 1.5;
+            font-size: 9.5pt;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px 50px;
+            min-height: 297mm;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+        }
+
+        .header-left {
+            margin-right: 30px;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+        }
+
+        .header-center {
+            flex: 1;
+        }
+
+        .header-center h1 {
+            font-size: 20pt;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+            margin-bottom: 5px;
+        }
+
+        .header-center h2 {
+            font-size: 11pt;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 9pt;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .header-right a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--primary);
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+
+        /* PROFILE */
+        .profile-text {
+            text-align: justify;
+            color: var(--text-main);
+        }
+
+        /* EXPERIENCE */
+        .exp-item {
+            margin-bottom: 20px;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .exp-role {
+            font-weight: 700;
+            font-size: 10.5pt;
+            color: var(--primary);
+        }
+
+        .exp-company {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .exp-date {
+            font-size: 9pt;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .exp-details ul {
+            padding-left: 16px;
+            margin-top: 8px;
+        }
+
+        .exp-details li {
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+
+        /* PROJECTS GRID */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            row-gap: 25px;
+        }
+
+        .project-card {
+            /* No border, clean look */
+        }
+
+        .project-head {
+            margin-bottom: 4px;
+        }
+
+        .project-title {
+            font-weight: 700;
+            font-size: 10pt;
+            color: var(--primary);
+        }
+
+        .project-tech {
+            display: block;
+            font-size: 8pt;
+            color: var(--accent);
+            font-weight: 600;
+            font-family: monospace;
+            margin-top: 2px;
+            text-transform: uppercase;
+        }
+
+        .project-desc {
+            font-size: 9pt;
+            color: var(--text-main);
+            line-height: 1.4;
+        }
+
+        /* SKILLS & LANGUAGES */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-cat h4 {
+            font-size: 9.5pt;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .skill-list {
+            list-style: none;
+            font-size: 9pt;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* EDUCATION */
+        .edu-item {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .edu-degree {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .edu-school {
+            margin-left: 10px;
+            color: var(--text-main);
+        }
+
+        .edu-date {
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        @media print {
+            body {
+                margin: 0;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                width: 100%;
+                padding: 30px;
+                margin: 0;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cv-container">
+
+        <header>
+            <div class="header-left">
+                <img src="../cara horizontal.jpg" alt="Profile" class="profile-img">
+            </div>
+            <div class="header-center">
+                <h1>Guillermo Prieto</h1>
+                <h2>DevOps & Cyber-Training Engineer</h2>
+            </div>
+            <div class="header-right">
+                <div>Madrid, Spain (Remote Eligible)</div>
+                <div>guillermoprieto17@gmail.com</div>
+                <div>+34 650 164 383</div>
+                <div><a href="https://linkedin.com/in/guillermo-prieto-rodriguez">linkedin.com/in/guillermo-prieto</a>
+                </div>
+                <div><a href="https://cv-guillermo-prieto-rodriguez.vercel.app">Portfolio Web</a></div>
+            </div>
+        </header>
+
+        <section>
+            <div class="section-title">Professional Profile</div>
+            <p class="profile-text">
+                <strong>Cybersecurity Engineer</strong> with a dual focus on <strong>DevOps automation</strong> and
+                <strong>Attack Simulation (Red Teaming/CTF)</strong>. I specialize in designing virtualized environments
+                using <strong>Docker</strong> and Python to simulate complex network architectures, ideal for
+                cyber-training ranges and security testing.
+                <br><br>
+                I am proficient in <strong>Python, JavaScript, and Linux Administration</strong>, ensuring seamless
+                integration of security tools into diverse operating systems. My passion lies in "Security by Design"
+                and education; I enjoy creating challenges (similar to CTFs) and scenarios that help users understand
+                vulnerabilities from the inside out. I am eager to contribute to Airbus's cyber-training platform by
+                developing innovative attack simulations and robust training labs.
+            </p>
+        </section>
+
+        <section>
+            <div class="section-title">Technical Skills</div>
+            <div class="skills-grid">
+                <div class="skill-cat">
+                    <h4>DevOps & Virtualization</h4>
+                    <ul class="skill-list">
+                        <li><strong>Containers:</strong> Docker • K8s Basics</li>
+                        <li><strong>Virtualization:</strong> VMware Concepts</li>
+                        <li><strong>IaC:</strong> Terraform • Ansible</li>
+                        <li>Lab Environment Design</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>Development & Scripting</h4>
+                    <ul class="skill-list">
+                        <li><strong>Languages:</strong> Python • JavaScript</li>
+                        <li><strong>API:</strong> REST Architectures</li>
+                        <li>Automation & Tooling</li>
+                        <li>Secure Coding Practices</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>Cybersecurity Operations</h4>
+                    <ul class="skill-list">
+                        <li><strong>Attack:</strong> Vuln Research • CTF Design</li>
+                        <li><strong>Systems:</strong> Linux • Windows OS</li>
+                        <li><strong>Network:</strong> TCP/IP • Routing</li>
+                        <li>English (Intermediate/Advanced)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section style="margin-top:-15px; margin-bottom: 20px;">
+            <div style="font-size:9pt; border-top:1px solid #eee; padding-top:5px; color:#555;">
+                <strong>Languages:</strong> Spanish (Native) • English (Fluent - Written & Verbal)
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Professional Experience</div>
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <span class="exp-role">Security Automation & Operations Engineer</span>
+                        <span class="exp-company"> | Centro de Servicios Avanzados (CSA)</span>
+                    </div>
+                    <span class="exp-date">Jan 2025 - Present</span>
+                </div>
+                <div class="exp-details">
+                    <ul>
+                        <li><strong>Lab Automation:</strong> Developed scripts to rapidly deploy and configure isolated
+                            testing environments (using Docker containers) for reproducing reported vulnerabilities and
+                            analyzing exploits safely.</li>
+                        <li><strong>Tool Integration:</strong> Integrated custom Python security tools into Linux and
+                            Windows environments, enabling automated data collection and system monitoring across the
+                            network.</li>
+                        <li><strong>Vulnerability Research:</strong> Researched emerging threats and attack vectors to
+                            improve internal detection rules. Simulated attack scenarios to validate the effectiveness
+                            of security controls (Red Team mindset).</li>
+                        <li><strong>DevOps Practices:</strong> Implemented CI/CD pipelines to automate the testing and
+                            deployment of internal security applications, ensuring reliability and "Security by Design".
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Key Projects</div>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Cyber Lab / Attack Simulation Env</div>
+                        <span class="project-tech">Docker • Python • Network Virtualization</span>
+                    </div>
+                    <div class="project-desc">
+                        Designed an automated lab environment using Docker Compose to simulate vulnerable network
+                        services. deeply understanding network isolation and attack vectors for training purposes.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">GraphSec (Attack Path Visualization)</div>
+                        <span class="project-tech">Python • Graph Theory • CTF Concepts</span>
+                    </div>
+                    <div class="project-desc">
+                        Developed a tool to visualize infrastructure dependencies as a graph. Useful for designing CTF
+                        challenges by mapping out "hidden" specific paths a massive attacker might take to escalate
+                        privileges.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Cerebro (High-Performance Engine)</div>
+                        <span class="project-tech">Python • REST API • JS Integration</span>
+                    </div>
+                    <div class="project-desc">
+                        Built a complex data processing system involving a Python backend and JavaScript frontend.
+                        Demonstrates full-stack integration capability and REST API design.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Automated "Golden Pipeline"</div>
+                        <span class="project-tech">DevOps • CI/CD • Security Tests</span>
+                    </div>
+                    <div class="project-desc">
+                        Created a standardized CI/CD pipeline that integrates security testing (SAST/DAST)
+                        automatically. Ensures that new code deployments are secure by default.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Education</div>
+            <div class="edu-item">
+                <div>
+                    <span class="edu-degree">BSc in Cybersecurity Engineering</span>
+                    <span class="edu-school">, Universidad Rey Juan Carlos (URJC)</span>
+                </div>
+                <span class="edu-date">2020 - 2025</span>
+            </div>
+            <div style="font-size: 9pt; margin-top: 5px; color: var(--text-main);">
+                <strong>Relevant Focus:</strong> Network Security, Secure Software Development, Ethical Hacking.
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>

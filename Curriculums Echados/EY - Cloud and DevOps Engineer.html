@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Guillermo Prieto Rodriguez - Cloud & DevOps Engineer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --primary: #2e2e38;
+            /* EY Black/Dark Grey */
+            --accent: #ffe600;
+            /* EY Yellow */
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-light: #f6f6f6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background: #fff;
+            line-height: 1.5;
+            font-size: 9.5pt;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px 50px;
+            min-height: 297mm;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            align-items: center;
+            border-bottom: 4px solid var(--accent);
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+            margin-right: 25px;
+        }
+
+        .header-left {
+            flex: 1;
+        }
+
+        .header-left h1 {
+            font-size: 22pt;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+            margin-bottom: 5px;
+        }
+
+        .header-left h2 {
+            font-size: 11pt;
+            font-weight: 600;
+            color: #555;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .header-left h2 span {
+            color: #dcb300;
+            /* Darker yellow for text readability */
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 9pt;
+            color: var(--text-light);
+        }
+
+        .header-right a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--primary);
+            background: var(--bg-light);
+            padding: 8px 10px;
+            border-left: 4px solid var(--accent);
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        /* PROFILE */
+        .profile-text {
+            text-align: justify;
+            color: var(--text-main);
+            margin-bottom: 15px;
+        }
+
+        /* SKILLS */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-cat h4 {
+            font-size: 9.5pt;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+            padding-bottom: 2px;
+        }
+
+        .skill-list {
+            font-size: 9pt;
+            color: var(--text-main);
+            list-style: none;
+        }
+
+        .skill-list li {
+            margin-bottom: 4px;
+        }
+
+        /* EXPERIENCE */
+        .exp-item {
+            margin-bottom: 20px;
+        }
+
+        .exp-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 6px;
+        }
+
+        .exp-role {
+            font-weight: 700;
+            font-size: 10.5pt;
+            color: var(--primary);
+        }
+
+        .exp-company {
+            font-weight: 600;
+            color: #555;
+        }
+
+        .exp-date {
+            font-size: 9pt;
+            color: var(--text-light);
+            font-weight: 500;
+            background: var(--bg-light);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .exp-details ul {
+            padding-left: 18px;
+            margin-top: 5px;
+        }
+
+        .exp-details li {
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+
+        /* PROJECTS */
+        .proj-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .proj-card {
+            border: 1px solid #eee;
+            padding: 15px;
+            border-top: 3px solid var(--primary);
+        }
+
+        .proj-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            align-items: center;
+        }
+
+        .proj-title {
+            font-weight: 700;
+            font-size: 9.5pt;
+            color: var(--primary);
+        }
+
+        .proj-tech {
+            font-size: 8pt;
+            font-weight: 600;
+            color: #777;
+            background: #f0f0f0;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+
+        .proj-desc {
+            font-size: 9pt;
+            color: var(--text-main);
+            text-align: justify;
+        }
+
+
+        @media print {
+            .cv-container {
+                width: 100%;
+                margin: 0;
+                padding: 30px;
+                box-shadow: none;
+            }
+
+            .section-title {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cv-container">
+
+        <header>
+            <img src="../cara horizontal.jpg" alt="Profile" class="profile-img">
+            <div class="header-left">
+                <h1>Guillermo Prieto</h1>
+                <h2>Cloud & DevOps Engineer <span>// Multi-Cloud</span></h2>
+            </div>
+            <div class="header-right">
+                <div>Madrid, Spain (Remote)</div>
+                <div>+34 650 164 383</div>
+                <div>guillermoprieto17@gmail.com</div>
+                <div><a href="https://linkedin.com/in/guillermo-prieto-rodriguez">linkedin.com/in/guillermo-prieto</a>
+                </div>
+            </div>
+        </header>
+
+        <section>
+            <div class="section-title">Professional Summary</div>
+            <p class="profile-text">
+                <strong>Cloud & DevOps Engineer</strong> with a strong foundation in <strong>Infrastructure as Code
+                    (Terraform)</strong> and secure cloud architecture (AWS/Azure). I bring a unique "DevSecOps"
+                perspective to infrastructure, ensuring that Landing Zones and Kubernetes clusters are not just
+                scalable,
+                but secure by design.
+                <br><br>
+                Experienced in building <strong>Multi-Cluster Kubernetes</strong> environments and automated CI/CD
+                pipelines (GitHub Actions) that streamline the SDLC. I am accustomed to high-autonomy environments where
+                I translate complex requirements into robust technical solutions, making me an ideal fit for EY's
+                Digital Engineering team to assist clients in their cloud transformation.
+            </p>
+        </section>
+
+        <section>
+            <div class="section-title">Technical Competencies</div>
+            <div class="skills-grid">
+                <div class="skill-cat">
+                    <h4>Cloud & Operations</h4>
+                    <ul class="skill-list">
+                        <li><strong>Multi-Cloud:</strong> AWS • Azure (basics)</li>
+                        <li><strong>IaC:</strong> Terraform (Modules) • Ansible</li>
+                        <li><strong>K8s:</strong> EKS • AKS • Helm Charts</li>
+                        <li>Landing Zones Design</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>CI/CD & DevOps</h4>
+                    <ul class="skill-list">
+                        <li><strong>Pipelines:</strong> GitHub Actions • Jenkins</li>
+                        <li><strong>Tools:</strong> Docker • GitFlow • ArgoCD</li>
+                        <li><strong>Strategy:</strong> SDLC Optimization</li>
+                        <li>Container Automation</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>Security (DevSecOps)</h4>
+                    <ul class="skill-list">
+                        <li><strong>Identity:</strong> IAM • RBAC • Azure AD</li>
+                        <li><strong>Network:</strong> VPC Peering • Firewalls</li>
+                        <li><strong>Data:</strong> Encryption (KMS) • Secrets</li>
+                        <li>Policy-as-Code</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Professional Experience</div>
+            <div class="exp-item">
+                <div class="exp-head">
+                    <div>
+                        <span class="exp-role">Cloud & DevOps Engineer</span>
+                        <span class="exp-company"> | Centro de Servicios Avanzados (CSA)</span>
+                    </div>
+                    <span class="exp-date">Jan 2025 - Present</span>
+                </div>
+                <div class="exp-details">
+                    <ul>
+                        <li><strong>Infrastructure as Code:</strong> Responsible for the development and lifecycle
+                            management of cloud infrastructure using <strong>Terraform</strong>. Designed reusable
+                            modules for compute (EC2/VMs), storage (S3/Blob), and networking, enforcing standardization
+                            across environments.</li>
+                        <li><strong>Kubernetes Operations:</strong> Managed the deployment and operation of production
+                            <strong>Kubernetes</strong> clusters. Implemented automated node scaling and self-healing
+                            configurations to ensure high availability for containerized applications.
+                        </li>
+                        <li><strong>CI/CD Implementation:</strong> Designed and implemented CI/CD pipelines to automate
+                            the delivery of microservices. Integrated code quality checks and automated container builds
+                            (Docker), reducing deployment times by 60%.</li>
+                        <li><strong>Security & Compliance:</strong> Implemented "Security-by-Design" in cloud
+                            architectures. Configured IAM roles with least privilege, established network segregation
+                            (Subnets/Firewalls), and enforced encryption at rest/transit for compliance.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-head">
+                    <div>
+                        <span class="exp-role">Software & SRE Engineer (Freelance)</span>
+                        <span class="exp-company"> | Various Projects</span>
+                    </div>
+                    <span class="exp-date">2020 - 2024</span>
+                </div>
+                <div class="exp-details">
+                    <ul>
+                        <li><strong>Distributed Systems Design:</strong> Architected critical backend internal tools
+                            that required high concurrency and low latency (Cerebro Engine), optimizing both database
+                            and network layers.</li>
+                        <li><strong>Platform Engineering:</strong> Developed and deployed full-stack web applications,
+                            managing the complete lifecycle from code (React/Python) to cloud deployment (VPS/Cloud).
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Key Projects</div>
+            <div class="proj-grid">
+
+                <!-- Project from Global CV: GraphSec-IaC -->
+                <div class="proj-card">
+                    <div class="proj-header">
+                        <span class="proj-title">GraphSec-IaC (Orchestration)</span>
+                        <span class="proj-tech">Terraform • Python • GitHub Actions</span>
+                    </div>
+                    <div class="proj-desc">
+                        Advanced infrastructure orchestration platform. Correlates security scans with infrastructure
+                        graphs. Features a native Python parser and integrates with <strong>Terraform</strong> state to
+                        visualize cloud assets.
+                    </div>
+                </div>
+
+                <!-- Project from Global CV: Secure CI/CD -->
+                <div class="proj-card">
+                    <div class="proj-header">
+                        <span class="proj-title">Secure CI/CD "Golden Pipeline"</span>
+                        <span class="proj-tech">GitHub Actions • Docker • DevOps</span>
+                    </div>
+                    <div class="proj-desc">
+                        Automated pipeline enforcing strict quality gates. Blocks commits with vulnerabilities or secret
+                        leaks before deployment. Standardizes the software delivery process for containerized apps.
+                    </div>
+                </div>
+
+                <!-- Project from Global CV: AI Chatbot (Showing Cloud/Serverless skills) -->
+                <div class="proj-card">
+                    <div class="proj-header">
+                        <span class="proj-title">AI Chatbot Widget (Serverless)</span>
+                        <span class="proj-tech">Cloudflare • React • Edge Computing</span>
+                    </div>
+                    <div class="proj-desc">
+                        Serverless RAG system deployed on the Edge. Demonstrates capability with modern cloud-native
+                        architectures (FaaS), handling high-traffic with milli-second latency.
+                    </div>
+                </div>
+
+                <!-- Project from Global CV: NativeConnect (Showing IAM/Security skills) -->
+                <div class="proj-card">
+                    <div class="proj-header">
+                        <span class="proj-title">NativeConnect (Identity Mgmt)</span>
+                        <span class="proj-tech">OAuth2 • Python • Security</span>
+                    </div>
+                    <div class="proj-desc">
+                        Designed a "Secure-by-Default" authentication system. Implements complex OAuth2 flows and
+                        session management, aligning with Identity & Access Management (IAM) best practices.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Education & Languages</div>
+            <div class="exp-item">
+                <div class="exp-head">
+                    <div>
+                        <span class="exp-role">BSc Cybersecurity Engineering</span>
+                        <span class="exp-company"> | Universidad Rey Juan Carlos (URJC)</span>
+                    </div>
+                    <span class="exp-date">2020 - 2025</span>
+                </div>
+                <div style="font-size: 9pt; margin-top: 5px; color: #555;">
+                    <strong>Languages:</strong> Spanish (Native) • English (C1 - Advanced Professional)
+                </div>
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>

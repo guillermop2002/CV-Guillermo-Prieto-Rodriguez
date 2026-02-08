@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Guillermo Prieto Rodriguez - Platform Engineer (Go)</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --primary: #0f172a;
+            /* Slate 900 */
+            --accent: #2563eb;
+            /* Royal Blue */
+            --text-main: #334155;
+            /* Slate 700 */
+            --text-light: #64748b;
+            /* Slate 500 */
+            --bg-light: #f8fafc;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background: #fff;
+            line-height: 1.5;
+            font-size: 9.5pt;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px 50px;
+            min-height: 297mm;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+        }
+
+        .header-left {
+            margin-right: 30px;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+        }
+
+        .header-center {
+            flex: 1;
+        }
+
+        .header-center h1 {
+            font-size: 20pt;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+            margin-bottom: 5px;
+        }
+
+        .header-center h2 {
+            font-size: 11pt;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 9pt;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .header-right a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--primary);
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+
+        /* PROFILE */
+        .profile-text {
+            text-align: justify;
+            color: var(--text-main);
+        }
+
+        /* EXPERIENCE */
+        .exp-item {
+            margin-bottom: 20px;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .exp-role {
+            font-weight: 700;
+            font-size: 10.5pt;
+            color: var(--primary);
+        }
+
+        .exp-company {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .exp-date {
+            font-size: 9pt;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .exp-details ul {
+            padding-left: 16px;
+            margin-top: 8px;
+        }
+
+        .exp-details li {
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+
+        /* PROJECTS GRID */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            row-gap: 25px;
+        }
+
+        .project-card {
+            /* No border, clean look */
+        }
+
+        .project-head {
+            margin-bottom: 4px;
+        }
+
+        .project-title {
+            font-weight: 700;
+            font-size: 10pt;
+            color: var(--primary);
+        }
+
+        .project-tech {
+            display: block;
+            font-size: 8pt;
+            color: var(--accent);
+            font-weight: 600;
+            font-family: monospace;
+            margin-top: 2px;
+            text-transform: uppercase;
+        }
+
+        .project-desc {
+            font-size: 9pt;
+            color: var(--text-main);
+            line-height: 1.4;
+        }
+
+        /* SKILLS & LANGUAGES */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-cat h4 {
+            font-size: 9.5pt;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .skill-list {
+            list-style: none;
+            font-size: 9pt;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* EDUCATION */
+        .edu-item {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .edu-degree {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .edu-school {
+            margin-left: 10px;
+            color: var(--text-main);
+        }
+
+        .edu-date {
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        @media print {
+            body {
+                margin: 0;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                width: 100%;
+                padding: 30px;
+                margin: 0;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cv-container">
+
+        <header>
+            <div class="header-left">
+                <img src="../cara horizontal.jpg" alt="Profile" class="profile-img">
+            </div>
+            <div class="header-center">
+                <h1>Guillermo Prieto</h1>
+                <h2>Platform Engineer (Backend / Go)</h2>
+            </div>
+            <div class="header-right">
+                <div>Madrid, Spain (Remote Eligible)</div>
+                <div>guillermoprieto17@gmail.com</div>
+                <div>+34 650 164 383</div>
+                <div><a href="https://linkedin.com/in/guillermo-prieto-rodriguez">linkedin.com/in/guillermo-prieto</a>
+                </div>
+                <div><a href="https://cv-guillermo-prieto-rodriguez.vercel.app">Portfolio Web</a></div>
+            </div>
+        </header>
+
+        <section>
+            <div class="section-title">Professional Profile</div>
+            <p class="profile-text">
+                <strong>Platform Engineer</strong> with a passion for building high-performance, distributed systems. I
+                specialize in designing scalable backend architectures using <strong>Go (Golang)</strong> and ensuring
+                their resilience on cloud platforms like <strong>AWS</strong>.
+                <br><br>
+                My background includes optimizing core system performance, dealing with high-load data streams
+                (Arbitrage Engine), and implementing <strong>Infrastructure-as-Code</strong>. I enjoy digging deep into
+                database internals and networking protocols to solve complex architectural challenges. I am eager to
+                join Sardine's Application Platform Team to help define the standards that power the next generation of
+                fraud prevention technology.
+            </p>
+        </section>
+
+        <section>
+            <div class="section-title">Technical Skills</div>
+            <div class="skills-grid">
+                <div class="skill-cat">
+                    <h4>Backend & Go</h4>
+                    <ul class="skill-list">
+                        <li><strong>Go:</strong> Goroutines • Channels • Profiling</li>
+                        <li>Microservices Architecture</li>
+                        <li>High-Concurrency Systems</li>
+                        <li>API Design (gRPC / HTTP)</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>Data & Infrastructure</h4>
+                    <ul class="skill-list">
+                        <li><strong>DB:</strong> SQL (Postgres) • NoSQL (Redis)</li>
+                        <li><strong>Cloud:</strong> AWS (SQS/SNS) • Docker</li>
+                        <li>Kubernetes Basics</li>
+                        <li>Terraform (IaC)</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>Core & Observability</h4>
+                    <ul class="skill-list">
+                        <li><strong>Networking:</strong> TCP/IP • DNS</li>
+                        <li>Distributed Systems</li>
+                        <li>Observability (Datadog/Grafana)</li>
+                        <li>Performance Optimization</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section style="margin-top:-15px; margin-bottom: 20px;">
+            <div style="font-size:9pt; border-top:1px solid #eee; padding-top:5px; color:#555;">
+                <strong>Languages:</strong> Spanish (Native) • English (Fluent - Written & Verbal)
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Professional Experience</div>
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <span class="exp-role">Backend & Platform Engineer</span>
+                        <span class="exp-company"> | Centro de Servicios Avanzados (CSA)</span>
+                    </div>
+                    <span class="exp-date">Jan 2025 - Present</span>
+                </div>
+                <div class="exp-details">
+                    <ul>
+                        <li><strong>High-Performance Systems:</strong> Optimized backend services to handle increased
+                            load, identifying and resolving memory leaks and concurrency bottlenecks in data processing
+                            pipelines.</li>
+                        <li><strong>Automated Infrastructure:</strong> Implemented
+                            <strong>Infrastructure-as-Code</strong> practices using Terraform to manage AWS resources,
+                            ensuring strictly reproducible environments.</li>
+                        <li><strong>Database Optimization:</strong> Refactored complex SQL queries and implemented
+                            caching strategies (Redis) to reduce latency in critical data retrieval paths.</li>
+                        <li><strong>Standardization:</strong> Contributed to the definition of internal coding standards
+                            and API design patterns, improving code maintainability across the team.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Key Projects</div>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Cerebro (Sports Arbitrage Engine)</div>
+                        <span class="project-tech">Go (Concepts) • Concurrency • Real-time</span>
+                    </div>
+                    <div class="project-desc">
+                        A high-frequency arbitrage detection engine. Required handling concurrent data streams from
+                        multiple sources and processing them with sub-second latency. Optimized for memory usage and
+                        high throughput.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">GraphSec (Dependency Graph)</div>
+                        <span class="project-tech">Algorithms • Data Structures • Graph Theory</span>
+                    </div>
+                    <div class="project-desc">
+                        Built a tool to model complex system dependencies as a directed graph. Involved deep traversal
+                        algorithms to identify critical nodes and optimize system architecture.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Secure Microservices Platform</div>
+                        <span class="project-tech">Docker • APIs • Networking</span>
+                    </div>
+                    <div class="project-desc">
+                        Designed a containerized microservices architecture. Focused on efficient inter-service
+                        communication and leveraging event-driven patterns where applicable.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">NativeConnect (Auth Service)</div>
+                        <span class="project-tech">Authentication • Database Design</span>
+                    </div>
+                    <div class="project-desc">
+                        Implemented a robust authentication backend. Designed the database schema to ensuring data
+                        consistency and security for user identities.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Education</div>
+            <div class="edu-item">
+                <div>
+                    <span class="edu-degree">BSc in Cybersecurity Engineering</span>
+                    <span class="edu-school">, Universidad Rey Juan Carlos (URJC)</span>
+                </div>
+                <span class="edu-date">2020 - 2025</span>
+            </div>
+            <div style="font-size: 9pt; margin-top: 5px; color: var(--text-main);">
+                <strong>Relevant Skills:</strong> Systems Programming, Network Architecture, Database Systems.
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>

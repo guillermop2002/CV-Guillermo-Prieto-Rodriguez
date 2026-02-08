@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Guillermo Prieto Rodriguez - QA Automation Engineer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --primary: #2c3e50;
+            /* Tech Dark Blue */
+            --accent: #e67e22;
+            /* QA Orange (Active) */
+            --text-main: #334155;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
+            --border: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background: #fff;
+            line-height: 1.5;
+            font-size: 9.5pt;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px 50px;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+        }
+
+        .header-left {
+            margin-right: 30px;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+        }
+
+        .header-center {
+            flex: 1;
+        }
+
+        .header-center h1 {
+            font-size: 20pt;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            margin-bottom: 5px;
+        }
+
+        .header-center h2 {
+            font-size: 11pt;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 9pt;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .header-right a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--primary);
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+        }
+
+        /* EXPERIENCE */
+        .exp-item {
+            margin-bottom: 20px;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .exp-role {
+            font-weight: 700;
+            font-size: 10.5pt;
+            color: var(--primary);
+        }
+
+        .exp-company {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .exp-date {
+            font-size: 9pt;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        .exp-details ul {
+            padding-left: 16px;
+            margin-top: 8px;
+        }
+
+        .exp-details li {
+            margin-bottom: 4px;
+            color: var(--text-main);
+            text-align: justify;
+        }
+
+        /* SKILLS GRID */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-cat h4 {
+            font-size: 9.5pt;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+        }
+
+        .skill-list {
+            list-style: none;
+            font-size: 9pt;
+            color: var(--text-main);
+        }
+
+        .project-card {
+            margin-bottom: 15px;
+        }
+
+        .project-title {
+            font-weight: 700;
+            font-size: 10pt;
+            color: var(--primary);
+        }
+
+        .project-tech {
+            font-family: monospace;
+            color: var(--accent);
+            font-size: 8.5pt;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cv-container">
+
+        <header>
+            <div class="header-left">
+                <img src="../cara horizontal.jpg" alt="Perfil" class="profile-img">
+            </div>
+            <div class="header-center">
+                <h1>Guillermo Prieto</h1>
+                <h2>QA Automation Engineer & DevSecOps</h2>
+            </div>
+            <div class="header-right">
+                <div>Madrid, España (Remoto)</div>
+                <div>guillermoprieto17@gmail.com</div>
+                <div>+34 650 164 383</div>
+                <div><a href="https://linkedin.com/in/guillermo-prieto-rodriguez"
+                        target="_blank">linkedin.com/in/guillermo-prieto</a></div>
+            </div>
+        </header>
+
+        <section>
+            <div class="section-title">Perfil Profesional</div>
+            <p style="text-align: justify;">
+                Ingeniero de Software y Ciberseguridad con sólida experiencia en <strong>automatización de pruebas
+                    (QA)</strong> y pipelines de <strong>CI/CD</strong>. Especializado en el uso de
+                <strong>Python</strong> para scripting de validación y despliegues en contenedores
+                (<strong>Docker/Kubernetes</strong>). Combino la mentalidad analítica de seguridad con prácticas de QA
+                para asegurar la calidad y robustez del código en entornos Cloud (AWS) y On-Premise.
+            </p>
+        </section>
+
+        <section>
+            <div class="section-title">Stack Tecnológico (QA & DevOps)</div>
+            <div class="skills-grid">
+                <div class="skill-cat">
+                    <h4>QA & Automation</h4>
+                    <ul class="skill-list">
+                        <li>Python Scripting (Advanced)</li>
+                        <li>RobotFramework (Familiar)</li>
+                        <li>Selenium • Unit Testing</li>
+                        <li>Automated API Testing</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>CI/CD & Cloud</h4>
+                    <ul class="skill-list">
+                        <li>Jenkins • GitHub Actions</li>
+                        <li>Docker • Kubernetes (K8s)</li>
+                        <li>AWS EC2 • Git Versioning</li>
+                        <li>Infrastructure as Code</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>Desarrollo</h4>
+                    <ul class="skill-list">
+                        <li>Python • Java • SQL</li>
+                        <li>React • REST APIs</li>
+                        <li>Agile / Scrum</li>
+                        <li>Linux (Bash Scripting)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Experiencia Profesional</div>
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <span class="exp-role">Ingeniero de Automatización y Seguridad (SecOps)</span>
+                        <span class="exp-company"> | Centro de Servicios Avanzados (CSA)</span>
+                    </div>
+                    <span class="exp-date">Ene 2025 - Presente</span>
+                </div>
+                <div class="exp-details">
+                    <ul>
+                        <li><strong>Automatización de Validaciones:</strong> Desarrollo de scripts en
+                            <strong>Python</strong> para la validación automática de estados de seguridad y cumplimiento
+                            en cientos de endpoints, reduciendo la carga manual de revisión (QA de Infraestructura).
+                        </li>
+                        <li><strong>Scripting y Orquestación:</strong> Mantenimiento de repositorios
+                            <strong>Git</strong> y pipelines de despliegue para herramientas de monitorización.</li>
+                        <li><strong>Gestión de Entornos Linux:</strong> Administración y hardening de servidores Linux,
+                            asegurando la estabilidad para el despliegue de servicios.</li>
+                        <li><strong>Validación de Parches:</strong> Ejecución de pruebas de regresión tras la aplicación
+                            de parches de seguridad para asegurar la continuidad del servicio.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Proyectos Reales (Enfoque QA/DevOps)</div>
+
+            <div class="project-card">
+                <div>
+                    <span class="project-title">Secure CI/CD Pipeline (Golden Pipeline)</span>
+                    <span class="project-tech">| Jenkins • GitHub Actions • Docker • Python</span>
+                </div>
+                <div style="font-size: 9.5pt; margin-top: 5px; text-align: justify;">
+                    Implementación de un pipeline de integración continua que automatiza fases de
+                    <strong>Testing</strong> y validación de código (SAST). Integración de <strong>Jenkins</strong> y
+                    GitHub Actions para orquestar la construcción de imágenes <strong>Docker</strong> y validar la
+                    calidad del código antes del despliegue en producción.
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div>
+                    <span class="project-title">GraphSec: Infrastructure Validation</span>
+                    <span class="project-tech">| Python • Kubernetes Concepts • Terraform</span>
+                </div>
+                <div style="font-size: 9.5pt; margin-top: 5px; text-align: justify;">
+                    Desarrollo de una herramienta en <strong>Python</strong> para validar la integridad de
+                    configuraciones de infraestructura como código. Automatiza la revisión de reglas de red y políticas
+                    de seguridad, asegurando que el despliegue coincida con el diseño (QA de Arquitectura).
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div>
+                    <span class="project-title">Patch-BOE (Automated Scraper)</span>
+                    <span class="project-tech">| Python • PyTest • AWS EC2</span>
+                </div>
+                <div style="font-size: 9.5pt; margin-top: 5px; text-align: justify;">
+                    Sistema automatizado de extracción de datos. Implementación de tests unitarios
+                    (<strong>PyTest</strong>) para asegurar la integridad del parseo de datos legislativos complejos y
+                    ejecución programada en instancias Cloud.
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Educación</div>
+            <div class="exp-item" style="margin-bottom: 0;">
+                <div class="exp-header">
+                    <div>
+                        <span class="exp-role">Grado en Ingeniería de Ciberseguridad</span>
+                        <span class="exp-company"> | Universidad Rey Juan Carlos (URJC)</span>
+                    </div>
+                    <span class="exp-date">2020 - 2025</span>
+                </div>
+                <div style="font-size: 9pt; margin-top: 5px;">
+                    Formación sólida en Ingeniería del Software, Algoritmia (Python/Java) y Redes.
+                </div>
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>

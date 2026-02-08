@@ -1,3 +1,5 @@
+import MatrixRain from '../MatrixRain'
+
 function Hero() {
     const keywords = [
         'Cybersecurity',
@@ -10,6 +12,7 @@ function Hero() {
 
     return (
         <section className="hero section" id="home">
+            <MatrixRain />
             <div className="container hero-content">
                 <div className="hero-text">
                     <div className="hero-subtitle">

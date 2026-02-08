@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Guillermo Prieto Rodriguez - SOC Coordinator & Blue Team</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --primary: #0f172a;
+            /* Slate 900 */
+            --accent: #2563eb;
+            /* Royal Blue */
+            --text-main: #334155;
+            /* Slate 700 */
+            --text-light: #64748b;
+            /* Slate 500 */
+            --bg-light: #f8fafc;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background: #fff;
+            line-height: 1.5;
+            font-size: 9.5pt;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px 50px;
+            min-height: 297mm;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+        }
+
+        .header-left {
+            margin-right: 30px;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+        }
+
+        .header-center {
+            flex: 1;
+        }
+
+        .header-center h1 {
+            font-size: 20pt;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+            margin-bottom: 5px;
+        }
+
+        .header-center h2 {
+            font-size: 11pt;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 9pt;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .header-right a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--primary);
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+
+        /* PROFILE */
+        .profile-text {
+            text-align: justify;
+            color: var(--text-main);
+        }
+
+        /* EXPERIENCE */
+        .exp-item {
+            margin-bottom: 20px;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .exp-role {
+            font-weight: 700;
+            font-size: 10.5pt;
+            color: var(--primary);
+        }
+
+        .exp-company {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .exp-date {
+            font-size: 9pt;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .exp-details ul {
+            padding-left: 16px;
+            margin-top: 8px;
+        }
+
+        .exp-details li {
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+
+        /* PROJECTS GRID */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            row-gap: 25px;
+        }
+
+        .project-card {
+            /* No border, clean look */
+        }
+
+        .project-head {
+            margin-bottom: 4px;
+        }
+
+        .project-title {
+            font-weight: 700;
+            font-size: 10pt;
+            color: var(--primary);
+        }
+
+        .project-tech {
+            display: block;
+            font-size: 8pt;
+            color: var(--accent);
+            font-weight: 600;
+            font-family: monospace;
+            margin-top: 2px;
+            text-transform: uppercase;
+        }
+
+        .project-desc {
+            font-size: 9pt;
+            color: var(--text-main);
+            line-height: 1.4;
+        }
+
+        /* SKILLS & LANGUAGES */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-cat h4 {
+            font-size: 9.5pt;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .skill-list {
+            list-style: none;
+            font-size: 9pt;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* EDUCATION */
+        .edu-item {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .edu-degree {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .edu-school {
+            margin-left: 10px;
+            color: var(--text-main);
+        }
+
+        .edu-date {
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        @media print {
+            body {
+                margin: 0;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                width: 100%;
+                padding: 30px;
+                margin: 0;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cv-container">
+
+        <header>
+            <div class="header-left">
+                <img src="../cara horizontal.jpg" alt="Profile" class="profile-img">
+            </div>
+            <div class="header-center">
+                <h1>Guillermo Prieto</h1>
+                <h2>SOC Coordinator & Blue Team Engineer</h2>
+            </div>
+            <div class="header-right">
+                <div>Madrid, España (Híbrido/Remoto)</div>
+                <div>guillermoprieto17@gmail.com</div>
+                <div>+34 650 164 383</div>
+                <div><a href="https://linkedin.com/in/guillermo-prieto-rodriguez">linkedin.com/in/guillermo-prieto</a>
+                </div>
+                <div><a href="https://cv-guillermo-prieto-rodriguez.vercel.app">Portfolio Web</a></div>
+            </div>
+        </header>
+
+        <section>
+            <div class="section-title">Perfil Profesional</div>
+            <p class="profile-text">
+                <strong>Ingeniero de Ciberseguridad</strong> con mentalidad proactiva y orientada a la
+                <strong>coordinación de operaciones SOC</strong>. Cuento con experiencia operativa en la detección y
+                respuesta a incidentes (Blue Team), complementada con habilidades de <strong>liderazgo técnico</strong>
+                para la definición de procedimientos, estandarización de playbooks y generación de informes ejecutivos.
+                <br><br>
+                Mi enfoque se centra en la mejora continua del servicio: desde la optimización de reglas SIEM hasta la
+                mentorización de perfiles Junior. Tengo capacidad demostrada para gestionar cargas de trabajo, analizar
+                métricas de desempeño y asegurar el cumplimiento de SLAs bajo normativas como <strong>ISO
+                    27001</strong>. Nivel alto de <strong>Inglés (C1)</strong> para la interlocución con clientes
+                internacionales.
+            </p>
+        </section>
+
+        <section>
+            <div class="section-title">Habilidades Técnicas y de Gestión</div>
+            <div class="skills-grid">
+                <div class="skill-cat">
+                    <h4>Coordinación SOC</h4>
+                    <ul class="skill-list">
+                        <li>Creación de Playbooks y Procesos</li>
+                        <li>Gestión de Incidentes (IR)</li>
+                        <li>Reporting y KPIs (SLAs)</li>
+                        <li>Mentorización y Soporte N1</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>Blue Team & Detección</h4>
+                    <ul class="skill-list">
+                        <li><strong>SIEM/SOAR:</strong> LUCIA • Wazuh</li>
+                        <li>Análisis de Logs y Forense</li>
+                        <li>Threat Hunting • MITRE ATT&CK</li>
+                        <li>Análisis de Malware</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>Tecnologías Base</h4>
+                    <ul class="skill-list">
+                        <li><strong>Scripting:</strong> Python • Bash</li>
+                        <li>Sistemas Linux/Windows</li>
+                        <li>Redes y Protocolos TCP/IP</li>
+                        <li>ISO 27001 • NIST CSF</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section style="margin-top:-15px; margin-bottom: 20px;">
+            <div style="font-size:9pt; border-top:1px solid #eee; padding-top:5px; color:#555;">
+                <strong>Idiomas:</strong> Español (Nativo) • Inglés (C1 - Competencia Profesional Completa)
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Experiencia Profesional</div>
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <span class="exp-role">Ingeniero de Ciberseguridad (Ops & Coordinación)</span>
+                        <span class="exp-company"> | Centro de Servicios Avanzados (CSA)</span>
+                    </div>
+                    <span class="exp-date">Ene 2025 - Actualidad</span>
+                </div>
+                <div class="exp-details">
+                    <ul>
+                        <li><strong>Soporte a la Operación SOC:</strong> Actuación como referente técnico para la
+                            resolución de incidentes complejos, garantizando la calidad del servicio y el cumplimiento
+                            de los tiempos de respuesta.</li>
+                        <li><strong>Diseño de Playbooks:</strong> Creación y mantenimiento de documentación operativa y
+                            flujos de respuesta automatizados (SOAR en Python) para estandarizar la actuación ante
+                            amenazas recurrentes.</li>
+                        <li><strong>Reporting y Métricas:</strong> Elaboración de informes de seguimiento y análisis de
+                            tendencias de ataques para clientes, traduciendo datos técnicos en recomendaciones
+                            estratégicas de seguridad.</li>
+                        <li><strong>Optimización del Servicio:</strong> Análisis continuo de falsos positivos y ajuste
+                            de reglas de correlación SIEM para mejorar la eficiencia del equipo de monitorización.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Proyectos Relevantes</div>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Automatización de Respuesta (SOAR)</div>
+                        <span class="project-tech">Python • Playbooks • Eficiencia</span>
+                    </div>
+                    <div class="project-desc">
+                        Desarrollo de scripts y flujos de trabajo automatizados que redujeron el tiempo de triaje manual
+                        en un 50%. Estandarización de la respuesta ante incidentes comunes mediante procedimientos
+                        codificados.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Auditoría y Compliance (ISO 27001)</div>
+                        <span class="project-tech">Normativa • Reporting • Procesos</span>
+                    </div>
+                    <div class="project-desc">
+                        Liderazgo técnico en la preparación de auditorías de seguridad. Definición de controles,
+                        revisión de políticas y generación de evidencias para asegurar el cumplimiento normativo del
+                        servicio.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">GraphSec-IaC (Orquestación)</div>
+                        <span class="project-tech">Gestión de Riesgos • Visibilidad</span>
+                    </div>
+                    <div class="project-desc">
+                        Plataforma de orquestación que centraliza resultados de múltiples escáneres de vulnerabilidades.
+                        Demuestra capacidad para integrar fuentes de datos y presentar una visión unificada del estado
+                        de seguridad.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Cerebro (Análisis de Datos)</div>
+                        <span class="project-tech">SQL • Métricas • Dashboards</span>
+                    </div>
+                    <div class="project-desc">
+                        Sistema de procesamiento de datos en tiempo real. Experiencia aplicable a la generación de
+                        métricas SOC y dashboards de visualización de amenazas.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Formación Académica</div>
+            <div class="edu-item">
+                <div>
+                    <span class="edu-degree">Grado en Ingeniería de Ciberseguridad</span>
+                    <span class="edu-school">, Universidad Rey Juan Carlos (URJC)</span>
+                </div>
+                <span class="edu-date">2020 - 2025</span>
+            </div>
+            <div style="font-size: 9pt; margin-top: 5px; color: var(--text-main);">
+                <strong>Habilidades Soft:</strong> Organización, Comunicación Efectiva, Trabajo en Equipo, Resolución de
+                Problemas.
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>

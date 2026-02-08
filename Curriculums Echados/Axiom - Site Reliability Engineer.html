@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Guillermo Prieto Rodriguez - Site Reliability Engineer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --primary: #0f172a;
+            /* Slate 900 */
+            --accent: #2563eb;
+            /* Royal Blue */
+            --text-main: #334155;
+            /* Slate 700 */
+            --text-light: #64748b;
+            /* Slate 500 */
+            --bg-light: #f8fafc;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background: #fff;
+            line-height: 1.5;
+            font-size: 9.5pt;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px 50px;
+            min-height: 297mm;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+        }
+
+        .header-left {
+            margin-right: 30px;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+        }
+
+        .header-center {
+            flex: 1;
+        }
+
+        .header-center h1 {
+            font-size: 20pt;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+            margin-bottom: 5px;
+        }
+
+        .header-center h2 {
+            font-size: 11pt;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 9pt;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .header-right a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--primary);
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+
+        /* PROFILE */
+        .profile-text {
+            text-align: justify;
+            color: var(--text-main);
+        }
+
+        /* EXPERIENCE */
+        .exp-item {
+            margin-bottom: 20px;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .exp-role {
+            font-weight: 700;
+            font-size: 10.5pt;
+            color: var(--primary);
+        }
+
+        .exp-company {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .exp-date {
+            font-size: 9pt;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .exp-details ul {
+            padding-left: 16px;
+            margin-top: 8px;
+        }
+
+        .exp-details li {
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+
+        /* PROJECTS GRID */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            row-gap: 25px;
+        }
+
+        .project-card {
+            /* No border, clean look */
+        }
+
+        .project-head {
+            margin-bottom: 4px;
+        }
+
+        .project-title {
+            font-weight: 700;
+            font-size: 10pt;
+            color: var(--primary);
+        }
+
+        .project-tech {
+            display: block;
+            font-size: 8pt;
+            color: var(--accent);
+            font-weight: 600;
+            font-family: monospace;
+            margin-top: 2px;
+            text-transform: uppercase;
+        }
+
+        .project-desc {
+            font-size: 9pt;
+            color: var(--text-main);
+            line-height: 1.4;
+        }
+
+        /* SKILLS & LANGUAGES */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-cat h4 {
+            font-size: 9.5pt;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .skill-list {
+            list-style: none;
+            font-size: 9pt;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* EDUCATION */
+        .edu-item {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .edu-degree {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .edu-school {
+            margin-left: 10px;
+            color: var(--text-main);
+        }
+
+        .edu-date {
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        @media print {
+            body {
+                margin: 0;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                width: 100%;
+                padding: 30px;
+                margin: 0;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cv-container">
+
+        <header>
+            <div class="header-left">
+                <img src="../cara horizontal.jpg" alt="Profile" class="profile-img">
+            </div>
+            <div class="header-center">
+                <h1>Guillermo Prieto</h1>
+                <h2>Site Reliability Engineer (SRE) & Automation</h2>
+            </div>
+            <div class="header-right">
+                <div>Madrid, Spain (Remote Eligible)</div>
+                <div>guillermoprieto17@gmail.com</div>
+                <div>+34 650 164 383</div>
+                <div><a href="https://linkedin.com/in/guillermo-prieto-rodriguez">linkedin.com/in/guillermo-prieto</a>
+                </div>
+                <div><a href="https://cv-guillermo-prieto-rodriguez.vercel.app">Portfolio Web</a></div>
+            </div>
+        </header>
+
+        <section>
+            <div class="section-title">Professional Profile</div>
+            <p class="profile-text">
+                <strong>Site Reliability Engineer</strong> dedicated to building scalable, self-healing infrastructure.
+                I specialize in <strong>automating away manual toil</strong> and implementing robust monitoring systems
+                to ensure high availability.
+                <br><br>
+                My technical stack is centered on <strong>Python, Terraform, and Kubernetes</strong>. I have a strong
+                background in automating operational tasks—from log analysis to incident response workflows—using Python
+                scripts and LLM integrations. I believe in the SRE methodology of treating operations as a software
+                problem, and I am eager to apply my skills in automation and system tuning to Axiom's cloud-native
+                analytics platform.
+            </p>
+        </section>
+
+        <section>
+            <div class="section-title">Technical Skills</div>
+            <div class="skills-grid">
+                <div class="skill-cat">
+                    <h4>Automation & Cloud</h4>
+                    <ul class="skill-list">
+                        <li><strong>Scripting:</strong> Python • Bash • Go</li>
+                        <li><strong>IaC:</strong> Terraform • HCL</li>
+                        <li><strong>Cloud:</strong> AWS (EKS/EC2) • Docker</li>
+                        <li>Toil Reduction Strategies</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>Reliability & Observability</h4>
+                    <ul class="skill-list">
+                        <li><strong>Stack:</strong> Prometheus • Grafana</li>
+                        <li>Incident Mgmt & Postmortems</li>
+                        <li>SLO/Error Budget Concepts</li>
+                        <li>System Hardening</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>DevTools & Workflows</h4>
+                    <ul class="skill-list">
+                        <li><strong>CI/CD:</strong> GitHub Actions</li>
+                        <li>GitOps Methodologies</li>
+                        <li>Networking: DNS • TCP/IP</li>
+                        <li>LLM-assisted Coding</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section style="margin-top:-15px; margin-bottom: 20px;">
+            <div style="font-size:9pt; border-top:1px solid #eee; padding-top:5px; color:#555;">
+                <strong>Languages:</strong> Spanish (Native) • English (Fluent - Written & Verbal)
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Professional Experience</div>
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <span class="exp-role">Security & Operations Engineer</span>
+                        <span class="exp-company"> | Centro de Servicios Avanzados (CSA)</span>
+                    </div>
+                    <span class="exp-date">Jan 2025 - Present</span>
+                </div>
+                <div class="exp-details">
+                    <ul>
+                        <li><strong>Automation:</strong> Develop <strong>Python</strong> scripts to automate daily
+                            operational tasks, such as log analysis and report generation, significantly reducing manual
+                            effort (Toil).</li>
+                        <li><strong>Monitoring:</strong> Configure and maintain monitoring alerts to proactively
+                            identify system degradation. Analyze metrics to support capacity planning and incident
+                            response.</li>
+                        <li><strong>Infrastructure:</strong> Manage cloud resources and assist in the deployment of
+                            secure infrastructure, ensuring configuration consistency across environments.</li>
+                        <li><strong>Incident Handling:</strong> Act as a first responder for security and operational
+                            incidents, performing root cause analysis and implementing fixes to prevent recurrence.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Key Projects</div>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Cerebro (Sports Arbitrage Engine)</div>
+                        <span class="project-tech">Python • Asyncio • Web Scraping</span>
+                    </div>
+                    <div class="project-desc">
+                        Developed a real-time arbitrage detection engine. Handles concurrent data streams from multiple
+                        sources, optimizing latency to identify opportunities in milliseconds. Demonstrates efficient
+                        resource usage and error handling.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">GraphSec (Infrastructure Tool)</div>
+                        <span class="project-tech">Python • Graph Theory • Visualization</span>
+                    </div>
+                    <div class="project-desc">
+                        Built a tool to parse code configuration and model infrastructure systems as a graph. Helps
+                        visualize dependencies and potential bottlenecks or security risks in the architecture.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">CI/CD "Golden Pipeline"</div>
+                        <span class="project-tech">GitHub Actions • DevOps • Automation</span>
+                    </div>
+                    <div class="project-desc">
+                        Implemented robust CI/CD pipelines for personal projects. Automated testing, linting, and
+                        deployment processes to ensure code quality and reliable delivery.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">NativeConnect (Auth System)</div>
+                        <span class="project-tech">Security • API • Authentication</span>
+                    </div>
+                    <div class="project-desc">
+                        Created a secure identity management system prototype. Focused on implementing correct
+                        authentication flows and ensuring API reliability.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Education</div>
+            <div class="edu-item">
+                <div>
+                    <span class="edu-degree">BSc in Cybersecurity Engineering</span>
+                    <span class="edu-school">, Universidad Rey Juan Carlos (URJC)</span>
+                </div>
+                <span class="edu-date">2020 - 2025</span>
+            </div>
+            <div style="font-size: 9pt; margin-top: 5px; color: var(--text-main);">
+                <strong>Relevant Skills:</strong> Systems Administration, Network Security, Programming.
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>

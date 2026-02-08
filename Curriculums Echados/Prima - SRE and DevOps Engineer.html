@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Guillermo Prieto Rodriguez - SRE & DevOps Engineer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --primary: #5227cc;
+            /* Prima Purple-ish Tone (Approximated) */
+            --accent: #ff0055;
+            /* Energetic Accent */
+            --text-main: #1f2937;
+            --text-light: #4b5563;
+            --bg-light: #f3f4f6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background: #fff;
+            line-height: 1.5;
+            font-size: 9.5pt;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px 50px;
+            min-height: 297mm;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            align-items: center;
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+            margin-right: 25px;
+        }
+
+        .header-content {
+            flex: 1;
+        }
+
+        .header-content h1 {
+            font-size: 22pt;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+            margin-bottom: 5px;
+        }
+
+        .header-content h2 {
+            font-size: 11pt;
+            font-weight: 600;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 9pt;
+            color: var(--text-light);
+        }
+
+        .header-right a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--primary);
+            background: var(--bg-light);
+            padding: 6px 10px;
+            border-left: 4px solid var(--accent);
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        /* PROFILE */
+        .profile-text {
+            text-align: justify;
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+
+        /* SKILLS */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .skill-cat h4 {
+            font-size: 9.5pt;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 6px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 2px;
+        }
+
+        .skill-list {
+            font-size: 9pt;
+            color: var(--text-main);
+            list-style: none;
+        }
+
+        .skill-list li {
+            margin-bottom: 3px;
+        }
+
+        /* EXPERIENCE */
+        .exp-item {
+            margin-bottom: 15px;
+        }
+
+        .exp-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .exp-role {
+            font-weight: 700;
+            font-size: 10.5pt;
+            color: var(--primary);
+        }
+
+        .exp-company {
+            font-weight: 600;
+            color: #444;
+        }
+
+        .exp-date {
+            font-size: 9pt;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .exp-details ul {
+            padding-left: 18px;
+            margin-top: 5px;
+        }
+
+        .exp-details li {
+            margin-bottom: 3px;
+            color: var(--text-main);
+        }
+
+        /* PROJECTS */
+        .proj-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .proj-card {
+            border: 1px solid #eee;
+            padding: 12px;
+            border-radius: 4px;
+            background: #fff;
+            border-left: 3px solid var(--accent);
+        }
+
+        .proj-header {
+            margin-bottom: 5px;
+        }
+
+        .proj-title {
+            font-weight: 700;
+            font-size: 10pt;
+            color: var(--primary);
+        }
+
+        .proj-tech {
+            font-size: 8pt;
+            font-weight: 600;
+            color: #666;
+            background: #f0f0f0;
+            padding: 2px 5px;
+            border-radius: 3px;
+            margin-left: 5px;
+        }
+
+        .proj-desc {
+            font-size: 9pt;
+            color: var(--text-main);
+            text-align: justify;
+        }
+
+
+        @media print {
+            .cv-container {
+                width: 100%;
+                margin: 0;
+                padding: 30px;
+                box-shadow: none;
+            }
+
+            .section-title {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cv-container">
+
+        <header>
+            <img src="../cara horizontal.jpg" alt="Profile" class="profile-img">
+            <div class="header-content">
+                <h1>Guillermo Prieto</h1>
+                <h2>SRE & Cloud DevOps Engineer <span>| Python & Automation</span></h2>
+            </div>
+            <div class="header-right">
+                <div>Madrid, Spain (Hybrid/Remote)</div>
+                <div>+34 650 164 383</div>
+                <div>guillermoprieto17@gmail.com</div>
+                <div><a href="https://linkedin.com/in/guillermo-prieto-rodriguez">linkedin.com/in/guillermo-prieto</a>
+                </div>
+            </div>
+        </header>
+
+        <section>
+            <div class="section-title">Professional Summary</div>
+            <p class="profile-text">
+                <strong>Site Reliability Engineer (SRE) & DevOps</strong> professional with an obsession for
+                <strong>code
+                    quality</strong> and <strong>automation</strong>. I bring a unique mix of 1 year of formal
+                Enterprise Operations experience and 3+ years of intensive R&D engineering, where I built high-scale
+                distributed systems from the ground up.
+                <br><br>
+                I don't just "operate" infrastructure; I engineer reliability. I have a strong background in
+                <strong>Python</strong> for automating toil, architecting <strong>Distributed Systems</strong>
+                (Microservices, Redis), and implementing <strong>SLO</strong>-driven monitoring. I am looking to join
+                Prima to apply this "SRE Mindset" to shape the future of insurance infrastructure.
+            </p>
+        </section>
+
+        <section>
+            <div class="section-title">Technical Expertise</div>
+            <div class="skills-grid">
+                <div class="skill-cat">
+                    <h4>SRE & Reliability</h4>
+                    <ul class="skill-list">
+                        <li><strong>Observability:</strong> SLOs/SLIs • Grafana</li>
+                        <li><strong>Incident Mgmt:</strong> Post-Mortems • MTTR</li>
+                        <li><strong>Toil Reduction:</strong> Python Automation</li>
+                        <li><strong>Performance:</strong> Capacity Planning</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>Cloud & Microservices</h4>
+                    <ul class="skill-list">
+                        <li><strong>Cloud:</strong> AWS • Cloudflare • Azure</li>
+                        <li><strong>K8s:</strong> EKS • Helm • Autoscaling</li>
+                        <li><strong>Distributed:</strong> Redis • Message Queues</li>
+                        <li><strong>IaC:</strong> Terraform • Infrastructure Design</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>Development & Security</h4>
+                    <ul class="skill-list">
+                        <li><strong>Languages:</strong> Python (Advanced) • JS</li>
+                        <li><strong>Code Quality:</strong> Testing • AppSec</li>
+                        <li><strong>DevOps:</strong> CI/CD (GitHub Actions)</li>
+                        <li><strong>Security:</strong> Cloud WAF • IAM</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Professional Experience</div>
+            <div class="exp-item">
+                <div class="exp-head">
+                    <div>
+                        <span class="exp-role">Cybersecurity Engineer (SRE Focus)</span>
+                        <span class="exp-company"> | Centro de Servicios Avanzados (CSA)</span>
+                    </div>
+                    <span class="exp-date">Jan 2025 - Present</span>
+                </div>
+                <div class="exp-details">
+                    <ul>
+                        <li><strong>Automating Toil:</strong> Designed and deployed <strong>Python</strong> automation
+                            workflows to handle security alerts, reducing Mean Time To Respond (MTTR) by 50% and
+                            freeing up engineer time for high-value tasks.</li>
+                        <li><strong>Incident Response:</strong> Lead technical triage for critical infrastructure
+                            incidents, conducting blameless post-incident reviews to identify root causes and improve
+                            system resilience.</li>
+                        <li><strong>Infrastructure monitoring:</strong> Improved observability of security systems,
+                            ensuring high availability of critical detection services in a regulated environment.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Independent Engineering & R&D</div>
+            <div class="exp-item">
+                <div class="exp-details" style="margin-top: 5px;">
+                    <p style="font-size: 9pt; color: #555; margin-bottom: 8px;">
+                        <em>Full-time equivalent engineering focused on building reliable, distributed systems and
+                            automation.</em>
+                    </p>
+                    <ul style="padding-left: 18px;">
+                        <li><strong>Distributed Systems (FinTech):</strong> Architected "Cerebro", a highly distributed
+                            trading engine. Solved complex concurrency challenges using <strong>Redis</strong> and
+                            asynchronous <strong>Python</strong>, ensuring sub-second latency under high load.</li>
+                        <li><strong>Cloud Engineering:</strong> Managed self-hosted <strong>Kubernetes</strong> clusters
+                            and deployed serverless applications on the Edge (Cloudflare), optimizing for global
+                            reliability and performance.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Key Projects (Engineering & Code)</div>
+            <div class="proj-grid">
+
+                <!-- Project: Cerebro -> Matches Distributed Systems / Reliability -->
+                <div class="proj-card">
+                    <div class="proj-header">
+                        <span class="proj-title">Cerebro (Distributed System)</span>
+                        <span class="proj-tech">Python • Redis • High Availability</span>
+                    </div>
+                    <div class="proj-desc">
+                        High-frequency engine handling massive concurrency. Engineered for reliability using message
+                        queues (Redis) and robust error handling. Demonstrates strong understanding of
+                        <strong>Microservices</strong> architecture.
+                    </div>
+                </div>
+
+                <!-- Project: Patch-BOE -> Matches Python Automation / Software Engineering -->
+                <div class="proj-card">
+                    <div class="proj-header">
+                        <span class="proj-title">Patch-BOE (Automation)</span>
+                        <span class="proj-tech">Python (Advanced) • ETL • Data</span>
+                    </div>
+                    <div class="proj-desc">
+                        Complex automation pipeline scraping and processing legal data. Focus on <strong>Clean
+                            Code</strong>
+                        and maintainability. Eliminates the manual toil of monitoring legislative updates.
+                    </div>
+                </div>
+
+                <!-- Project: AI Chatbot -> Matches Cloudflare / Edge / Regulated Tech -->
+                <div class="proj-card">
+                    <div class="proj-header">
+                        <span class="proj-title">AI Chatbot (Edge Computing)</span>
+                        <span class="proj-tech">Cloudflare • Serverless • Security</span>
+                    </div>
+                    <div class="proj-desc">
+                        Serverless application deployed on <strong>Cloudflare</strong> global network (Edge). Secure,
+                        scalable, and optimized for performance. Directly relevant to Prima's tech stack interests.
+                    </div>
+                </div>
+
+                <!-- Project: GraphSec -> Matches Security / IaC -->
+                <div class="proj-card">
+                    <div class="proj-header">
+                        <span class="proj-title">GraphSec (Security Orchestration)</span>
+                        <span class="proj-tech">Terraform • CI/CD • DevSecOps</span>
+                    </div>
+                    <div class="proj-desc">
+                        Infrastructure orchestration tool. Correlates graph data with security findings. Proves
+                        capability
+                        to build complex tooling for <strong>Infrastructure as Code</strong> environments.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Education & Languages</div>
+            <div class="exp-item">
+                <div class="exp-head">
+                    <div>
+                        <span class="exp-role">BSc in Cybersecurity Engineering</span>
+                        <span class="exp-company"> | Universidad Rey Juan Carlos (URJC)</span>
+                    </div>
+                    <span class="exp-date">2020 - 2025</span>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>

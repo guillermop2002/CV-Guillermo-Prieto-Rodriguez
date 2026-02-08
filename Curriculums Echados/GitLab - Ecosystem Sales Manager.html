@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Guillermo Prieto Rodriguez - Ecosystem Sales Manager</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --primary: #171321;
+            /* GitLab Dark */
+            --accent: #FC6D26;
+            /* GitLab Orange */
+            --text-main: #333;
+            --text-light: #666;
+            --bg-light: #fca32610;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background: #fff;
+            line-height: 1.5;
+            font-size: 9.5pt;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px 50px;
+            min-height: 297mm;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent);
+            margin-right: 30px;
+        }
+
+        .header-center {
+            flex: 1;
+        }
+
+        .header-center h1 {
+            font-size: 20pt;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+            margin-bottom: 5px;
+        }
+
+        .header-center h2 {
+            font-size: 11pt;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 9pt;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .header-right a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--primary);
+            border-bottom: 1px solid var(--accent);
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+        }
+
+        /* PROFILE */
+        .profile-text {
+            text-align: justify;
+            color: var(--text-main);
+        }
+
+        /* EXP */
+        .exp-item {
+            margin-bottom: 20px;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .exp-role {
+            font-weight: 700;
+            font-size: 10.5pt;
+            color: var(--primary);
+        }
+
+        .exp-company {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .exp-date {
+            font-size: 9pt;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .exp-details ul {
+            padding-left: 16px;
+            margin-top: 8px;
+        }
+
+        .exp-details li {
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+
+        /* SKILLS */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-cat h4 {
+            font-size: 9.5pt;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .skill-list {
+            list-style: none;
+            font-size: 9pt;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cv-container">
+
+        <header>
+            <img src="../cara horizontal.jpg" alt="Profile" class="profile-img">
+            <div class="header-center">
+                <h1>Guillermo Prieto</h1>
+                <h2>Ecosystem Sales Manager</h2>
+            </div>
+            <div class="header-right">
+                <div>Madrid, Spain (Remote)</div>
+                <div>guillermoprieto17@gmail.com</div>
+                <div>+34 650 164 383</div>
+                <div><a href="https://linkedin.com/in/guillermo-prieto-rodriguez">linkedin.com/in/guillermo-prieto</a>
+                </div>
+            </div>
+        </header>
+
+        <section>
+            <div class="section-title">Professional Profile</div>
+            <p class="profile-text">
+                <strong>Technical Sales & Partnerships Manager</strong> with a strong engineering background in
+                <strong>DevSecOps and Cloud</strong>. I bridge the gap between technical innovation and business value,
+                helping partners (System Integrators/MSPs) build profitable practices around complex platforms like
+                GitLab.
+                <br><br>
+                My "manager of one" mindset allows me to operate autonomously in remote environments, driving joint
+                business plans and co-sell motions. I possess the unique ability to articulate the value of
+                <strong>AI-powered DevSecOps</strong> to C-level executives while maintaining credibility with technical
+                teams, accelerating adoption across the Mediterranean region.
+            </p>
+        </section>
+
+        <section>
+            <div class="section-title">Core Competencies</div>
+            <div class="skills-grid">
+                <div class="skill-cat">
+                    <h4>Ecosystem & Sales</h4>
+                    <ul class="skill-list">
+                        <li>Partner Relationship Mgmt</li>
+                        <li>Joint Go-to-Market Strategy</li>
+                        <li>Solution Selling (B2B)</li>
+                        <li>Pipeline Forecasting</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>Technical Domain</h4>
+                    <ul class="skill-list">
+                        <li><strong>DevSecOps Platform:</strong> GitLab CI/CD</li>
+                        <li><strong>Cloud:</strong> AWS, Google Cloud</li>
+                        <li>SDLC & Agile Methodologies</li>
+                        <li>AI for Software Development</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>Soft Skills</h4>
+                    <ul class="skill-list">
+                        <li>Strategic Negotiation</li>
+                        <li>Public Speaking / Demos</li>
+                        <li>Remote-First Work Style</li>
+                        <li>Fluent English & Spanish</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Professional Experience</div>
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <span class="exp-role">Strategic Technical Consultant</span>
+                        <span class="exp-company"> | Centro de Servicios Avanzados (CSA)</span>
+                    </div>
+                    <span class="exp-date">Jan 2025 - Present</span>
+                </div>
+                <div class="exp-details">
+                    <ul>
+                        <li><strong>Partner Enablement:</strong> Acted as the primary technical advisor for key client
+                            accounts, helping them define their DevSecOps strategy and adopt cloud-native solutions.
+                            This consultative approach directly drove service expansion revenue.</li>
+                        <li><strong>Solution Selling:</strong> Collaborated with the sales team to design and pitch
+                            complex infrastructure modernization projects to public sector clients. Validated technical
+                            feasibility to accelerate deal closure.</li>
+                        <li><strong>Stakeholder Management:</strong> Managed relationships with third-party vendors and
+                            cloud providers (AWS/GCP), aligning their offerings with client business goals to create
+                            mutual value.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <span class="exp-role">DevSecOps & Cloud Engineer</span>
+                        <span class="exp-company"> | Freelance / Various Projects</span>
+                    </div>
+                    <span class="exp-date">2020 - 2024</span>
+                </div>
+                <div class="exp-details">
+                    <ul>
+                        <li><strong>Client Acquisition:</strong> Built a personal portfolio of clients by identifying
+                            their pain points in software delivery and pitching tailored automation solutions (CI/CD).
+                        </li>
+                        <li><strong>Value Demonstration:</strong> Successfully sold the ROI of "shifting left" security
+                            to non-technical business owners, resulting in long-term retainer contracts for maintenance
+                            and optimization.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Relevant Projects</div>
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span class="exp-role">GitLab Integration Strategy</span>
+                    <span class="exp-company"> | "Golden Pipeline" Initiative</span>
+                </div>
+                <div class="exp-details">
+                    Built a standardized CI/CD offering for development teams, effectively "productizing" the DevSecOps
+                    workflow. This demonstrated the platform's value by reducing deployment times by 40%, serving as a
+                    key sales enabler for wider adoption.
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Education</div>
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span class="exp-role">BSc in Cybersecurity Engineering</span>
+                    <span class="exp-company"> | Universidad Rey Juan Carlos</span>
+                </div>
+                <span class="exp-date">2020 - 2025</span>
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>

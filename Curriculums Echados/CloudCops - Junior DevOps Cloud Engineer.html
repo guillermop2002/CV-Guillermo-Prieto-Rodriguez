@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Guillermo Prieto Rodriguez - Junior DevOps Engineer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --primary: #0f172a;
+            /* Slate 900 */
+            --accent: #3b82f6;
+            /* Blue */
+            --text-main: #334155;
+            /* Slate 700 */
+            --text-light: #64748b;
+            /* Slate 500 */
+            --bg-light: #f8fafc;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background: #fff;
+            line-height: 1.5;
+            font-size: 9.5pt;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px 50px;
+            min-height: 297mm;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+            margin-right: 30px;
+        }
+
+        .header-center {
+            flex: 1;
+        }
+
+        .header-center h1 {
+            font-size: 20pt;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+            margin-bottom: 5px;
+        }
+
+        .header-center h2 {
+            font-size: 11pt;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 9pt;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .header-right a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--primary);
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+
+        /* PROFILE */
+        .profile-text {
+            text-align: justify;
+            color: var(--text-main);
+        }
+
+        /* EXPERIENCE */
+        .exp-item {
+            margin-bottom: 20px;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .exp-role {
+            font-weight: 700;
+            font-size: 10.5pt;
+            color: var(--primary);
+        }
+
+        .exp-company {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .exp-date {
+            font-size: 9pt;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .exp-details ul {
+            padding-left: 16px;
+            margin-top: 8px;
+        }
+
+        .exp-details li {
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+
+        /* PROJECTS GRID */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            row-gap: 25px;
+        }
+
+        .project-card {
+            /* No border, clean look */
+        }
+
+        .project-head {
+            margin-bottom: 4px;
+        }
+
+        .project-title {
+            font-weight: 700;
+            font-size: 10pt;
+            color: var(--primary);
+        }
+
+        .project-tech {
+            display: block;
+            font-size: 8pt;
+            color: var(--accent);
+            font-weight: 600;
+            font-family: monospace;
+            margin-top: 2px;
+            text-transform: uppercase;
+        }
+
+        .project-desc {
+            font-size: 9pt;
+            color: var(--text-main);
+            line-height: 1.4;
+        }
+
+        /* SKILLS & LANGUAGES */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-cat h4 {
+            font-size: 9.5pt;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .skill-list {
+            list-style: none;
+            font-size: 9pt;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* EDUCATION */
+        .edu-item {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .edu-degree {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .edu-school {
+            margin-left: 10px;
+            color: var(--text-main);
+        }
+
+        .edu-date {
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        @media print {
+            body {
+                margin: 0;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                width: 100%;
+                padding: 30px;
+                margin: 0;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cv-container">
+
+        <header>
+            <img src="../cara horizontal.jpg" alt="Profile" class="profile-img">
+            <div class="header-center">
+                <h1>Guillermo Prieto</h1>
+                <h2>Junior DevOps & Cloud Engineer</h2>
+            </div>
+            <div class="header-right">
+                <div>Madrid / Remote</div>
+                <div>guillermoprieto17@gmail.com</div>
+                <div>+34 650 164 383</div>
+                <div><a href="https://linkedin.com/in/guillermo-prieto-rodriguez">linkedin.com/in/guillermo-prieto</a>
+                </div>
+                <div><a href="https://cv-guillermo-prieto-rodriguez.vercel.app">Portfolio Web</a></div>
+            </div>
+        </header>
+
+        <section>
+            <div class="section-title">Professional Mindset</div>
+            <p class="profile-text">
+                <strong>DevOps Engineer</strong> passionate about the <strong>"Everything-as-Code"</strong> philosophy.
+                I transitioned from cybersecurity engineering to Cloud/DevOps because I love building scalable,
+                automated systems rather than just breaking them.
+                <br><br>
+                I am proficient in <strong>Terraform (IaC)</strong> and <strong>Kubernetes</strong>, and I actively
+                experiment with modern GitOps workflows (ArgoCD) and observability stacks (Prometheus/Grafana) in my own
+                time. I am looking for a team like CloudCops where I can learn from seniors, contribute to innovative
+                projects, and turn my passion for automation into production-grade solutions.
+            </p>
+        </section>
+
+        <section>
+            <div class="section-title">Core Competencies</div>
+            <div class="skills-grid">
+                <div class="skill-cat">
+                    <h4>IaC & Cloud</h4>
+                    <ul class="skill-list">
+                        <li><strong>Terraform:</strong> Modular Infrastructure Design</li>
+                        <li><strong>Cloud:</strong> AWS (Main) • GCP (Familiar)</li>
+                        <li><strong>Containers:</strong> Docker • EKS/GKE Basics</li>
+                        <li>"Everything-as-Code" Approach</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>CI/CD & GitOps</h4>
+                    <ul class="skill-list">
+                        <li><strong>Pipelines:</strong> GitHub Actions • GitLab CI</li>
+                        <li><strong>GitOps:</strong> ArgoCD (Lab Exp)</li>
+                        <li><strong>Version Control:</strong> Git Flow • Branching</li>
+                        <li>Automated Testing in CI</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>Observability & Backend</h4>
+                    <ul class="skill-list">
+                        <li><strong>Stack:</strong> Prometheus • Grafana • Loki</li>
+                        <li><strong>Systems:</strong> Linux • Bash • Redis</li>
+                        <li><strong>Prog:</strong> Python • Go (Basics)</li>
+                        <li>English (Professional Proficiency)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section style="margin-top:-15px; margin-bottom: 20px;">
+            <div style="font-size:9pt; border-top:1px solid #eee; padding-top:5px; color:#555;">
+                <strong>Languages:</strong> Spanish (Native) • English (Fluent - C1)
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Professional Experience</div>
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <span class="exp-role">Cloud DevOps Engineer (Junior)</span>
+                        <span class="exp-company"> | Centro de Servicios Avanzados (CSA)</span>
+                    </div>
+                    <span class="exp-date">Jan 2025 - Present</span>
+                </div>
+                <div class="exp-details">
+                    <ul>
+                        <li><strong>Infrastructure as Code:</strong> Responsible for maintaining and writing Terraform
+                            modules to provision cloud resources (AWS EC2, VPC, S3). Replaced manual click-ops processes
+                            with reproducible code.</li>
+                        <li><strong>Pipeline Optimization:</strong> Improved CI/CD pipelines in GitHub Actions, reducing
+                            build times by caching dependencies and parallelizing testing stages.</li>
+                        <li><strong>Observability:</strong> Deployed Grafana dashboards connected to Prometheus to
+                            monitor system health, setting up basic alerts for CPU/Memory spikes in production services.
+                        </li>
+                        <li><strong>Incident Support:</strong> Assisted senior engineers in debugging production
+                            incidents, using log analysis (Loki/CloudWatch) to trace root causes in distributed
+                            microservices.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Side Projects & Hack-Time</div>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Home Lab Kubernetes Cluster</div>
+                        <span class="project-tech">K3s • ArgoCD • MetalLB</span>
+                    </div>
+                    <div class="project-desc">
+                        Built a bare-metal Kubernetes cluster at home to practice GitOps. Deployed apps using ArgoCD,
+                        syncing state directly from a Git repository to the cluster.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Serverless Bot Portfolio</div>
+                        <span class="project-tech">AWS Lambda • Python • Terraform</span>
+                    </div>
+                    <div class="project-desc">
+                        Developed a series of automation bots (e.g., for finding cheap flights or tracking prices)
+                        deployed entirely on AWS Lambda using Terraform, with zero fixed costs.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Redis-based Arbitrage Engine</div>
+                        <span class="project-tech">Redis • Docker Compose • Networking</span>
+                    </div>
+                    <div class="project-desc">
+                        Designed a high-throughput system using Redis as a message broker to process sports data. Gained
+                        hands-on experience with container networking and in-memory databases.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">"Golden Pipeline" Template</div>
+                        <span class="project-tech">GitHub Actions • Docker • Trivy</span>
+                    </div>
+                    <div class="project-desc">
+                        Created a reusable CI/CD template that builds a Docker image, scans it for vulnerabilities
+                        (Trivy), and pushes it to a registry only if it passes all checks.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Education</div>
+            <div class="edu-item">
+                <div>
+                    <span class="edu-degree">BSc in Cybersecurity Engineering</span>
+                    <span class="edu-school">, Universidad Rey Juan Carlos (URJC)</span>
+                </div>
+                <span class="edu-date">2020 - 2025</span>
+            </div>
+            <div style="font-size: 9pt; margin-top: 5px; color: var(--text-main);">
+                <strong>Relevant Focus:</strong> Cloud Computing, Linux Systems, Network Architecture.
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>

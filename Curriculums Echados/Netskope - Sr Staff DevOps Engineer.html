@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Guillermo Prieto Rodriguez - Sr. DevOps Engineer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --primary: #0071CE;
+            /* Netskope Blue */
+            --dark: #0f172a;
+            --text-main: #334155;
+            --text-light: #64748b;
+            --bg-light: #f1f5f9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background: #fff;
+            line-height: 1.5;
+            font-size: 9.5pt;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px 50px;
+            min-height: 297mm;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            align-items: center;
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+        }
+
+        .header-left {
+            flex: 1;
+        }
+
+        .header-left h1 {
+            font-size: 22pt;
+            font-weight: 800;
+            color: var(--dark);
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+            margin-bottom: 5px;
+        }
+
+        .header-left h2 {
+            font-size: 12pt;
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 9pt;
+            color: var(--text-light);
+        }
+
+        .header-right div {
+            margin-bottom: 2px;
+        }
+
+        .header-right a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--dark);
+            border-left: 4px solid var(--primary);
+            padding-left: 10px;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+            background: linear-gradient(90deg, var(--bg-light) 0%, transparent 100%);
+            padding-top: 2px;
+            padding-bottom: 2px;
+        }
+
+        /* PROFILE */
+        .profile-text {
+            text-align: justify;
+            color: var(--text-main);
+            margin-bottom: 15px;
+        }
+
+        /* SKILLS */
+        .skills-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+
+        .skills-table td {
+            padding: 6px 0;
+            vertical-align: top;
+        }
+
+        .skill-cat {
+            width: 140px;
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 9pt;
+        }
+
+        .skill-list {
+            font-size: 9pt;
+            color: var(--text-main);
+        }
+
+        /* EXPERIENCE */
+        .exp-item {
+            margin-bottom: 20px;
+        }
+
+        .exp-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 6px;
+        }
+
+        .exp-role {
+            font-weight: 700;
+            font-size: 10.5pt;
+            color: var(--dark);
+        }
+
+        .exp-company {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .exp-date {
+            font-size: 9pt;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .exp-details ul {
+            padding-left: 18px;
+            margin-top: 5px;
+        }
+
+        .exp-details li {
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+
+        /* PROJECTS CARD STYLE */
+        .proj-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .proj-card {
+            background: var(--bg-light);
+            padding: 15px;
+            border-radius: 4px;
+            border-left: 3px solid var(--text-light);
+        }
+
+        .proj-title {
+            font-weight: 700;
+            color: var(--dark);
+            font-size: 10pt;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .proj-tech {
+            font-size: 8pt;
+            color: var(--primary);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .proj-desc {
+            font-size: 9pt;
+            color: var(--text-main);
+        }
+
+        @media print {
+            .cv-container {
+                width: 100%;
+                margin: 0;
+                padding: 30px;
+                box-shadow: none;
+            }
+
+            .section-title {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cv-container">
+
+        <header>
+            <div class="header-left">
+                <h1>Guillermo Prieto</h1>
+                <h2>DevSecOps Engineer & Infrastructure Specialist</h2>
+            </div>
+            <div class="header-right">
+                <div>Madrid, Spain (Remote)</div>
+                <div>+34 650 164 383</div>
+                <div>guillermoprieto17@gmail.com</div>
+                <div><a href="https://linkedin.com/in/guillermo-prieto-rodriguez">linkedin.com/in/guillermo-prieto</a>
+                </div>
+            </div>
+        </header>
+
+        <section>
+            <div class="section-title">Executive Summary</div>
+            <p class="profile-text">
+                <strong>High-autonomy DevSecOps Engineer</strong> with a strong track record of designing, building, and
+                operating secure infrastructure from the ground up. I specialize in the "One-Man Army" approach:
+                efficiently managing complex CI/CD pipelines, hybrid cloud environments, and security monitoring without
+                the need for large operational teams.
+                <br><br>
+                blend deep knowledge of <strong>Systems Engineering (Linux/Networking)</strong> with the ability to
+                write production-grade <strong>Python/Go</strong> code to automate toil. Whether optimizing latency for
+                distributed applications or securing Kubernetes clusters against modern threats, I focus on delivering
+                scalable, self-healing systems that require minimal manual intervention.
+            </p>
+        </section>
+
+        <section>
+            <div class="section-title">Technical Expertise</div>
+            <table class="skills-table">
+                <tr>
+                    <td class="skill-cat">Cloud & Hybrid</td>
+                    <td class="skill-list">AWS • On-Prem/Hybrid Cloud Ops • Infrastructure as Code (Terraform)</td>
+                </tr>
+                <tr>
+                    <td class="skill-cat">Container Orchestration</td>
+                    <td class="skill-list">Kubernetes (GKE/EKS) • Docker • Helm • GitOps (ArgoCD Labs)</td>
+                </tr>
+                <tr>
+                    <td class="skill-cat">DevOps & CI/CD</td>
+                    <td class="skill-list">GitHub Actions (Advanced Pipelines) • Jenkins • Ansible • SRE Principles</td>
+                </tr>
+                <tr>
+                    <td class="skill-cat">Observability</td>
+                    <td class="skill-list">Prometheus • Grafana • CloudWatch • ELK Stack • Incident Triage</td>
+                </tr>
+                <tr>
+                    <td class="skill-cat">Backend & Systems</td>
+                    <td class="skill-list">Python (Automation/Scripting) • Go • Linux/Unix Internals • Networking</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <div class="section-title">Professional Experience</div>
+            <div class="exp-item">
+                <div class="exp-head">
+                    <div>
+                        <span class="exp-role">DevSecOps Engineer (Sole Owner)</span>
+                        <span class="exp-company"> | Centro de Servicios Avanzados (CSA)</span>
+                    </div>
+                    <span class="exp-date">Jan 2025 - Present</span>
+                </div>
+                <div class="exp-details">
+                    <ul>
+                        <li><strong>End-to-End CI/CD Ownership:</strong> Solely responsible for architecting and
+                            maintaining the "Golden Pipeline" for internal development. Replaced manual deployment steps
+                            with fully automated GitHub Actions workflows, integrating Security-as-Code (SAST/DAST)
+                            blocking mechanisms.</li>
+                        <li><strong>Infrastructure Automation:</strong> Designed and deployed Python-based automation
+                            bots that reduced security incident triage time by 50%. The system aggregates alerts from
+                            multiple sources and provides enriched context automatically.</li>
+                        <li><strong>Hybrid Cloud Operations:</strong> Managed the migration of core services to a hybrid
+                            Kubernetes environment. responsible for capacity planning and ensuring high availability
+                            (HA) across on-prem and cloud nodes.</li>
+                        <li><strong>Reliability Engineering:</strong> Implemented a comprehensive observability stack
+                            (Grafana/Prometheus) from scratch to monitor system health. Tuned alerts to eliminate noise
+                            and focused on actionable metrics (Latency, Errors).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-head">
+                    <div>
+                        <span class="exp-role">Site Reliability Engineer (Freelance)</span>
+                        <span class="exp-company"> | Various Projects</span>
+                    </div>
+                    <span class="exp-date">2020 - 2024</span>
+                </div>
+                <div class="exp-details">
+                    <ul>
+                        <li><strong>Distributed Systems Design:</strong> Independently designed "Cerebro", a distributed
+                            arbitrage engine. Optimized the backend (Go/Python) to handle high-throughput real-time data
+                            streams with minimal latency.</li>
+                        <li><strong>Performance Tuning:</strong> Managed full-stack performance for client web
+                            applications. Optimized Nginx configurations and Redis caching layers to improve
+                            Time-To-First-Byte (TTFB) and overall responsiveness.</li>
+                        <li><strong>Autonomous Operations:</strong> Acted as the sole technical point of contact for
+                            clients, handling everything from architectural decisions to 24/7 incident response and
+                            resolution.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Key Projects</div>
+            <div class="proj-grid">
+                <div class="proj-card">
+                    <div class="proj-title">
+                        <span>Golden Pipeline (CI/CD)</span>
+                        <span class="proj-tech">GitHub Actions • Gitleaks • Semgrep</span>
+                    </div>
+                    <div class="proj-desc">
+                        Built a standardized, secure CI/CD pipeline template. It automatically scans for secrets,
+                        vulnerabilities, and code quality issues, blocking unsafe merges without human intervention.
+                    </div>
+                </div>
+
+                <div class="proj-card">
+                    <div class="proj-title">
+                        <span>Cerebro Arbitrage Engine</span>
+                        <span class="proj-tech">Python • Redis • Distributed Systems</span>
+                    </div>
+                    <div class="proj-desc">
+                        A low-latency system processing real-time market data. Required deep optimization of network I/O
+                        and concurrency handling to execute trades in milliseconds.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Education</div>
+            <div class="exp-item">
+                <div class="exp-head">
+                    <div>
+                        <span class="exp-role">BSc Cybersecurity Engineering</span>
+                        <span class="exp-company"> | Universidad Rey Juan Carlos (URJC)</span>
+                    </div>
+                    <span class="exp-date">2020 - 2025</span>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>
