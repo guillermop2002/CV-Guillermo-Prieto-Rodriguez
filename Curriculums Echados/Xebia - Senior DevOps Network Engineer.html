@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Guillermo Prieto Rodriguez - DevOps & Cloud Network Engineer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --primary: #0f172a;
+            /* Slate 900 */
+            --accent: #2563eb;
+            /* Royal Blue */
+            --text-main: #334155;
+            /* Slate 700 */
+            --text-light: #64748b;
+            /* Slate 500 */
+            --bg-light: #f8fafc;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background: #fff;
+            line-height: 1.5;
+            font-size: 9.5pt;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px 50px;
+            min-height: 297mm;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+        }
+
+        .header-left {
+            margin-right: 30px;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+        }
+
+        .header-center {
+            flex: 1;
+        }
+
+        .header-center h1 {
+            font-size: 20pt;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+            margin-bottom: 5px;
+        }
+
+        .header-center h2 {
+            font-size: 11pt;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 9pt;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .header-right a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--primary);
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+
+        /* PROFILE */
+        .profile-text {
+            text-align: justify;
+            color: var(--text-main);
+        }
+
+        /* EXPERIENCE */
+        .exp-item {
+            margin-bottom: 20px;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .exp-role {
+            font-weight: 700;
+            font-size: 10.5pt;
+            color: var(--primary);
+        }
+
+        .exp-company {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .exp-date {
+            font-size: 9pt;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .exp-details ul {
+            padding-left: 16px;
+            margin-top: 8px;
+        }
+
+        .exp-details li {
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+
+        /* PROJECTS GRID */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            row-gap: 25px;
+        }
+
+        .project-card {
+            /* No border, clean look */
+        }
+
+        .project-head {
+            margin-bottom: 4px;
+        }
+
+        .project-title {
+            font-weight: 700;
+            font-size: 10pt;
+            color: var(--primary);
+        }
+
+        .project-tech {
+            display: block;
+            font-size: 8pt;
+            color: var(--accent);
+            font-weight: 600;
+            font-family: monospace;
+            margin-top: 2px;
+            text-transform: uppercase;
+        }
+
+        .project-desc {
+            font-size: 9pt;
+            color: var(--text-main);
+            line-height: 1.4;
+        }
+
+        /* SKILLS & LANGUAGES */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-cat h4 {
+            font-size: 9.5pt;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .skill-list {
+            list-style: none;
+            font-size: 9pt;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* EDUCATION */
+        .edu-item {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .edu-degree {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .edu-school {
+            margin-left: 10px;
+            color: var(--text-main);
+        }
+
+        .edu-date {
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        @media print {
+            body {
+                margin: 0;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                width: 100%;
+                padding: 30px;
+                margin: 0;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cv-container">
+
+        <header>
+            <div class="header-left">
+                <img src="../cara horizontal.jpg" alt="Profile" class="profile-img">
+            </div>
+            <div class="header-center">
+                <h1>Guillermo Prieto</h1>
+                <h2>DevOps & Cloud Network Engineer</h2>
+            </div>
+            <div class="header-right">
+                <div>Madrid, Spain (Remote)</div>
+                <div>guillermoprieto17@gmail.com</div>
+                <div>+34 650 164 383</div>
+                <div><a href="https://linkedin.com/in/guillermo-prieto-rodriguez">linkedin.com/in/guillermo-prieto</a>
+                </div>
+                <div><a href="https://cv-guillermo-prieto-rodriguez.vercel.app">Web Portfolio</a></div>
+            </div>
+        </header>
+
+        <section>
+            <div class="section-title">Professional Profile</div>
+            <p class="profile-text">
+                Engineer with strong expertise in <strong>Cloud Infrastructure & Networking</strong>, specializing in
+                scalable
+                AWS architectures. Proficient in automating network deployment with <strong>Terraform</strong> and
+                implementing
+                "Security-by-Design" principles in cloud connectivity.
+                <br><br>
+                Experienced in designing <strong>VPC</strong>, <strong>Security Groups</strong>, and <strong>Centralized
+                    Egress</strong> solutions.
+                My background combines deep network security knowledge (Firewalls, WAF) with hands-on
+                DevOps practices, ensuring high availability and compliance for global backbone networks.
+                I thrive in distributed, multi-region environments, optimizing connectivity and reducing operational
+                toil through IaC.
+            </p>
+        </section>
+
+        <section>
+            <div class="section-title">Technical Skills</div>
+            <div class="skills-grid">
+                <div class="skill-cat">
+                    <h4>Cloud Networking</h4>
+                    <ul class="skill-list">
+                        <li><strong>AWS:</strong> VPC • Route53 • Network Firewall</li>
+                        <li><strong>Connectivity:</strong> Transit Gateway • VPN • Load Balancers</li>
+                        <li><strong>Security:</strong> Security Groups • WAF • Shield</li>
+                        <li><strong>Global:</strong> Multi-region routing • CDN • Edge</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>IaC & Automation</h4>
+                    <ul class="skill-list">
+                        <li><strong>Tools:</strong> Terraform • Ansible • AWS CDK</li>
+                        <li><strong>Scripting:</strong> Python (Boto3) • Bash • Go</li>
+                        <li><strong>Orchestration:</strong> Kubernetes (EKS) • Docker</li>
+                        <li><strong>Pipelines:</strong> GitHub Actions • CI/CD for Infra</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>Observability & Soft Skills</h4>
+                    <ul class="skill-list">
+                        <li><strong>Monitoring:</strong> CloudWatch • Datadog • VPC Flow Logs</li>
+                        <li><strong>Collaboration:</strong> English (C1) • Cross-functional</li>
+                        <li><strong>Compliance:</strong> Network Segmentation • Zero Trust</li>
+                        <li><strong>Methodology:</strong> Agile • GitOps • SRE</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section style="margin-top:-15px; margin-bottom: 20px;">
+            <div style="font-size:9pt; border-top:1px solid #eee; padding-top:5px; color:#555;">
+                <strong>Relevant Stack:</strong> Terraform, AWS VPC, Network Firewall, Python, CI/CD.
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Professional Experience</div>
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <span class="exp-role">Network Security & Cloud Engineer</span>
+                        <span class="exp-company"> | Advanced Services Center (CSA)</span>
+                    </div>
+                    <span class="exp-date">Jan 2025 - Present</span>
+                </div>
+                <div class="exp-details">
+                    <ul>
+                        <li><strong>Secure Network Architecture:</strong> Designed and implemented hardened network
+                            architectures for government clients, utilizing strict segmentation (VPC) and centralized
+                            firewall policies.</li>
+                        <li><strong>Infrastructure Automation:</strong> Automated the deployment of network
+                            components (Subnets, Route Tables, Gateways) using Terraform, ensuring scalability and
+                            consistency.</li>
+                        <li><strong>Centralized Egress & Inspection:</strong> Configured proxy and firewall solutions to
+                            manage and inspect outbound traffic, aligning with rigorous security compliance standards
+                            (ENS, ISO 27001).</li>
+                        <li><strong>High Availability Connectivity:</strong> Maintained robust connectivity solutions,
+                            optimizing routing and reducing latency for critical services.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Projects & Architecture</div>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Network Infrastructure Orchestration</div>
+                        <span class="project-tech">Terraform • AWS • Python</span>
+                    </div>
+                    <div class="project-desc">
+                        Orchestration platform (GraphSec) automating the provisioning of complex cloud network
+                        topologies.
+                        Validates infrastructure code against security policies before deployment, ensuring compliant
+                        network backbone setup.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Automated Network Deployment</div>
+                        <span class="project-tech">CI/CD • EKS • VPC CNI</span>
+                    </div>
+                    <div class="project-desc">
+                        Designed pipelines for deploying Kubernetes networking (AWS VPC CNI) and ingress controllers.
+                        Ensures seamless traffic management and observability for microservices architectures.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Secure Traffic Gateway</div>
+                        <span class="project-tech">API Gateway • Load Balancing • WAF</span>
+                    </div>
+                    <div class="project-desc">
+                        Implemented a centralized ingress/egress gateway (NativeConnect) to manage API traffic. Includes
+                        automated WAF rules, rate limiting, and SSL termination for secure and scalable communications.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Edge Connectivity & Optimization</div>
+                        <span class="project-tech">Cloudflare • DNS • Global Routing</span>
+                    </div>
+                    <div class="project-desc">
+                        Deployed global edge logic using Cloudflare Workers to optimize routing and enforce security
+                        policies at the network edge, minimizing latency for distributed users.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Education</div>
+            <div class="edu-item">
+                <div>
+                    <span class="edu-degree">BSc in Cybersecurity Engineering</span>
+                    <span class="edu-school">, Rey Juan Carlos University (URJC)</span>
+                </div>
+                <span class="edu-date">2020 - 2025. Madrid</span>
+            </div>
+            <div style="font-size: 9pt; margin-top: 5px; color: var(--text-main);">
+                <strong>Focus:</strong> Network Architectures, Cloud Computing, Routing protocols, and Secure Systems.
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>

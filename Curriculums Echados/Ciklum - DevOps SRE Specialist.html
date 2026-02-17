@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Guillermo Prieto Rodriguez - DevOps & SRE Specialist</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --primary: #0f172a;
+            /* Slate 900 */
+            --accent: #2563eb;
+            /* Royal Blue */
+            --text-main: #334155;
+            /* Slate 700 */
+            --text-light: #64748b;
+            /* Slate 500 */
+            --bg-light: #f8fafc;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background: #fff;
+            line-height: 1.5;
+            font-size: 9.5pt;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px 50px;
+            min-height: 297mm;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+        }
+
+        .header-left {
+            margin-right: 30px;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+        }
+
+        .header-center {
+            flex: 1;
+        }
+
+        .header-center h1 {
+            font-size: 20pt;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+            margin-bottom: 5px;
+        }
+
+        .header-center h2 {
+            font-size: 11pt;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 9pt;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .header-right a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--primary);
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+
+        /* PROFILE */
+        .profile-text {
+            text-align: justify;
+            color: var(--text-main);
+        }
+
+        /* EXPERIENCE */
+        .exp-item {
+            margin-bottom: 20px;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .exp-role {
+            font-weight: 700;
+            font-size: 10.5pt;
+            color: var(--primary);
+        }
+
+        .exp-company {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .exp-date {
+            font-size: 9pt;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .exp-details ul {
+            padding-left: 16px;
+            margin-top: 8px;
+        }
+
+        .exp-details li {
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+
+        /* PROJECTS GRID */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            row-gap: 25px;
+        }
+
+        .project-card {
+            /* No border, clean look */
+        }
+
+        .project-head {
+            margin-bottom: 4px;
+        }
+
+        .project-title {
+            font-weight: 700;
+            font-size: 10pt;
+            color: var(--primary);
+        }
+
+        .project-tech {
+            display: block;
+            font-size: 8pt;
+            color: var(--accent);
+            font-weight: 600;
+            font-family: monospace;
+            margin-top: 2px;
+            text-transform: uppercase;
+        }
+
+        .project-desc {
+            font-size: 9pt;
+            color: var(--text-main);
+            line-height: 1.4;
+        }
+
+        /* SKILLS & LANGUAGES */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-cat h4 {
+            font-size: 9.5pt;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .skill-list {
+            list-style: none;
+            font-size: 9pt;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* EDUCATION */
+        .edu-item {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .edu-degree {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .edu-school {
+            margin-left: 10px;
+            color: var(--text-main);
+        }
+
+        .edu-date {
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        @media print {
+            body {
+                margin: 0;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                width: 100%;
+                padding: 30px;
+                margin: 0;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cv-container">
+
+        <header>
+            <div class="header-left">
+                <img src="../cara horizontal.jpg" alt="Profile" class="profile-img">
+            </div>
+            <div class="header-center">
+                <h1>Guillermo Prieto</h1>
+                <h2>DevOps & SRE Specialist</h2>
+            </div>
+            <div class="header-right">
+                <div>Madrid, Spain (Remote)</div>
+                <div>guillermoprieto17@gmail.com</div>
+                <div>+34 650 164 383</div>
+                <div><a href="https://linkedin.com/in/guillermo-prieto-rodriguez">linkedin.com/in/guillermo-prieto</a>
+                </div>
+                <div><a href="https://cv-guillermo-prieto-rodriguez.vercel.app">Web Portfolio</a></div>
+            </div>
+        </header>
+
+        <section>
+            <div class="section-title">Professional Profile</div>
+            <p class="profile-text">
+                Engineer specialized in <strong>DevOps, SRE, and Cloud Infrastructure</strong> with a focus on
+                scalability and reducing toil. Expert in designing resilient platforms using <strong>Infrastructure as
+                    Code (Terraform)</strong> and container orchestration (<strong>Docker, Kubernetes</strong>).
+                <br><br>
+                I combine a strong foundation in automation (Python/Bash) with practical experience in
+                <strong>Observability
+                    Systems</strong> (Grafana/Datadog) to ensure SLO/SLI compliance. My background in Security adds an
+                extra layer of value, integrating "Secure by Design" practices and cost optimization in cloud
+                environments
+                (AWS/GCP), ensuring both operational and financial efficiency.
+            </p>
+        </section>
+
+        <section>
+            <div class="section-title">Technical Skills</div>
+            <div class="skills-grid">
+                <div class="skill-cat">
+                    <h4>Cloud & Orchestration</h4>
+                    <ul class="skill-list">
+                        <li><strong>Cloud:</strong> AWS • GCP • Azure • Cost Mgmt</li>
+                        <li><strong>Orchestration:</strong> Kubernetes (K8s) • Docker</li>
+                        <li><strong>IaC:</strong> Terraform • Ansible • GitOps (ArgoCD)</li>
+                        <li><strong>Networking:</strong> Load Balancers • DNS • VPC</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>Observability & SRE</h4>
+                    <ul class="skill-list">
+                        <li><strong>Monitoring:</strong> Datadog • Prometheus • Grafana</li>
+                        <li><strong>Logs:</strong> ELK Stack • Splunk • CloudWatch</li>
+                        <li><strong>Reliability:</strong> Incident Response • Post-Mortems</li>
+                        <li><strong>Metrics:</strong> Defining SLIs/SLOs • Alerting</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>Automation & Coding</h4>
+                    <ul class="skill-list">
+                        <li><strong>Languages:</strong> Python • Go • Bash • Node.js</li>
+                        <li><strong>CI/CD:</strong> GitHub Actions • Jenkins • Pipelines</li>
+                        <li><strong>OS:</strong> Linux Administration • Shell Scripting</li>
+                        <li><strong>Database:</strong> PostgreSQL • Redis • NoSQL</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section style="margin-top:-15px; margin-bottom: 20px;">
+            <div style="font-size:9pt; border-top:1px solid #eee; padding-top:5px; color:#555;">
+                <strong>Languages:</strong> Spanish (Native) • English (C1 - Professional Proficiency)
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Professional Experience</div>
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <span class="exp-role">SRE & Security Operations Engineer</span>
+                        <span class="exp-company"> | Advanced Services Center (CSA)</span>
+                    </div>
+                    <span class="exp-date">Jan 2025 - Present</span>
+                </div>
+                <div class="exp-details">
+                    <ul>
+                        <li><strong>Incident Response & Automation:</strong> Leading critical incident response,
+                            reducing MTTR (Mean Time To Recovery) through automated runbooks with Python.</li>
+                        <li><strong>Observability Improvement:</strong> Optimization of monitoring and alerting systems
+                            (SIEM/LUCIA), reducing operational noise and improving anomaly detection accuracy.</li>
+                        <li><strong>Infrastructure Resilience:</strong> Design and implementation of secure and
+                            resilient architectures for government clients, ensuring high availability and compliance
+                            (ENS).</li>
+                        <li><strong>Cross-Functional Collaboration:</strong> Working directly with development teams to
+                            implement performance and security improvements from early lifecycle stages (Shift-Left).
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Projects & Infrastructure</div>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Infrastructure Orchestration Platform</div>
+                        <span class="project-tech">Terraform • Python • GitHub Actions</span>
+                    </div>
+                    <div class="project-desc">
+                        Development of an orchestration platform (based on GraphSec) managing infrastructure as code.
+                        Automates resource provisioning and validation, ensuring consistency and reducing configuration
+                        drift.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Edge AI RAG Deployment</div>
+                        <span class="project-tech">Cloudflare Workers • Serverless • KV Store</span>
+                    </div>
+                    <div class="project-desc">
+                        Implementation of a high-availability RAG system at the Edge. Optimized for minimal latency and
+                        reduced costs through serverless architecture, eliminating traditional server management.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Automated CI/CD Pipelines</div>
+                        <span class="project-tech">GitOps • Docker • Cost Checks</span>
+                    </div>
+                    <div class="project-desc">
+                        Design of continuous integration pipelines including automatic performance and security checks.
+                        Implementation of GitOps principles for traceable and reversible deployments.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Cost & Authenticated Gateway</div>
+                        <span class="project-tech">OAuth2 • Python • API Gateway</span>
+                    </div>
+                    <div class="project-desc">
+                        Centralized gateway architecture (NativeConnect) for efficient authentication and API traffic
+                        management. Focused on optimizing resource consumption and ensuring scalable access to
+                        microservices.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Education</div>
+            <div class="edu-item">
+                <div>
+                    <span class="edu-degree">BSc in Cybersecurity Engineering</span>
+                    <span class="edu-school">, Rey Juan Carlos University (URJC)</span>
+                </div>
+                <span class="edu-date">2020 - 2025. Madrid</span>
+            </div>
+            <div style="font-size: 9pt; margin-top: 5px; color: var(--text-main);">
+                <strong>Focus:</strong> System Architecture, Networks, Cloud Computing, and Secure Development.
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>

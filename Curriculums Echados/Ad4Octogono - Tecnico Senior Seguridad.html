@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Guillermo Prieto Rodriguez - Técnico Senior de Seguridad</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --primary: #0f172a;
+            /* Slate 900 */
+            --accent: #2563eb;
+            /* Royal Blue */
+            --text-main: #334155;
+            /* Slate 700 */
+            --text-light: #64748b;
+            /* Slate 500 */
+            --bg-light: #f8fafc;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background: #fff;
+            line-height: 1.5;
+            font-size: 9.5pt;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px 50px;
+            min-height: 297mm;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+        }
+
+        .header-left {
+            margin-right: 30px;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+        }
+
+        .header-center {
+            flex: 1;
+        }
+
+        .header-center h1 {
+            font-size: 20pt;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+            margin-bottom: 5px;
+        }
+
+        .header-center h2 {
+            font-size: 11pt;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 9pt;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .header-right a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--primary);
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+
+        /* PROFILE */
+        .profile-text {
+            text-align: justify;
+            color: var(--text-main);
+        }
+
+        /* EXPERIENCE */
+        .exp-item {
+            margin-bottom: 20px;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .exp-role {
+            font-weight: 700;
+            font-size: 10.5pt;
+            color: var(--primary);
+        }
+
+        .exp-company {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .exp-date {
+            font-size: 9pt;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .exp-details ul {
+            padding-left: 16px;
+            margin-top: 8px;
+        }
+
+        .exp-details li {
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+
+        /* PROJECTS GRID */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            row-gap: 25px;
+        }
+
+        .project-card {
+            /* No border, clean look */
+        }
+
+        .project-head {
+            margin-bottom: 4px;
+        }
+
+        .project-title {
+            font-weight: 700;
+            font-size: 10pt;
+            color: var(--primary);
+        }
+
+        .project-tech {
+            display: block;
+            font-size: 8pt;
+            color: var(--accent);
+            font-weight: 600;
+            font-family: monospace;
+            margin-top: 2px;
+            text-transform: uppercase;
+        }
+
+        .project-desc {
+            font-size: 9pt;
+            color: var(--text-main);
+            line-height: 1.4;
+        }
+
+        /* SKILLS & LANGUAGES */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-cat h4 {
+            font-size: 9.5pt;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .skill-list {
+            list-style: none;
+            font-size: 9pt;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* EDUCATION */
+        .edu-item {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .edu-degree {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .edu-school {
+            margin-left: 10px;
+            color: var(--text-main);
+        }
+
+        .edu-date {
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        @media print {
+            body {
+                margin: 0;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                width: 100%;
+                padding: 30px;
+                margin: 0;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cv-container">
+
+        <header>
+            <div class="header-left">
+                <img src="../cara horizontal.jpg" alt="Profile" class="profile-img">
+            </div>
+            <div class="header-center">
+                <h1>Guillermo Prieto</h1>
+                <h2>Ingeniero de Ciberseguridad</h2>
+            </div>
+            <div class="header-right">
+                <div>Madrid, España (Remoto)</div>
+                <div>guillermoprieto17@gmail.com</div>
+                <div>+34 650 164 383</div>
+                <div><a href="https://linkedin.com/in/guillermo-prieto-rodriguez">linkedin.com/in/guillermo-prieto</a>
+                </div>
+                <div><a href="https://cv-guillermo-prieto-rodriguez.vercel.app">Portfolio Web</a></div>
+            </div>
+        </header>
+
+        <section>
+            <div class="section-title">Perfil Profesional</div>
+            <p class="profile-text">
+                Ingeniero de Ciberseguridad con sólida experiencia técnica en <strong>auditoría, bastionado y gestión de
+                    incidentes</strong> en entornos críticos. Especialista en cumplimiento de normativas (<strong>ENS,
+                    ISO
+                    27001</strong>) y uso
+                de herramientas del <strong>CCN-CERT</strong> (LUCÍA, PILAR, microCLAUDIA).
+                <br><br>
+                Cuento con amplia experiencia en la ejecución de <strong>auditorías técnicas (OWASP)</strong> y
+                respuesta ante
+                capacidad técnica para realizar <strong>pentesting y hardening</strong> de sistemas (Windows/Linux)
+                con la visión
+                estratégica para asesorar en la mejora continua de la seguridad en la Administración Pública.
+            </p>
+        </section>
+
+        <section>
+            <div class="section-title">Competencias Técnicas</div>
+            <div class="skills-grid">
+                <div class="skill-cat">
+                    <h4>Auditoría & Pentesting</h4>
+                    <ul class="skill-list">
+                        <li><strong>Metodología:</strong> OWASP Top 10 • OSSTMM</li>
+                        <li><strong>Herramientas:</strong> Burp Suite • OWASP ZAP • Nessus</li>
+                        <li><strong>Gestión Vuln:</strong> Trivy • Snyk • MITRE CVE/CWE</li>
+                        <li><strong>Pentesting:</strong> Caja Negra • Caja Gris • Web/API</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>Gestión & CCN-CERT</h4>
+                    <ul class="skill-list">
+                        <li><strong>Herramientas CCN:</strong> LUCÍA • PILAR • ANA</li>
+                        <li><strong>Incidentes:</strong> Triage • Forense • Respuesta</li>
+                        <li><strong>Normativa:</strong> Esquema Nacional de Seguridad (ENS)</li>
+                        <li><strong>Compliance:</strong> ISO 27001 • GDPR</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>Bastionado & Sistemas</h4>
+                    <ul class="skill-list">
+                        <li><strong>Sistemas:</strong> Windows Server • Linux (RHEL/Ubuntu)</li>
+                        <li><strong>Directorio:</strong> Active Directory • GPOs</li>
+                        <li><strong>Cloud/Dev:</strong> AWS • Docker • Python Scripting</li>
+                        <li><strong>Hardening:</strong> CIS Benchmarks • Ansible</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section style="margin-top:-15px; margin-bottom: 20px;">
+            <div style="font-size:9pt; border-top:1px solid #eee; padding-top:5px; color:#555;">
+                <strong>Idiomas:</strong> Español (Nativo) • Inglés (C1 - Competencia Profesional Completa)
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Experiencia Profesional</div>
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <span class="exp-role">Ingeniero de Ciberseguridad y Gestión de Incidentes (SOC)</span>
+                        <span class="exp-company"> | Centro de Servicios Avanzados (CSA)</span>
+                    </div>
+                    <span class="exp-date">Ene 2025 - Actualidad</span>
+                </div>
+                <div class="exp-details">
+                    <ul>
+                        <li><strong>Gestión de Incidentes con LUCÍA:</strong> Responsable de la triaje, documentación y
+                            resolución de incidentes de seguridad utilizando la herramienta <strong>LUCÍA</strong> del
+                            CCN-CERT,
+                            asegurando el cumplimiento de los SLA y la correcta notificación al CSIRT de referencia.
+                        </li>
+                        <li><strong>Auditorías Técnicas y de Cumplimiento (ENS):</strong> Ejecución de auditorías
+                            internas para verificar la adecuación al <strong>Esquema Nacional de Seguridad
+                                (ENS)</strong>,
+                            identificando desviaciones y proponiendo medidas correctoras técnicas y organizativas.</li>
+                        <li><strong>Bastionado y Hardening:</strong> Definición e implementación de políticas de
+                            bastionado para servidores Windows y Linux, así como configuraciones seguras en Active
+                            Directory para mitigar vectores de ataque comunes.</li>
+                        <li><strong>Automatización de Respuesta:</strong> Desarrollo de scripts en
+                            <strong>Python</strong> para
+                            automatizar la recolección de evidencias y el enriquecimiento de alertas con Threat
+                            Intelligence, mejorando la eficiencia del equipo de respuesta.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Proyectos Destacados</div>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Auditoría y Bastionado "Golden Pipeline"</div>
+                        <span class="project-tech">OWASP • SAST/DAST • Hardening</span>
+                    </div>
+                    <div class="project-desc">
+                        Implementación de un ciclo de vida de desarrollo seguro (SSDLC) integrando herramientas de
+                        auditoría automática (SAST/DAST) basadas en <strong>OWASP</strong>. Definición de líneas base de
+                        seguridad
+                        para contenedores y servidores de despliegue.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">GraphSec-IaC (Gestión de Vulnerabilidades)</div>
+                        <span class="project-tech">Python • CVE/CWE • Priorización de Riesgos</span>
+                    </div>
+                    <div class="project-desc">
+                        Plataforma propia para la correlación de vulnerabilidades de infraestructura. Permite priorizar
+                        parches y medidas de mitigación basándose en la criticidad del activo y su exposición a
+                        internet, facilitando la toma de decisiones.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">NativeConnect (Seguridad en Identidad)</div>
+                        <span class="project-tech">IAM • OAuth2 • Bastionado de Autenticación</span>
+                    </div>
+                    <div class="project-desc">
+                        Diseño de un sistema de gestión de identidades robusto, implementando controles de seguridad
+                        contra ataques de fuerza bruta y robo de sesiones. Aseguramiento de la confidencialidad e
+                        integridad en el manejo de credenciales.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Cerebro (Inteligencia de Amenazas)</div>
+                        <span class="project-tech">Python • Data Aggregation • Análisis</span>
+                    </div>
+                    <div class="project-desc">
+                        Motor de procesamiento de datos en tiempo real capaz de ingerir y normalizar logs de diversas
+                        fuentes. Utilizado para la detección temprana de patrones anómalos y correlación de eventos de
+                        seguridad.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Formación Académica</div>
+            <div class="edu-item">
+                <div>
+                    <span class="edu-degree">Grado en Ingeniería de Ciberseguridad</span>
+                    <span class="edu-school">, Universidad Rey Juan Carlos (URJC)</span>
+                </div>
+                <span class="edu-date">2020 - 2025</span>
+            </div>
+            <div style="font-size: 9pt; margin-top: 5px; color: var(--text-main);">
+                <strong>Materias Relevantes:</strong> Seguridad en Redes, Auditoría de Sistemas, Forense Digital,
+                Normativa y Cumplimiento (ENS/RGPD).
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>

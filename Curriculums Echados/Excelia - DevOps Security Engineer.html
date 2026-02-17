@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Guillermo Prieto Rodriguez - DevOps Security Engineer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --primary: #0f172a;
+            /* Slate 900 */
+            --accent: #2563eb;
+            /* Royal Blue */
+            --text-main: #334155;
+            /* Slate 700 */
+            --text-light: #64748b;
+            /* Slate 500 */
+            --bg-light: #f8fafc;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background: #fff;
+            line-height: 1.5;
+            font-size: 9.5pt;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px 50px;
+            min-height: 297mm;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+        }
+
+        .header-left {
+            margin-right: 30px;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+        }
+
+        .header-center {
+            flex: 1;
+        }
+
+        .header-center h1 {
+            font-size: 20pt;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+            margin-bottom: 5px;
+        }
+
+        .header-center h2 {
+            font-size: 11pt;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 9pt;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .header-right a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--primary);
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+
+        /* PROFILE */
+        .profile-text {
+            text-align: justify;
+            color: var(--text-main);
+        }
+
+        /* EXPERIENCE */
+        .exp-item {
+            margin-bottom: 20px;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .exp-role {
+            font-weight: 700;
+            font-size: 10.5pt;
+            color: var(--primary);
+        }
+
+        .exp-company {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .exp-date {
+            font-size: 9pt;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .exp-details ul {
+            padding-left: 16px;
+            margin-top: 8px;
+        }
+
+        .exp-details li {
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+
+        /* PROJECTS GRID */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            row-gap: 25px;
+        }
+
+        .project-card {
+            /* No border, clean look */
+        }
+
+        .project-head {
+            margin-bottom: 4px;
+        }
+
+        .project-title {
+            font-weight: 700;
+            font-size: 10pt;
+            color: var(--primary);
+        }
+
+        .project-tech {
+            display: block;
+            font-size: 8pt;
+            color: var(--accent);
+            font-weight: 600;
+            font-family: monospace;
+            margin-top: 2px;
+            text-transform: uppercase;
+        }
+
+        .project-desc {
+            font-size: 9pt;
+            color: var(--text-main);
+            line-height: 1.4;
+        }
+
+        /* SKILLS & LANGUAGES */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-cat h4 {
+            font-size: 9.5pt;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .skill-list {
+            list-style: none;
+            font-size: 9pt;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* EDUCATION */
+        .edu-item {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .edu-degree {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .edu-school {
+            margin-left: 10px;
+            color: var(--text-main);
+        }
+
+        .edu-date {
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        @media print {
+            body {
+                margin: 0;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                width: 100%;
+                padding: 30px;
+                margin: 0;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cv-container">
+
+        <header>
+            <div class="header-left">
+                <img src="../cara horizontal.jpg" alt="Profile" class="profile-img">
+            </div>
+            <div class="header-center">
+                <h1>Guillermo Prieto</h1>
+                <h2>DevOps Security Engineer | SOC Automation</h2>
+            </div>
+            <div class="header-right">
+                <div>Madrid, España (Remoto)</div>
+                <div>guillermoprieto17@gmail.com</div>
+                <div>+34 650 164 383</div>
+                <div><a href="https://linkedin.com/in/guillermo-prieto-rodriguez">linkedin.com/in/guillermo-prieto</a>
+                </div>
+                <div><a href="https://cv-guillermo-prieto-rodriguez.vercel.app">Portfolio Web</a></div>
+            </div>
+        </header>
+
+        <section>
+            <div class="section-title">Perfil Profesional</div>
+            <p class="profile-text">
+                Ingeniero especializado en <strong>Automatización de Seguridad y SOC</strong> con un fuerte perfil
+                DevOps. Experto en construir plataformas que soportan operaciones de seguridad modernas mediante
+                <strong>Infraestructura como Código (Terraform)</strong> y orquestación de contenedores
+                (<strong>Kubernetes</strong>).
+                <br><br>
+                Cuento con amplia experiencia desarrollando <strong>Playbooks de Seguridad</strong> y scripts en
+                <strong>Python</strong> para respuesta a incidentes,
+                así como en el diseño de pipelines CI/CD seguros para el despliegue de reglas de detección (Detection as
+                Code).
+                Apasionado por integrar <strong>Observabilidad (Grafana/Prometheus)</strong> e Inteligencia Artificial
+                en los flujos de trabajo del SOC para maximizar la eficiencia operativa.
+            </p>
+        </section>
+
+        <section>
+            <div class="section-title">Competencias Técnicas</div>
+            <div class="skills-grid">
+                <div class="skill-cat">
+                    <h4>Automation & IaC</h4>
+                    <ul class="skill-list">
+                        <li><strong>IaC:</strong> Terraform • Ansible • Docker</li>
+                        <li><strong>Orchestration:</strong> Kubernetes (K8s) • Helm</li>
+                        <li><strong>Scripting:</strong> Python (Boto3) • Bash • API Integration</li>
+                        <li><strong>CI/CD:</strong> GitHub Actions • Pipelines Seguros</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>SecOps & Observability</h4>
+                    <ul class="skill-list">
+                        <li><strong>SIEM/XDR:</strong> Integración y Reglas • Elastic • Splunk</li>
+                        <li><strong>Monitoring:</strong> Prometheus • Grafana • OpenTelemetry</li>
+                        <li><strong>SOAR:</strong> Playbooks • Respuesta Automatizada</li>
+                        <li><strong>Security:</strong> SAST/DAST • Gestión de Secretos • OPA</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>Plataforma & Cloud</h4>
+                    <ul class="skill-list">
+                        <li><strong>Cloud:</strong> AWS • Azure • GCP</li>
+                        <li><strong>Contenedores:</strong> Seguridad de Imágenes • Hardening</li>
+                        <li><strong>Compliance:</strong> ISO 27001 • ENS • Políticas de Seguridad</li>
+                        <li><strong>Idiomas:</strong> Español (Nativo) • Inglés (C1)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section style="margin-top:-15px; margin-bottom: 20px;">
+            <div style="font-size:9pt; border-top:1px solid #eee; padding-top:5px; color:#555;">
+                <strong>Stack Relevante:</strong> Python, Terraform, Kubernetes, Grafana, Integración SIEM/SOAR.
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Experiencia Profesional</div>
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <span class="exp-role">SOC Automation & Security Engineer</span>
+                        <span class="exp-company"> | Centro de Servicios Avanzados (CSA)</span>
+                    </div>
+                    <span class="exp-date">Ene 2025 - Actualidad</span>
+                </div>
+                <div class="exp-details">
+                    <ul>
+                        <li><strong>Plataforma de Automatización:</strong> Lidero la construcción y mejora de
+                            herramientas internas para la automatización del SOC, utilizando Python para orquestar
+                            respuestas a incidentes y enriquecimiento de alertas.</li>
+                        <li><strong>Ingeniería de Detección:</strong> Desarrollo y mantenimiento de reglas de detección
+                            (SIEM) como código, asegurando versionado y despliegue automatizado mediante pipelines
+                            CI/CD.</li>
+                        <li><strong>Observabilidad y Métricas:</strong> Implementación de dashboards en Grafana para
+                            monitorizar la salud de los servicios de seguridad y métricas operativas del SOC.</li>
+                        <li><strong>Integración de Herramientas:</strong> Desarrollo de integraciones (APIs) entre
+                            sistemas de ticketing, SIEM y herramientas de Threat Intelligence para unificar la
+                            respuesta.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Proyectos e Innovación</div>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">SOC Orchestration Platform</div>
+                        <span class="project-tech">Python • Terraform • Docker</span>
+                    </div>
+                    <div class="project-desc">
+                        Diseño de una plataforma de orquestación de seguridad (basada en GraphSec) que automatiza el
+                        análisis de vulnerabilidades y la correlación de eventos. Desplegada como microservicios en
+                        contenedores.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Detection-as-Code Pipelines</div>
+                        <span class="project-tech">CI/CD • YAML • SIEM</span>
+                    </div>
+                    <div class="project-desc">
+                        Implementación de flujos de trabajo "Detection as Code", donde las reglas de seguridad se
+                        definen, prueban y despliegan automáticamente a través de pipelines de integración continua.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Secure API Gateway for SOAR</div>
+                        <span class="project-tech">API Security • OAuth2 • WAF</span>
+                    </div>
+                    <div class="project-desc">
+                        Arquitectura de gateway seguro (NativeConnect) para exponer capacidades de automatización del
+                        SOC a otros equipos, garantizando autenticación robusta y control de acceso.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">AI-Powered Incident Analysis</div>
+                        <span class="project-tech">Python • LLU • Automation</span>
+                    </div>
+                    <div class="project-desc">
+                        Integración de modelos de análisis de texto en el flujo de triaje de incidentes para clasificar
+                        automáticamente alertas y reducir el tiempo de respuesta de los analistas.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Formación Académica</div>
+            <div class="edu-item">
+                <div>
+                    <span class="edu-degree">Grado en Ingeniería de Ciberseguridad</span>
+                    <span class="edu-school">, Universidad Rey Juan Carlos (URJC)</span>
+                </div>
+                <span class="edu-date">2020 - 2025. Madrid</span>
+            </div>
+            <div style="font-size: 9pt; margin-top: 5px; color: var(--text-main);">
+                <strong>Enfoque:</strong> Desarrollo Seguro, Arquitectura de Sistemas, Automatización y Cloud Computing.
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>

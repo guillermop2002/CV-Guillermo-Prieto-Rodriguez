@@ -79,7 +79,7 @@ function About() {
                                     }}>Carta de Recomendación</span>
                                 </div>
                                 <a
-                                    href="/Carta Recomendacion CSA.pdf"
+                                    href="/Carta de Recomendación CSA.pdf"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="btn btn-secondary"

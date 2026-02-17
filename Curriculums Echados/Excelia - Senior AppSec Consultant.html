@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Guillermo Prieto Rodriguez - Senior AppSec Consultant</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --primary: #0f172a;
+            /* Slate 900 */
+            --accent: #2563eb;
+            /* Royal Blue */
+            --text-main: #334155;
+            /* Slate 700 */
+            --text-light: #64748b;
+            /* Slate 500 */
+            --bg-light: #f8fafc;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background: #fff;
+            line-height: 1.5;
+            font-size: 9.5pt;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px 50px;
+            min-height: 297mm;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+        }
+
+        .header-left {
+            margin-right: 30px;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+        }
+
+        .header-center {
+            flex: 1;
+        }
+
+        .header-center h1 {
+            font-size: 20pt;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+            margin-bottom: 5px;
+        }
+
+        .header-center h2 {
+            font-size: 11pt;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 9pt;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .header-right a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--primary);
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+
+        /* PROFILE */
+        .profile-text {
+            text-align: justify;
+            color: var(--text-main);
+        }
+
+        /* EXPERIENCE */
+        .exp-item {
+            margin-bottom: 20px;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .exp-role {
+            font-weight: 700;
+            font-size: 10.5pt;
+            color: var(--primary);
+        }
+
+        .exp-company {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .exp-date {
+            font-size: 9pt;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .exp-details ul {
+            padding-left: 16px;
+            margin-top: 8px;
+        }
+
+        .exp-details li {
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+
+        /* PROJECTS GRID */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            row-gap: 25px;
+        }
+
+        .project-card {
+            /* No border, clean look */
+        }
+
+        .project-head {
+            margin-bottom: 4px;
+        }
+
+        .project-title {
+            font-weight: 700;
+            font-size: 10pt;
+            color: var(--primary);
+        }
+
+        .project-tech {
+            display: block;
+            font-size: 8pt;
+            color: var(--accent);
+            font-weight: 600;
+            font-family: monospace;
+            margin-top: 2px;
+            text-transform: uppercase;
+        }
+
+        .project-desc {
+            font-size: 9pt;
+            color: var(--text-main);
+            line-height: 1.4;
+        }
+
+        /* SKILLS & LANGUAGES */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-cat h4 {
+            font-size: 9.5pt;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .skill-list {
+            list-style: none;
+            font-size: 9pt;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* EDUCATION */
+        .edu-item {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .edu-degree {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .edu-school {
+            margin-left: 10px;
+            color: var(--text-main);
+        }
+
+        .edu-date {
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        @media print {
+            body {
+                margin: 0;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                width: 100%;
+                padding: 30px;
+                margin: 0;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cv-container">
+
+        <header>
+            <div class="header-left">
+                <img src="../cara horizontal.jpg" alt="Profile" class="profile-img">
+            </div>
+            <div class="header-center">
+                <h1>Guillermo Prieto</h1>
+                <h2>Consultor AppSec & DevSecOps</h2>
+            </div>
+            <div class="header-right">
+                <div>Madrid, España (Remoto)</div>
+                <div>guillermoprieto17@gmail.com</div>
+                <div>+34 650 164 383</div>
+                <div><a href="https://linkedin.com/in/guillermo-prieto-rodriguez">linkedin.com/in/guillermo-prieto</a>
+                </div>
+                <div><a href="https://cv-guillermo-prieto-rodriguez.vercel.app">Portfolio Web</a></div>
+            </div>
+        </header>
+
+        <section>
+            <div class="section-title">Perfil Profesional</div>
+            <p class="profile-text">
+                Ingeniero de Ciberseguridad orientado a la consultoría estratégica de <strong>Seguridad de Aplicaciones
+                    (AppSec)</strong>. Cuento con una sólida trayectoria en el diseño, implementación y evolución de
+                frameworks de seguridad en entornos complejos.
+                <br><br>
+                Experto en liderar la integración de herramientas <strong>SAST, DAST y SCA en pipelines
+                    DevSecOps</strong> (GitHub Actions, Jenkins), con un enfoque en la mejora continua y la reducción de
+                fricción para los equipos de desarrollo. Mi capacidad para conectar la seguridad técnica con los
+                objetivos de negocio me permite actuar como puente entre seguridad, arquitectura y desarrollo,
+                impulsando una cultura de "Secure by Design".
+            </p>
+        </section>
+
+        <section>
+            <div class="section-title">Competencias Técnicas</div>
+            <div class="skills-grid">
+                <div class="skill-cat">
+                    <h4>AppSec Framework</h4>
+                    <ul class="skill-list">
+                        <li><strong>Tools:</strong> SonarQube (SAST) • OWASP ZAP (DAST)</li>
+                        <li><strong>Dependency:</strong> Snyk • Trivy • Dependabot (SCA)</li>
+                        <li><strong>Standards:</strong> OWASP ASVS • Top 10 • CWE/CVE</li>
+                        <li><strong>Methodology:</strong> Threat Modeling • Risk Assessment</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>DevSecOps & CI/CD</h4>
+                    <ul class="skill-list">
+                        <li><strong>Pipelines:</strong> GitHub Actions • Jenkins • GitLab CI</li>
+                        <li><strong>Cloud:</strong> AWS • Azure • Kubernetes Security</li>
+                        <li><strong>IaC Security:</strong> Terraform • Checkov • KICS</li>
+                        <li><strong>Automation:</strong> Python • Bash • API Integration</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>Gestión & Consultoría</h4>
+                    <ul class="skill-list">
+                        <li><strong>Procesos:</strong> Mejora Continua • Vulnerability Mgmt</li>
+                        <li><strong>Colaboración:</strong> Security Champion Program</li>
+                        <li><strong>Reporting:</strong> Métricas de Seguridad • KPIs</li>
+                        <li><strong>Mentoring:</strong> Formación a Desarrolladores</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section style="margin-top:-15px; margin-bottom: 20px;">
+            <div style="font-size:9pt; border-top:1px solid #eee; padding-top:5px; color:#555;">
+                <strong>Idiomas:</strong> Español (Nativo) • Inglés (B2+ - Entornos Internacionales)
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Experiencia Profesional</div>
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <span class="exp-role">Ingeniero de Ciberseguridad (AppSec Lead)</span>
+                        <span class="exp-company"> | Centro de Servicios Avanzados (CSA)</span>
+                    </div>
+                    <span class="exp-date">Ene 2025 - Actualidad</span>
+                </div>
+                <div class="exp-details">
+                    <ul>
+                        <li><strong>Implantación Framework AppSec:</strong> Lideré la definición y despliegue del
+                            framework de seguridad de aplicaciones corporativo, seleccionando e integrando herramientas
+                            SAST/DAST en el ciclo de vida de desarrollo.</li>
+                        <li><strong>Integración DevSecOps:</strong> Automaticé controles de seguridad en pipelines de
+                            CI/CD, logrando reducir el tiempo de detección de vulnerabilidades y habilitando despliegues
+                            más seguros y frecuentes.</li>
+                        <li><strong>Gestión de Vulnerabilidades:</strong> Optimicé el proceso de triaje y remediación,
+                            trabajando codo a codo con los desarrolladores para entender el contexto, filtrar falsos
+                            positivos y priorizar correcciones críticas.</li>
+                        <li><strong>Consultoría Interna:</strong> Referente técnico para equipos de desarrollo y
+                            arquitectura, asesorando sobre diseño seguro, bastionado de contenedores y cumplimiento de
+                            normativas en nuevos proyectos.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Proyectos e Iniciativas</div>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Enterprise AppSec Framework</div>
+                        <span class="project-tech">SAST/DAST/SCA • GitHub Actions • Policies</span>
+                    </div>
+                    <div class="project-desc">
+                        Diseño e implementación de una "Golden Pipeline" estandarizada para toda la organización.
+                        Integra análisis estático, dinámico y de composición de software, con quality gates automáticos
+                        que bloquean despliegues inseguros.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">GraphSec (Risk Analysis Platform)</div>
+                        <span class="project-tech">Python • Vulnerability Intelligence • Reporting</span>
+                    </div>
+                    <div class="project-desc">
+                        Desarrollo de una plataforma interna para la gestión unificada de riesgos. Correlaciona
+                        hallazgos de múltiples herramientas de seguridad con el contexto de infraestructura, facilitando
+                        la toma de decisiones basada en datos.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">NativeConnect (Secure Architecture)</div>
+                        <span class="project-tech">OAuth2 • OIDC • Secure Design</span>
+                    </div>
+                    <div class="project-desc">
+                        Arquitectura de referencia para gestión de identidades y accesos. Sirve como modelo para
+                        implementar autenticación robusta (OAuth2/OIDC) en nuevas aplicaciones, asegurando alineación
+                        con los estándares de seguridad corporativos.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Security Automation Lab</div>
+                        <span class="project-tech">Docker • Python • API Integration</span>
+                    </div>
+                    <div class="project-desc">
+                        Entorno de laboratorio para probar y validar nuevas herramientas de seguridad antes de su
+                        integración productiva. Desarrollé scripts de automatización para orquestar escaneos y
+                        centralizar resultados.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Formación Académica</div>
+            <div class="edu-item">
+                <div>
+                    <span class="edu-degree">Grado en Ingeniería de Ciberseguridad</span>
+                    <span class="edu-school">, Universidad Rey Juan Carlos (URJC)</span>
+                </div>
+                <span class="edu-date">2020 - 2025</span>
+            </div>
+            <div style="font-size: 9pt; margin-top: 5px; color: var(--text-main);">
+                <strong>Materias Relevantes:</strong> Seguridad del Software, Auditoría, Gestión de Riesgos, Cloud
+                Security.
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>

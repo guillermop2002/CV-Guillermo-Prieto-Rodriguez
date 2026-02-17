@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Guillermo Prieto Rodriguez - Application Security Engineer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --primary: #0f172a;
+            /* Slate 900 */
+            --accent: #2563eb;
+            /* Royal Blue */
+            --text-main: #334155;
+            /* Slate 700 */
+            --text-light: #64748b;
+            /* Slate 500 */
+            --bg-light: #f8fafc;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background: #fff;
+            line-height: 1.5;
+            font-size: 9.5pt;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px 50px;
+            min-height: 297mm;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+        }
+
+        .header-left {
+            margin-right: 30px;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+        }
+
+        .header-center {
+            flex: 1;
+        }
+
+        .header-center h1 {
+            font-size: 20pt;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+            margin-bottom: 5px;
+        }
+
+        .header-center h2 {
+            font-size: 11pt;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 9pt;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .header-right a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--primary);
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+
+        /* PROFILE */
+        .profile-text {
+            text-align: justify;
+            color: var(--text-main);
+        }
+
+        /* EXPERIENCE */
+        .exp-item {
+            margin-bottom: 20px;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .exp-role {
+            font-weight: 700;
+            font-size: 10.5pt;
+            color: var(--primary);
+        }
+
+        .exp-company {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .exp-date {
+            font-size: 9pt;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .exp-details ul {
+            padding-left: 16px;
+            margin-top: 8px;
+        }
+
+        .exp-details li {
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+
+        /* PROJECTS GRID */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            row-gap: 25px;
+        }
+
+        .project-card {
+            /* No border, clean look */
+        }
+
+        .project-head {
+            margin-bottom: 4px;
+        }
+
+        .project-title {
+            font-weight: 700;
+            font-size: 10pt;
+            color: var(--primary);
+        }
+
+        .project-tech {
+            display: block;
+            font-size: 8pt;
+            color: var(--accent);
+            font-weight: 600;
+            font-family: monospace;
+            margin-top: 2px;
+            text-transform: uppercase;
+        }
+
+        .project-desc {
+            font-size: 9pt;
+            color: var(--text-main);
+            line-height: 1.4;
+        }
+
+        /* SKILLS & LANGUAGES */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-cat h4 {
+            font-size: 9.5pt;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .skill-list {
+            list-style: none;
+            font-size: 9pt;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* EDUCATION */
+        .edu-item {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .edu-degree {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .edu-school {
+            margin-left: 10px;
+            color: var(--text-main);
+        }
+
+        .edu-date {
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        @media print {
+            body {
+                margin: 0;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                width: 100%;
+                padding: 30px;
+                margin: 0;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cv-container">
+
+        <header>
+            <div class="header-left">
+                <img src="../cara horizontal.jpg" alt="Profile" class="profile-img">
+            </div>
+            <div class="header-center">
+                <h1>Guillermo Prieto</h1>
+                <h2>Application Security Engineer</h2>
+            </div>
+            <div class="header-right">
+                <div>Madrid, Spain (Remote)</div>
+                <div>guillermoprieto17@gmail.com</div>
+                <div>+34 650 164 383</div>
+                <div><a href="https://linkedin.com/in/guillermo-prieto-rodriguez">linkedin.com/in/guillermo-prieto</a>
+                </div>
+                <div><a href="https://cv-guillermo-prieto-rodriguez.vercel.app">Portfolio Web</a></div>
+            </div>
+        </header>
+
+        <section>
+            <div class="section-title">Professional Profile</div>
+            <p class="profile-text">
+                Proactive <strong>Application Security Engineer</strong> committed to embedding security into every
+                stage of the
+                SDLC. I specialize in <strong>Secure By Design architecture, Threat Modeling, and API Security</strong>.
+                My approach combines deep technical expertise in <strong>OWASP ASVS</strong> and modern authentication
+                standards
+                with hands-on experience in <strong>DevSecOps</strong> (SAST/DAST/SCA tooling).
+                <br><br>
+                Passionate about guiding engineering teams to build resilient, scalable systems, I excel at mentoring
+                Security Champions and fostering a culture where security is a shared responsibility. Proficient in
+                <strong>Java/Kotlin concepts, Kubernetes, Terraform, and Python</strong>, I am eager to contribute to
+                the mission of
+                building a trusted, sovereign European payment solution.
+            </p>
+        </section>
+
+        <section>
+            <div class="section-title">Technical Skills</div>
+            <div class="skills-grid">
+                <div class="skill-cat">
+                    <h4>AppSec & Secure Coding</h4>
+                    <ul class="skill-list">
+                        <li><strong>Standards:</strong> OWASP ASVS • Top 10</li>
+                        <li><strong>Auth:</strong> OAuth2 • OIDC • JWT</li>
+                        <li><strong>Analysis:</strong> Threat Modeling • Code Review</li>
+                        <li><strong>API Security:</strong> OpenAPI • API Gateway</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>DevSecOps & Tooling</h4>
+                    <ul class="skill-list">
+                        <li><strong>Pipelines:</strong> GitHub Actions • CI/CD</li>
+                        <li><strong>Scanners:</strong> SAST • DAST • SCA (Trivy/Snyk)</li>
+                        <li><strong>Infrastructure:</strong> Kubernetes • Terraform</li>
+                        <li><strong>Containers:</strong> Docker • Hardening</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>Development & Core</h4>
+                    <ul class="skill-list">
+                        <li><strong>Languages:</strong> Java • Python • JavaScript</li>
+                        <li><strong>Databases:</strong> SQL • NoSQL (Concepts)</li>
+                        <li><strong>Frameworks:</strong> Spring Boot (Knowledge)</li>
+                        <li><strong>Communication:</strong> Mentoring • Documentation</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section style="margin-top:-15px; margin-bottom: 20px;">
+            <div style="font-size:9pt; border-top:1px solid #eee; padding-top:5px; color:#555;">
+                <strong>Languages:</strong> Spanish (Native) • English (C1 - Full Professional Proficiency)
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Professional Experience</div>
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <span class="exp-role">Cybersecurity Engineer (AppSec & DevSecOps)</span>
+                        <span class="exp-company"> | Centro de Servicios Avanzados (CSA)</span>
+                    </div>
+                    <span class="exp-date">Jan 2025 - Present</span>
+                </div>
+                <div class="exp-details">
+                    <ul>
+                        <li><strong>Secure Software Development Lifecycle (SSDLC):</strong> Championed the integration
+                            of security
+                            early in the development process ("Shift Left"). Conducted <strong>Threat Modeling</strong>
+                            sessions
+                            and code reviews to identify architectural flaws before deployment.</li>
+                        <li><strong>AppSec Tooling Implementation:</strong> Deployed and configured <strong>SAST, DAST,
+                                and SCA</strong>
+                            tools within CI/CD pipelines, automating vulnerability detection and reducing remediation
+                            time for
+                            development teams.</li>
+                        <li><strong>Security Mentorship:</strong> Acted as a subject-matter expert, mentoring junior
+                            developers
+                            and promoting secure coding best practices to raise security awareness across the
+                            engineering organization.</li>
+                        <li><strong>Vulnerability Management:</strong> Managed the triage and remediation of critical
+                            application
+                            vulnerabilities, prioritizing fixes based on risk impact and exploitability in high-security
+                            environments.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Key Projects</div>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">NativeConnect (Identity & Access Mgmt)</div>
+                        <span class="project-tech">OAuth2 • OIDC • Node.js • Secure Auth</span>
+                    </div>
+                    <div class="project-desc">
+                        Architected a secure Identity Provider (IdP) prototype implementing <strong>OAuth 2.0 and
+                            OIDC</strong>
+                        flows. Focused on mitigating authentication vulnerabilities (Session Hijacking, CSRF) and
+                        enforcing
+                        secure token handling practices.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Secure CI/CD "Golden Pipeline"</div>
+                        <span class="project-tech">SAST/DAST • Gitleaks • GitHub Actions</span>
+                    </div>
+                    <div class="project-desc">
+                        Designed a standard "Golden Pipeline" for secure software delivery. Integrates automated
+                        security
+                        gates including <strong>Static Analysis (SAST), Secret Scanning, and Dependency Checks
+                            (SCA)</strong>
+                        to ensure supply chain security.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Secure API Gateway (Concept)</div>
+                        <span class="project-tech">API Security • Rate Limiting • Input Validation</span>
+                    </div>
+                    <div class="project-desc">
+                        Implemented robust API security controls, including strict input validation, rate limiting to
+                        prevent
+                        DoS, and centralized authentication/authorization enforcement to protect microservices
+                        endpoints.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">GraphSec-IaC (Cloud Security)</div>
+                        <span class="project-tech">Terraform • AWS • Python • Graph Theory</span>
+                    </div>
+                    <div class="project-desc">
+                        Engineered a platform to visualize and analyze cloud infrastructure security posture. Correlates
+                        misconfigurations in Infrastructure-as-Code (Terraform) with runtime vulnerability data to
+                        prioritize
+                        fixes.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Education</div>
+            <div class="edu-item">
+                <div>
+                    <span class="edu-degree">BSc in Cybersecurity Engineering</span>
+                    <span class="edu-school">, Universidad Rey Juan Carlos (URJC)</span>
+                </div>
+                <span class="edu-date">2020 - 2025</span>
+            </div>
+            <div style="font-size: 9pt; margin-top: 5px; color: var(--text-main);">
+                <strong>Relevant Coursework:</strong> Secure Software Development, Cryptography, Web Application
+                Security, Cloud Computing.
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>

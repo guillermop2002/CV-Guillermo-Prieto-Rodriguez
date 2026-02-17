@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Guillermo Prieto Rodriguez - DevSecOps Platform Engineer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --primary: #0f172a;
+            /* Slate 900 */
+            --accent: #2563eb;
+            /* Royal Blue */
+            --text-main: #334155;
+            /* Slate 700 */
+            --text-light: #64748b;
+            /* Slate 500 */
+            --bg-light: #f8fafc;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background: #fff;
+            line-height: 1.5;
+            font-size: 9.5pt;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px 50px;
+            min-height: 297mm;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+        }
+
+        .header-left {
+            margin-right: 30px;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+        }
+
+        .header-center {
+            flex: 1;
+        }
+
+        .header-center h1 {
+            font-size: 20pt;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+            margin-bottom: 5px;
+        }
+
+        .header-center h2 {
+            font-size: 11pt;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 9pt;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .header-right a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--primary);
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+
+        /* PROFILE */
+        .profile-text {
+            text-align: justify;
+            color: var(--text-main);
+        }
+
+        /* EXPERIENCE */
+        .exp-item {
+            margin-bottom: 20px;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .exp-role {
+            font-weight: 700;
+            font-size: 10.5pt;
+            color: var(--primary);
+        }
+
+        .exp-company {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .exp-date {
+            font-size: 9pt;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .exp-details ul {
+            padding-left: 16px;
+            margin-top: 8px;
+        }
+
+        .exp-details li {
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+
+        /* PROJECTS GRID */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            row-gap: 25px;
+        }
+
+        .project-card {
+            /* No border, clean look */
+        }
+
+        .project-head {
+            margin-bottom: 4px;
+        }
+
+        .project-title {
+            font-weight: 700;
+            font-size: 10pt;
+            color: var(--primary);
+        }
+
+        .project-tech {
+            display: block;
+            font-size: 8pt;
+            color: var(--accent);
+            font-weight: 600;
+            font-family: monospace;
+            margin-top: 2px;
+            text-transform: uppercase;
+        }
+
+        .project-desc {
+            font-size: 9pt;
+            color: var(--text-main);
+            line-height: 1.4;
+        }
+
+        /* SKILLS & LANGUAGES */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-cat h4 {
+            font-size: 9.5pt;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .skill-list {
+            list-style: none;
+            font-size: 9pt;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* EDUCATION */
+        .edu-item {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .edu-degree {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .edu-school {
+            margin-left: 10px;
+            color: var(--text-main);
+        }
+
+        .edu-date {
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        @media print {
+            body {
+                margin: 0;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                width: 100%;
+                padding: 30px;
+                margin: 0;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cv-container">
+
+        <header>
+            <div class="header-left">
+                <img src="../cara horizontal.jpg" alt="Profile" class="profile-img">
+            </div>
+            <div class="header-center">
+                <h1>Guillermo Prieto</h1>
+                <h2>DevSecOps Platform Engineer</h2>
+            </div>
+            <div class="header-right">
+                <div>Madrid, Spain (Remote)</div>
+                <div>guillermoprieto17@gmail.com</div>
+                <div>+34 650 164 383</div>
+                <div><a href="https://linkedin.com/in/guillermo-prieto-rodriguez">linkedin.com/in/guillermo-prieto</a>
+                </div>
+                <div><a href="https://cv-guillermo-prieto-rodriguez.vercel.app">Portfolio Web</a></div>
+            </div>
+        </header>
+
+        <section>
+            <div class="section-title">Professional Profile</div>
+            <p class="profile-text">
+                Passionate <strong>DevSecOps Platform Engineer</strong> dedicated to empowering developers by building
+                automated, secure, and scalable foundations. I specialize in designing <strong>reusable infrastructure
+                    patterns</strong> and integrating security seamlessly into <strong>CI/CD pipelines</strong> (GitHub
+                Actions).
+                <br><br>
+                With a strong background in <strong>Security Engineering and Automation</strong>, I excel at
+                architecting tools that eliminate repetitive tasks and ensure compliance without slowing down delivery.
+                Proficient in <strong>AWS, Kubernetes, Python, and IaC (Terraform)</strong>, I am eager to contribute to
+                a culture of innovation and operational excellence, helping teams deliver software faster and safer.
+            </p>
+        </section>
+
+        <section>
+            <div class="section-title">Technical Skills</div>
+            <div class="skills-grid">
+                <div class="skill-cat">
+                    <h4>Platform & Infrastructure</h4>
+                    <ul class="skill-list">
+                        <li><strong>Cloud:</strong> AWS (EC2, Lambda, S3)</li>
+                        <li><strong>IaC:</strong> Terraform • CloudFormation</li>
+                        <li><strong>Orchestration:</strong> Kubernetes • Docker</li>
+                        <li><strong>HA Patterns:</strong> Load Balancing • Auto-Scaling</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>DevSecOps & Automation</h4>
+                    <ul class="skill-list">
+                        <li><strong>CI/CD:</strong> GitHub Actions (Advanced Workflows)</li>
+                        <li><strong>Security:</strong> SAST • DAST • Secret Scanning</li>
+                        <li><strong>Scripting:</strong> Python • Bash • Node.js</li>
+                        <li><strong>Monitoring:</strong> ELK Stack • Prometheus</li>
+                    </ul>
+                </div>
+                <div class="skill-cat">
+                    <h4>Development & Tools</h4>
+                    <ul class="skill-list">
+                        <li><strong>Languages:</strong> Python • JavaScript/TypeScript</li>
+                        <li><strong>Version Control:</strong> Git • GitHub Flow</li>
+                        <li><strong>Databases:</strong> SQL • Redis</li>
+                        <li><strong>Soft Skills:</strong> Mentoring • Documentation</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section style="margin-top:-15px; margin-bottom: 20px;">
+            <div style="font-size:9pt; border-top:1px solid #eee; padding-top:5px; color:#555;">
+                <strong>Languages:</strong> Spanish (Native) • English (C1 - Full Professional Proficiency)
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Professional Experience</div>
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <span class="exp-role">Cybersecurity & Automation Engineer (Platform Focus)</span>
+                        <span class="exp-company"> | Centro de Servicios Avanzados (CSA)</span>
+                    </div>
+                    <span class="exp-date">Jan 2025 - Present</span>
+                </div>
+                <div class="exp-details">
+                    <ul>
+                        <li><strong>Internal Tooling & Automation:</strong> Architected and developed Python-based
+                            automation workflows to eliminate manual triage tasks, reducing operational overhead by
+                            <strong>50%</strong>. Evangelized the adoption of these tools across the team.</li>
+                        <li><strong>Secure CI/CD Implementation:</strong> Led the initiative to integrate automated
+                            security checks (SAST/DAST) into development pipelines, ensuring code quality and security
+                            early in the lifecycle ("Shift Left").</li>
+                        <li><strong>Infrastructure Monitoring:</strong> Enhanced production environment visibility by
+                            customizing SIEM dashboards and alerting rules, proactively identifying performance
+                            bottlenecks and security incidents.</li>
+                        <li><strong>Cross-Functional Collaboration:</strong> Partnered with development teams to design
+                            secure infrastructure patterns and address vulnerabilities, fostering a collaborative
+                            DevSecOps culture.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Key Projects</div>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Secure CI/CD "Golden Pipeline"</div>
+                        <span class="project-tech">GitHub Actions • Gitleaks • Semgrep • Docker</span>
+                    </div>
+                    <div class="project-desc">
+                        Designed and implemented a modular CI/CD pipeline template. Automates building, testing, and
+                        security scanning (SAST, Secret Detection), enabling developers to deploy secure code
+                        confidently and rapidly.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">GraphSec-IaC (Cloud Infrastructure)</div>
+                        <span class="project-tech">Terraform • Python • AWS • Graph Theory</span>
+                    </div>
+                    <div class="project-desc">
+                        Platform engineering tool that correlates infrastructure vulnerability data with architectural
+                        graphs. automating risk assessment and prioritization for cloud assets.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">Cerebro (Data Processing Engine)</div>
+                        <span class="project-tech">Python • Distributed Systems • Redis • SQL</span>
+                    </div>
+                    <div class="project-desc">
+                        Developed a scalable, high-availability data ingestion engine capable of processing real-time
+                        streams. Implemented complex logic for data normalization and aggregation, similar to production
+                        telemetry pipelines.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-head">
+                        <div class="project-title">NativeConnect (IAM Prototype)</div>
+                        <span class="project-tech">Node.js • OAuth2 • Secure Auth Patterns</span>
+                    </div>
+                    <div class="project-desc">
+                        Built a secure Identity and Access Management system implementing modern authentication
+                        standards (OAuth2). Focused on secure session management and protecting against common web
+                        vulnerabilities.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Education</div>
+            <div class="edu-item">
+                <div>
+                    <span class="edu-degree">BSc in Cybersecurity Engineering</span>
+                    <span class="edu-school">, Universidad Rey Juan Carlos (URJC)</span>
+                </div>
+                <span class="edu-date">2020 - 2025</span>
+            </div>
+            <div style="font-size: 9pt; margin-top: 5px; color: var(--text-main);">
+                <strong>Relevant Coursework:</strong> Cloud Computing, Secure Software Development, Network Engineering,
+                Operating Systems.
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>
