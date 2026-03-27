@@ -1,7 +1,20 @@
 function Experience() {
     const experiences = [
         {
-            date: 'Enero 2025 - Enero 2026',
+            date: 'Marzo 2026 - Presente',
+            role: 'Security Engineer',
+            company: 'Edpuzzle',
+            location: 'Remoto',
+            description: [
+                'Gestión integral de la seguridad en la nube (AWS/GCP), asegurando la protección de datos en el entorno EdTech (GDPR, FERPA).',
+                'Implementación de DevSecOps, integrando automatización de controles de seguridad (SAST, DAST, SCA) en los pipelines CI/CD.',
+                'Gestión técnica de vulnerabilidades y triaje de reportes en plataformas de Bug Bounty para mitigar riesgos críticos rápidamente.',
+                'Desarrollo de estrategias "Policy-as-Code" para mantener el cumplimiento normativo y endurecer la infraestructura.'
+            ],
+            skills: ['Cloud Security', 'DevSecOps', 'AWS/GCP', 'Bug Bounty', 'GDPR/FERPA', 'Policy-as-Code']
+        },
+        {
+            date: 'Enero 2025 - Febrero 2026',
             role: 'Ingeniero de Ciberseguridad',
             company: 'Centro de Servicios Avanzados (CSA)',
             location: 'Madrid, España',

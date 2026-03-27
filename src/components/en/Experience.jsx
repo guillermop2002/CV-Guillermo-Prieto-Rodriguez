@@ -1,7 +1,20 @@
 function Experience() {
     const experiences = [
         {
-            date: 'Oct 2024 - Present',
+            date: 'Mar 2026 - Present',
+            role: 'Security Engineer',
+            company: 'Edpuzzle',
+            location: 'Remote',
+            description: [
+                'Comprehensive management of cloud security (AWS/GCP), ensuring data protection for millions of users in the EdTech ecosystem (GDPR, FERPA).',
+                'Driving SecOps and DevSecOps practices by integrating automated security gates (SAST, DAST, SCA) into CI/CD pipelines.',
+                'Vulnerability management and Bug Bounty platform administration, effectively triaging and mitigating critical security reports.',
+                'Implementing "Policy-as-Code" strategies to maintain strict regulatory compliance and harden cloud infrastructure.'
+            ],
+            skills: ['Cloud Security', 'DevSecOps', 'AWS/GCP', 'Bug Bounty', 'GDPR/FERPA', 'Policy-as-Code']
+        },
+        {
+            date: 'Oct 2024 - Feb 2026',
             role: 'Cybersecurity Engineer',
             company: 'Cloud Security Alliance (CSA)',
             location: 'Madrid, Spain',
